@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการรักษาความปลอดภัยแห่งชาติ</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=Kanit:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+    :root {
+    --bg: #f4f1eb;
+    --bg-2: #ede9e1;
+    --bg-card: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --ink: #2c2c2c;
+    --ink-2: #4a4a4a;
+    --ink-3: #7a7a7a;
+    --sage: #5a6e50;
+    --sage-2: #4a5c42;
+    --sage-light: #7a9470;
+    --sage-pale: rgba(90,110,80,0.08);
+    --green-light: #4a8a40;
+    --red-bright: #e74c3c;
+  }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+    /* ===== HEADER ===== */
+  header {
+    background: #ffffff;
+    border-bottom: 2px solid var(--sage);
+    padding: 0; position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 32px; max-width: 1400px; margin: 0 auto; gap: 12px;
+  }
+  .logo-area { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .shield-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--sage), var(--sage-2));
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .logo-text h1 { font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+  .logo-text p  { font-size: 11px; color: var(--ink-3); }
+  nav { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+  nav button {
+    background: none; border: 1px solid transparent; color: var(--ink-3);
+    padding: 7px 14px; border-radius: 8px; cursor: pointer;
+    font-family: 'Sarabun', sans-serif; font-size: 13px; font-weight: 600;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  nav button:hover { border-color: var(--sage); color: var(--sage); background: var(--sage-pale); }
+  nav button.active { background: var(--sage); color: #fff; border-color: var(--sage); }
+  .back-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--bg-2); border: 1px solid var(--border);
+    color: var(--sage-2); padding: 7px 14px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; text-decoration: none;
+    white-space: nowrap; flex-shrink: 0; transition: all 0.2s;
+  }
+  .back-btn:hover { background: var(--sage-pale); border-color: var(--sage); }
+
+  /* ===== MAIN ===== */
+  main { max-width: 1400px; margin: 0 auto; padding: 32px 24px; }
+  .section { display: none; animation: fadeIn 0.35s ease; }
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== HERO ===== */
+  .hero { text-align: center; padding: 40px 20px; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--sage-pale); border: 1px solid var(--sage-light);
+    color: var(--sage-2);
+    padding: 5px 18px; border-radius: 20px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.06em; margin-bottom: 20px;
+  }
+  .hero h2 {
+    font-family: 'Kanit', sans-serif; font-size: 34px; font-weight: 800;
+    line-height: 1.25; margin-bottom: 14px; color: var(--ink);
+  }
+  .hero p { color: var(--ink-3); font-size: 16px; max-width: 640px; margin: 0 auto 36px; line-height: 1.8; }
+
+  .stats-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+  .stat-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 28px; text-align: center; min-width: 130px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .stat-card .num { font-family: 'Kanit', sans-serif; font-size: 32px; font-weight: 800; color: var(--sage); line-height: 1; }
+  .stat-card .label { font-size: 12px; color: var(--ink-3); margin-top: 4px; }
+
+  .quick-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 8px; }
+  .quick-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px 20px; cursor: pointer; transition: all 0.25s;
+    text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .quick-card:hover { border-color: var(--sage); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); }
+  .quick-card .icon { font-size: 28px; margin-bottom: 12px; }
+  .quick-card h3 { font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .quick-card p { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .content-header { margin-bottom: 28px; padding-bottom: 16px; border-bottom: 2px solid var(--bg-2); }
+  .content-header h2 { font-family: 'Kanit', sans-serif; font-size: 26px; font-weight: 700; color: var(--sage-2); margin-bottom: 6px; }
+  .content-header p { color: var(--ink-3); font-size: 14px; }
+
+  /* ===== ACCORDION ===== */
+  .accordion { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .acc-item {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; transition: border-color 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .acc-item.open { border-color: var(--sage-light); }
+  .acc-header { display: flex; align-items: center; gap: 14px; padding: 16px 20px; cursor: pointer; user-select: none; }
+  .acc-num {
+    width: 34px; height: 34px; background: var(--sage);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .acc-title { flex: 1; font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 600; color: var(--ink); }
+  .acc-arrow { color: var(--sage); font-size: 16px; transition: transform 0.3s; }
+  .acc-item.open .acc-arrow { transform: rotate(180deg); }
+  .acc-body { display: none; padding: 4px 20px 20px 20px; }
+  .acc-item.open .acc-body { display: block; }
+  .acc-body p { color: var(--ink-2); line-height: 1.8; font-size: 14px; margin-bottom: 12px; }
+  .acc-body strong { color: var(--sage-2); }
+  .acc-body em { color: var(--ink-2); font-style: italic; }
+
+  /* ===== STRUCTURE / ORG CHART ===== */
+  .org-chart { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 32px 0; }
+  .org-top {
+    background: var(--sage); color: #fff;
+    border-radius: 12px; padding: 14px 32px; text-align: center;
+    font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 16px; min-width: 280px; position: relative;
+  }
+  .org-top::after {
+    content: ''; position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 20px; background: var(--sage-light);
+  }
+  .org-mid-row { display: flex; gap: 20px; margin-top: 20px; position: relative; flex-wrap: wrap; justify-content: center; }
+  .org-mid-row::before {
+    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: calc(100% - 140px); height: 2px; background: var(--sage-light);
+  }
+  .org-node {
+    background: var(--bg-card); border: 1px solid var(--sage-light);
+    border-radius: 10px; padding: 12px 18px; text-align: center;
+    font-size: 13px; font-weight: 600; color: var(--ink); min-width: 160px; position: relative;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .org-node::before {
+    content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 20px; background: var(--sage-light);
+  }
+  .org-node .org-tag { display: block; font-size: 11px; color: var(--sage); font-weight: 700; margin-bottom: 4px; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 20px 0; }
+  .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .info-card h4 { font-family: 'Kanit', sans-serif; font-size: 15px; font-weight: 600; color: var(--sage-2); margin-bottom: 10px; }
+  .info-card ul { list-style: none; }
+  .info-card ul li {
+    padding: 6px 0; font-size: 13px; color: var(--ink-2);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 8px; line-height: 1.6;
+  }
+  .info-card ul li:last-child { border-bottom: none; }
+  .info-card ul li::before { content: '▸'; color: var(--sage); flex-shrink: 0; }
+
+  /* ===== GLOSSARY ===== */
+  .glossary-search { display: flex; gap: 12px; margin-bottom: 20px; }
+  .glossary-search input {
+    flex: 1; background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 11px 18px; color: var(--ink);
+    font-family: 'Sarabun', sans-serif; font-size: 15px; outline: none; transition: border-color 0.2s;
+  }
+  .glossary-search input::placeholder { color: var(--ink-3); }
+  .glossary-search input:focus { border-color: var(--sage); }
+  .glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .gloss-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px; transition: border-color 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .gloss-card:hover { border-color: var(--sage-light); }
+  .gloss-term { font-family: 'Kanit', sans-serif; font-size: 15px; font-weight: 700; color: var(--sage-2); margin-bottom: 6px; display: flex; gap: 8px; align-items: center; }
+  .gloss-term .term-icon { width: 28px; height: 28px; background: var(--sage-pale); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+  .gloss-def { font-size: 13px; color: var(--ink-3); line-height: 1.7; }
+
+  /* ===== QUIZ ===== */
+  .quiz-container { max-width: 760px; margin: 0 auto; }
+  .quiz-progress-bar { background: var(--bg-2); height: 6px; border-radius: 4px; margin-bottom: 28px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: var(--sage); border-radius: 4px; transition: width 0.5s ease; }
+  .quiz-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .quiz-counter { font-family: 'Kanit', sans-serif; font-size: 13px; color: var(--ink-3); font-weight: 600; }
+  .quiz-score-display {
+    background: var(--sage-pale); border: 1px solid var(--sage-light);
+    padding: 4px 14px; border-radius: 20px;
+    font-family: 'Kanit', sans-serif; font-size: 13px; color: var(--sage-2); font-weight: 600;
+  }
+  .quiz-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 32px 36px; position: relative;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .quiz-q-num {
+    position: absolute; top: -13px; left: 36px;
+    background: var(--sage); color: #fff;
+    font-family: 'Kanit', sans-serif; font-size: 12px; font-weight: 700;
+    padding: 3px 14px; border-radius: 20px;
+  }
+  .quiz-question {
+    font-family: 'Sarabun', sans-serif; font-size: 17px; font-weight: 600;
+    line-height: 1.7; color: var(--ink); margin-bottom: 24px;
+  }
+  .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+  .quiz-option {
+    background: var(--bg); border: 2px solid var(--border);
+    border-radius: 10px; padding: 14px 18px; cursor: pointer;
+    display: flex; align-items: flex-start; gap: 12px; transition: all 0.2s;
+    font-size: 15px; color: var(--ink-2); text-align: left;
+    font-family: 'Sarabun', sans-serif; line-height: 1.6; width: 100%;
+  }
+  .quiz-option:hover:not(:disabled) { border-color: var(--sage); background: var(--sage-pale); color: var(--ink); }
+  .quiz-option .opt-letter {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--bg-2); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Kanit', sans-serif; font-size: 13px; font-weight: 700;
+    flex-shrink: 0; color: var(--ink-3); transition: all 0.2s;
+    min-width: 28px;
+  }
+  .quiz-option:hover:not(:disabled) .opt-letter { background: var(--sage); color: #fff; border-color: var(--sage); }
+  .quiz-option.correct { border-color: #4a8a40 !important; background: rgba(74,138,64,0.08) !important; color: var(--ink) !important; }
+  .quiz-option.correct .opt-letter { background: #4a8a40 !important; color: #fff !important; border-color: #4a8a40 !important; }
+  .quiz-option.wrong { border-color: #e74c3c !important; background: rgba(231,76,60,0.06) !important; color: var(--ink-2) !important; opacity: 0.8; }
+  .quiz-option.wrong .opt-letter { background: #e74c3c !important; color: #fff !important; border-color: #e74c3c !important; }
+  .quiz-option:disabled { cursor: default; }
+
+  .quiz-explanation {
+    margin-top: 16px; padding: 14px 18px;
+    background: var(--sage-pale); border-left: 4px solid var(--sage);
+    border-radius: 0 8px 8px 0; font-size: 14px; color: var(--ink-2); line-height: 1.8; display: none;
+  }
+  .quiz-explanation.show { display: block; animation: fadeIn 0.3s ease; }
+  .quiz-explanation strong { color: var(--sage-2); }
+
+  .quiz-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
+
+  .btn {
+    padding: 11px 26px; border-radius: 10px; border: none; cursor: pointer;
+    font-family: 'Kanit', sans-serif; font-size: 15px; font-weight: 700;
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-primary { background: var(--sage); color: #fff; }
+  .btn-primary:hover { background: var(--sage-2); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(90,110,80,0.3); }
+  .btn-primary:disabled { opacity: 0; pointer-events: none; }
+  .btn-secondary { background: var(--bg-2); border: 1px solid var(--border); color: var(--ink-3); }
+  .btn-secondary:hover { border-color: var(--sage); color: var(--sage); }
+
+  /* ===== QUIZ SELECTOR ===== */
+  .quiz-selector { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 28px; }
+  .quiz-mode-card {
+    background: var(--bg-card); border: 2px solid var(--border);
+    border-radius: 14px; padding: 22px 18px; cursor: pointer;
+    text-align: center; transition: all 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .quiz-mode-card:hover { border-color: var(--sage); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); }
+  .quiz-mode-card .mode-icon { font-size: 32px; margin-bottom: 10px; }
+  .quiz-mode-card h4 { font-family: 'Kanit', sans-serif; font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .quiz-mode-card p { font-size: 12px; color: var(--ink-3); }
+
+  /* ===== RESULT ===== */
+  .result-screen { text-align: center; padding: 48px 36px; }
+  .result-circle {
+    width: 156px; height: 156px; border-radius: 50%;
+    background: conic-gradient(var(--sage) 0deg, var(--sage) var(--deg), var(--bg-2) var(--deg));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px; position: relative;
+  }
+  .result-circle::before { content: ''; position: absolute; inset: 12px; border-radius: 50%; background: var(--bg-card); }
+  .result-pct { position: relative; z-index: 1; font-family: 'Kanit', sans-serif; font-size: 34px; font-weight: 900; color: var(--sage-2); }
+  .result-screen h3 { font-family: 'Kanit', sans-serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .result-screen p { color: var(--ink-3); font-size: 15px; margin-bottom: 24px; }
+  .result-breakdown { display: flex; justify-content: center; gap: 32px; margin-bottom: 32px; }
+  .breakdown-item { display: flex; flex-direction: column; align-items: center; }
+  .breakdown-item .b-num { font-family: 'Kanit', sans-serif; font-size: 30px; font-weight: 900; display: block; margin-bottom: 4px; }
+  .breakdown-item .b-label { font-size: 13px; color: var(--ink-3); }
+  .breakdown-item.correct .b-num { color: #4a8a40; }
+  .breakdown-item.wrong .b-num { color: #e74c3c; }
+
+  /* ===== TABLE ===== */
+  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .data-table th {
+    background: var(--sage-pale); color: var(--sage-2);
+    font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 700;
+    padding: 13px 18px; text-align: left; border-bottom: 2px solid var(--sage-light);
+  }
+  .data-table td {
+    padding: 13px 18px; font-size: 14px; color: var(--ink-2);
+    border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6;
+  }
+  .data-table tr:hover td { background: var(--bg); }
+
+  /* ===== DONATE BANNER ===== */
+  .donate-banner {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px; text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 32px;
+  }
+  .donate-banner p { color: var(--ink-3); font-size: 14px; margin-bottom: 8px; line-height: 1.7; }
+  .donate-banner strong { color: var(--sage-2); }
+  .donate-qr { width: 180px; height: 180px; margin: 16px auto; display: block; border-radius: 8px; border: 1px solid var(--border); }
+  .donate-note { font-size: 12px; color: var(--ink-3); margin-top: 4px; }
+  .btn-donate {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--sage); color: #fff;
+    border: none; border-radius: 10px;
+    padding: 10px 22px; font-family: 'Kanit', sans-serif;
+    font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+    margin-top: 12px;
+  }
+  .btn-donate:hover { background: var(--sage-2); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(90,110,80,0.3); }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-2); }
+  ::-webkit-scrollbar-thumb { background: var(--sage-light); border-radius: 3px; }
+
+  @media (max-width: 768px) {
+    .header-inner { padding: 10px 14px; flex-wrap: wrap; }
+    nav { flex-wrap: wrap; }
+    nav button { padding: 6px 10px; font-size: 12px; }
+    .hero h2 { font-size: 24px; }
+    .quiz-card { padding: 24px 16px; }
+    .org-mid-row { flex-direction: column; gap: 10px; }
+    .org-mid-row::before { display: none; }
+    main { padding: 20px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="shield-icon">🛡</div>
+      <div class="logo-text">
+        <h1>ระเบียบสำนักนายกรัฐมนตรี</h1>
+        <p>ว่าด้วยการรักษาความปลอดภัยแห่งชาติ พ.ศ. 2552 (แก้ไข พ.ศ. 2560)</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-btn">&#8592; หน้าหลัก</a>
+    <nav>
+      <button class="active" onclick="showSection('home', this)">🏠 หน้าหลัก</button>
+      <button onclick="showSection('content', this)">📖 เนื้อหา</button>
+      <button onclick="showSection('structure', this)">🏛 โครงสร้าง</button>
+      <button onclick="showSection('glossary', this)">📚 คำศัพท์</button>
+      <button onclick="showSection('quiz', this)">✍ ทดสอบ</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ====== HOME ====== -->
+<div id="home" class="section active">
+  <div class="hero">
+    <div class="hero-badge">สื่อการเรียนรู้อิเล็กทรอนิกส์</div>
+    <h2>รักษาความปลอดภัยแห่งชาติ</h2>
+    <p>ศึกษาและทำความเข้าใจระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการรักษาความปลอดภัยแห่งชาติ ฉบับสมบูรณ์ พร้อมแบบทดสอบ 100 ข้อ</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="num">7</div>
+        <div class="label">หมวดหลัก</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">3</div>
+        <div class="label">ชั้นความลับ</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">100</div>
+        <div class="label">ข้อสอบ</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">2560</div>
+        <div class="label">แก้ไขล่าสุด</div>
+      </div>
+    </div>
+
+    <div class="quick-nav">
+      <div class="quick-card" onclick="showSection('content', document.querySelector('nav button:nth-child(2)'))">
+        <div class="icon">📖</div>
+        <h3>เรียนรู้เนื้อหา</h3>
+        <p>สาระสำคัญครบทุกหมวด นิยาม มาตรการ และขั้นตอนปฏิบัติ</p>
+      </div>
+      <div class="quick-card" onclick="showSection('structure', document.querySelector('nav button:nth-child(3)'))">
+        <div class="icon">🏛</div>
+        <h3>โครงสร้างองค์กร</h3>
+        <p>กรช. องค์การรักษาความปลอดภัย และหน่วยงานที่เกี่ยวข้อง</p>
+      </div>
+      <div class="quick-card" onclick="showSection('glossary', document.querySelector('nav button:nth-child(4)'))">
+        <div class="icon">📚</div>
+        <h3>คำศัพท์สำคัญ</h3>
+        <p>นิยามคำสำคัญตามระเบียบ ค้นหาได้อย่างรวดเร็ว</p>
+      </div>
+      <div class="quick-card" onclick="startQuiz('all')">
+        <div class="icon">✍</div>
+        <h3>ทดสอบ 100 ข้อ</h3>
+        <p>ฝึกทำข้อสอบจริงพร้อมเฉลยและคำอธิบายทุกข้อ</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CONTENT ====== -->
+<div id="content" class="section">
+  <div class="content-header">
+    <h2>📖 สาระสำคัญของระเบียบ</h2>
+    <p>ครอบคลุมทุกหมวดตั้งแต่บทนิยาม โครงสร้าง ถึงมาตรการต่าง ๆ</p>
+  </div>
+
+  <!-- Classification -->
+  <h3 style="font-family:Kanit;font-size:20px;color:var(--sage-2);margin-bottom:16px;">🔐 ประเภทชั้นความลับ (หมวด 2)</h3>
+  <div class="class-grid">
+    <div class="class-card top-secret">
+      <div class="class-badge">Top Secret</div>
+      <h3>ลับที่สุด</h3>
+      <div class="en-name">TOP SECRET</div>
+      <p>ความลับสำคัญที่สุด หากรั่วไหลทั้งหมดหรือบางส่วนจะก่อให้เกิดความเสียหายต่อความมั่นคงและผลประโยชน์แห่งรัฐ <strong>อย่างร้ายแรงที่สุด</strong></p>
+    </div>
+    <div class="class-card secret">
+      <div class="class-badge">Secret</div>
+      <h3>ลับมาก</h3>
+      <div class="en-name">SECRET</div>
+      <p>ความลับสำคัญมาก หากรั่วไหลทั้งหมดหรือบางส่วนจะก่อให้เกิดความเสียหายต่อความมั่นคงและผลประโยชน์แห่งรัฐ <strong>อย่างร้ายแรง</strong></p>
+    </div>
+    <div class="class-card confidential">
+      <div class="class-badge">Confidential</div>
+      <h3>ลับ</h3>
+      <div class="en-name">CONFIDENTIAL</div>
+      <p>ความลับสำคัญ หากรั่วไหลทั้งหมดหรือบางส่วนจะก่อให้เกิดความเสียหายต่อความมั่นคงและผลประโยชน์แห่งรัฐ (ระดับทั่วไป)</p>
+    </div>
+  </div>
+
+  <div class="accordion" id="mainAccordion">
+
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-num">1</div>
+        <div class="acc-title">วัตถุประสงค์และขอบเขต</div>
+        <div class="acc-arrow">▼</div>
+      </div>
+      <div class="acc-body">
+        <p><strong style="color:var(--sage-2)">วัตถุประสงค์หลัก:</strong> ปรับปรุงมาตรการรักษาความปลอดภัย แทนที่ระเบียบเดิม พ.ศ. 2517 ให้เหมาะสมกับสถานการณ์ปัจจุบัน</p>
+        <p><strong style="color:var(--sage-2)">การคุ้มครอง:</strong> มุ่งพิทักษ์รักษาความลับของทางราชการ หน่วยงานของรัฐ เจ้าหน้าที่ของรัฐ และทรัพย์สินมีค่าของแผ่นดิน</p>
+        <p><strong style="color:var(--sage-2)">การป้องกันภัยคุกคาม:</strong> ป้องกันจากการจารกรรม การก่อวินาศกรรม การบ่อนทำลาย การก่อการร้าย และการรั่วไหลของข้อมูลความลับ</p>
+        <p><strong style="color:var(--sage-2)">ผู้รักษาการ:</strong> นายกรัฐมนตรี (ข้อ 6)</p>
+        <p><strong style="color:var(--sage-2)">การทบทวน:</strong> นายกรัฐมนตรีจัดให้มีการทบทวนอย่างน้อยทุก <strong>5 ปี</strong></p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-num">2</div>
+        <div class="acc-title">มาตรการรักษาความปลอดภัยเกี่ยวกับบุคคล (หมวด 4)</div>
+        <div class="acc-arrow">▼</div>
+      </div>
+      <div class="acc-body">
+        <p><strong style="color:var(--sage-2)">วัตถุประสงค์:</strong> เลือกเฟ้นและตรวจสอบบุคคลให้เป็นที่เชื่อแน่ว่าไม่เป็นภัยต่อความมั่นคง</p>
+        <p><strong style="color:var(--sage-2)">มาตรการหลัก 2 ประการ:</strong></p>
+        <p>① การตรวจสอบประวัติและพฤติการณ์บุคคล — ใช้กับผู้รอบรรจุ ลูกจ้างทดลอง ผู้กลับเข้ารับราชการ ผู้ที่ต้องเข้าถึงความลับ ผู้รับทุน</p>
+        <p>② การรับรองความไว้วางใจ — หัวหน้าหน่วยงานรัฐมีหน้าที่รับรอง ต้องผ่านอบรมและลงนามบันทึกก่อน</p>
+        <p><strong style="color:var(--sage-2)">การตรวจสอบโดยละเอียด:</strong> ใช้กับบุคคลที่จะเข้าถึงความลับชั้น "ลับที่สุด" หรือ "ลับมาก"</p>
+        <p><strong style="color:var(--sage-2)">กรณีเร่งด่วน:</strong> รับรองก่อนได้ แต่ถ้าผลตรวจสอบไม่ผ่านต้องให้พ้นหน้าที่</p>
+        <p><strong style="color:var(--sage-2)">ทะเบียนความไว้วางใจ:</strong> หน่วยงานต้องจัดทำและแก้ไขเมื่อมีการเปลี่ยนแปลง</p>
+        <p><strong style="color:var(--sage-2)">หลักการเข้าถึง:</strong> จำกัดให้ทราบเท่าที่จำเป็น (Need to Know) เพื่อปฏิบัติภารกิจที่ได้รับมอบหมาย</p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-num">3</div>
+        <div class="acc-title">มาตรการรักษาความปลอดภัยเกี่ยวกับสถานที่ (หมวด 5)</div>
+        <div class="acc-arrow">▼</div>
+      </div>
+      <div class="acc-body">
+        <p><strong style="color:var(--sage-2)">ขอบเขต:</strong> ที่สงวน อาคาร สถานที่ ข้อมูลข่าวสาร ศูนย์ข้อมูลสารสนเทศ ระบบสาธารณูปโภค และเจ้าหน้าที่</p>
+        <p><strong style="color:var(--sage-2)">ประเภทภยันตราย:</strong></p>
+        <p>① ปรากฏการณ์ธรรมชาติ — พายุ น้ำท่วม ฟ้าผ่า แผ่นดินไหว ดินถล่ม ระเบิด เพลิงไหม้</p>
+        <p>② การกระทำของมนุษย์เปิดเผย — จลาจล การก่อความไม่สงบ การโจมตี</p>
+        <p>③ การกระทำของมนุษย์ไม่เปิดเผย — โจรกรรม จารกรรม วินาศกรรม ก่อการร้าย</p>
+        <p><strong style="color:var(--sage-2)">มาตรการ 9 ด้าน:</strong> กำหนดพื้นที่ | เครื่องกีดขวาง | แสงสว่าง | สัญญาณเตือนภัย | ควบคุมบุคคล | ควบคุมยานพาหนะ | เจ้าหน้าที่รักษาความปลอดภัย | ป้องกันอัคคีภัย | อุปกรณ์ความปลอดภัย</p>
+        <p><strong style="color:var(--sage-2)">การทบทวนแผน:</strong> ต้องซักซ้อมอย่างน้อย <strong>ปีละ 1 ครั้ง</strong></p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-num">4</div>
+        <div class="acc-title">การรักษาความปลอดภัยในการประชุมลับ (หมวด 6)</div>
+        <div class="acc-arrow">▼</div>
+      </div>
+      <div class="acc-body">
+        <p><strong style="color:var(--sage-2)">นิยาม:</strong> การร่วมปรึกษาหารือเรื่องที่เกี่ยวข้องกับสิ่งที่เป็นความลับของทางราชการ รวมถึงการบรรยายสรุปด้วย</p>
+        <p><strong style="color:var(--sage-2)">ผู้รับผิดชอบ:</strong> หัวหน้าหน่วยงานของรัฐเจ้าของเรื่อง</p>
+        <p><strong style="color:var(--sage-2)">ข้อห้ามสำคัญ:</strong></p>
+        <p>✗ ห้ามนำเครื่องมือสื่อสารเข้าสถานที่ประชุม</p>
+        <p>✗ ห้ามนำเครื่องบันทึกภาพหรือเสียงเข้าสถานที่ประชุม</p>
+        <p>✗ ห้ามนำข้อมูลข่าวสารออกนอกสถานที่ประชุมโดยไม่ได้รับอนุญาต</p>
+        <p><strong style="color:var(--sage-2)">การแถลงข่าว:</strong> จัดสถานที่แถลงนอกพื้นที่รักษาความปลอดภัย ข้อมูลต้องได้รับอนุมัติจากที่ประชุมลับก่อน</p>
+        <p><strong style="color:var(--sage-2)">การบรรยายสรุป:</strong> ผู้บรรยายต้องแจ้งชั้นความลับทั้งเมื่อเริ่มและสิ้นสุดการบรรยาย</p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-num">5</div>
+        <div class="acc-title">การละเมิดและการเผชิญเหตุ (หมวด 7)</div>
+        <div class="acc-arrow">▼</div>
+      </div>
+      <div class="acc-body">
+        <p><strong style="color:var(--sage-2)">หน้าที่เจ้าหน้าที่ (ข้อ 51):</strong> เมื่อพบเห็นการละเมิด ให้รีบดำเนินการเบื้องต้นเพื่อลดความเสียหายให้น้อยที่สุด และรายงานผู้บังคับบัญชาโดยเร็วที่สุด</p>
+        <p><strong style="color:var(--sage-2)">หน้าที่ จคร. (ข้อ 52):</strong> สำรวจความเสียหาย | ป้องกันลดความเสียหาย | หาสาเหตุ | แก้ไขมาตรการ | รายงาน | แจ้งเจ้าหน้าที่สืบสวนหากมีการจารกรรม</p>
+        <p><strong style="color:var(--sage-2)">หน้าที่หัวหน้าหน่วยงาน (ข้อ 53):</strong> แจ้งเจ้าของเรื่อง | สอบสวนหาผู้รับผิดชอบ | แก้ไขข้อบกพร่อง | ลงโทษผู้ละเมิด</p>
+        <p><strong style="color:var(--sage-2)">หน้าที่เจ้าของเรื่อง (ข้อ 54):</strong> พิจารณาลดหรือยกเลิกชั้นความลับ | ขจัดความเสียหายต่อความมั่นคงรัฐ อาจต้องเปลี่ยนนโยบายและแผน</p>
+        <p><strong style="color:var(--sage-2)">ข้อมูลสูญหาย:</strong> รายงานรายละเอียดต่อผู้บังคับบัญชา และบันทึกลงในทะเบียนควบคุมข้อมูลข่าวสารลับ</p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        <div class="acc-num">6</div>
+        <div class="acc-title">บทเฉพาะกาลและสิ่งที่เปลี่ยนแปลงในฉบับที่ 3 (พ.ศ. 2560)</div>
+        <div class="acc-arrow">▼</div>
+      </div>
+      <div class="acc-body">
+        <p><strong style="color:var(--sage-2)">บทเฉพาะกาล (ข้อ 55):</strong> สิ่งที่เป็นความลับตามระเบียบเดิม (พ.ศ. 2517) ให้ถือว่าเป็นความลับตามระเบียบ พ.ศ. 2552 ต่อไป</p>
+        <p><strong style="color:var(--sage-2)">การเปลี่ยนแปลงในฉบับที่ 3 (2560):</strong></p>
+        <p>① แก้ไขนิยาม "ที่สงวน" (2) เพิ่มชุมทางการขนส่งทางรางทุกระบบ</p>
+        <p>② แก้ไขนิยาม "องค์การรักษาความปลอดภัย" ให้ชัดเจนขึ้น</p>
+        <p>③ เพิ่มข้อ 5 วรรคสอง เรื่องการรักษาความปลอดภัยทางเครือข่ายคอมพิวเตอร์</p>
+        <p>④ เพิ่มข้อ 26/1 เรื่องผู้ไม่ใช่เจ้าหน้าที่รัฐที่เข้าปฏิบัติงาน</p>
+        <p>⑤ แก้ไขข้อ 28 เรื่องการรับรองความไว้วางใจโดยละเอียด</p>
+        <p>⑥ เพิ่มข้อ 36 วรรคสอง ให้ทบทวนและซักซ้อมแผนอย่างน้อยปีละ 1 ครั้ง</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Comparison Table -->
+  <h3 style="font-family:Kanit;font-size:20px;color:var(--sage-2);margin:32px 0 16px;">📊 เปรียบเทียบชั้นความลับ</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ชั้นความลับ</th>
+        <th>ชื่อภาษาอังกฤษ</th>
+        <th>ระดับความเสียหายเมื่อรั่วไหล</th>
+        <th>ข้อที่กำหนด</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span style="color:var(--red-bright);font-weight:700">ลับที่สุด</span></td>
+        <td>TOP SECRET</td>
+        <td>ร้ายแรงที่สุดต่อความมั่นคงและผลประโยชน์แห่งรัฐ</td>
+        <td>ข้อ 16</td>
+      </tr>
+      <tr>
+        <td><span style="color:var(--sage-2);font-weight:700">ลับมาก</span></td>
+        <td>SECRET</td>
+        <td>ร้ายแรงต่อความมั่นคงและผลประโยชน์แห่งรัฐ</td>
+        <td>ข้อ 17</td>
+      </tr>
+      <tr>
+        <td><span style="color:var(--green-light);font-weight:700">ลับ</span></td>
+        <td>CONFIDENTIAL</td>
+        <td>เสียหายต่อความมั่นคงและผลประโยชน์แห่งรัฐ</td>
+        <td>ข้อ 18</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ====== STRUCTURE ====== -->
+<div id="structure" class="section">
+  <div class="content-header">
+    <h2>🏛 โครงสร้างการบริหารจัดการ</h2>
+    <p>คณะกรรมการ กรช. และองค์การรักษาความปลอดภัยทั้ง 3 ฝ่าย</p>
+  </div>
+
+  <h3 style="font-family:Kanit;font-size:18px;color:var(--sage-2);margin-bottom:24px;">แผนภูมิองค์กร กรช.</h3>
+
+  <div class="org-chart">
+    <div class="org-top">
+      คณะกรรมการนโยบายรักษาความปลอดภัยแห่งชาติ (กรช.)<br>
+      <span style="font-size:12px;font-weight:400;">ประธาน: รัฐมนตรีที่นายกรัฐมนตรีมอบหมาย</span>
+    </div>
+    <div class="org-mid-row">
+      <div class="org-node">
+        <span class="org-tag">รองประธาน คนที่ 1</span>
+        เลขาธิการนายกรัฐมนตรี
+      </div>
+      <div class="org-node">
+        <span class="org-tag">รองประธาน คนที่ 2</span>
+        เลขาธิการคณะรัฐมนตรี (ปลัดสนร.)
+      </div>
+      <div class="org-node">
+        <span class="org-tag">กรรมการและเลขานุการ</span>
+        เลขาธิการสภาความมั่นคงแห่งชาติ
+      </div>
+    </div>
+  </div>
+
+  <div class="info-grid" style="margin-top:32px;">
+    <div class="info-card">
+      <h4>🏢 สำนักงานเลขานุการ กรช.</h4>
+      <ul>
+        <li>สำนักงานสภาความมั่นคงแห่งชาติ สำนักนายกรัฐมนตรี</li>
+        <li>ศึกษาวิจัยเชิงนโยบาย วิเคราะห์และสนธิข้อมูล</li>
+        <li>สนับสนุนและประสานงานกับหน่วยงานในและต่างประเทศ</li>
+        <li>เสนอแนะแก้ไขกฎหมายและมาตรการต่าง ๆ</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>⚙️ อำนาจหน้าที่ กรช.</h4>
+      <ul>
+        <li>กำหนดนโยบายและมาตรการรักษาความปลอดภัยแห่งชาติ</li>
+        <li>วินิจฉัยปัญหาที่เกี่ยวข้องกับการปฏิบัติตามระเบียบ</li>
+        <li>เสนอแนะการแก้ไขปรับปรุงระเบียบ</li>
+        <li>แต่งตั้งคณะอนุกรรมการหรือคณะทำงาน</li>
+        <li>ออกประกาศเพื่อปฏิบัติการตามระเบียบ</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>📋 การประชุม กรช.</h4>
+      <ul>
+        <li>องค์ประชุม: กรรมการไม่น้อยกว่า <strong>กึ่งหนึ่ง</strong> ของทั้งหมด</li>
+        <li>การลงคะแนน: ถือเสียงข้างมาก คนละ 1 เสียง</li>
+        <li>คะแนนเสมอ: ประธานออกเสียงชี้ขาดเพิ่มอีก 1 เสียง</li>
+        <li>ประธาน/รองประธานทั้ง 2 ไม่มา: กรรมการที่มาเลือกกันเอง</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-family:Kanit;font-size:18px;color:var(--sage-2);margin:32px 0 16px;">🛡 องค์การรักษาความปลอดภัย (อรม.)</h3>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ฝ่าย</th>
+        <th>หน่วยงาน</th>
+        <th>สังกัด</th>
+        <th>หน้าที่</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:var(--sage-2)">พลเรือน</strong></td>
+        <td>สำนักข่าวกรองแห่งชาติ (สขช.)</td>
+        <td>สำนักนายกรัฐมนตรี</td>
+        <td>ให้คำแนะนำ ช่วยเหลือ กำกับดูแล ตรวจสอบ แก้ไขข้อบกพร่อง หน่วยงานรัฐฝ่ายพลเรือน</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--sage-2)">ทหาร</strong></td>
+        <td>ศูนย์รักษาความปลอดภัย (ศรภ.)</td>
+        <td>กองบัญชาการกองทัพไทย กระทรวงกลาโหม</td>
+        <td>ให้คำแนะนำ ช่วยเหลือ กำกับดูแล ตรวจสอบ แก้ไขข้อบกพร่อง หน่วยงานรัฐฝ่ายทหาร</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--sage-2)">ตำรวจ</strong></td>
+        <td>กองบัญชาการตำรวจสันติบาล</td>
+        <td>สำนักงานตำรวจแห่งชาติ</td>
+        <td>ให้คำแนะนำ ช่วยเหลือ กำกับดูแล ตรวจสอบ แก้ไขข้อบกพร่อง หน่วยงานรัฐฝ่ายตำรวจ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:Kanit;font-size:18px;color:var(--sage-2);margin:32px 0 16px;">👤 ผู้ช่วยเลขานุการ กรช.</h3>
+  <div class="info-grid">
+    <div class="info-card">
+      <h4>📌 ตำแหน่งผู้ช่วยเลขานุการ</h4>
+      <ul>
+        <li>ผู้อำนวยการสำนักข่าวกรองแห่งชาติ</li>
+        <li>ผู้บัญชาการศูนย์รักษาความปลอดภัย</li>
+        <li>ผู้บัญชาการกองบัญชาการตำรวจสันติบาล</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>📌 หน้าที่หัวหน้าหน่วยงานรัฐ</h4>
+      <ul>
+        <li>รับผิดชอบการรักษาความปลอดภัยในหน่วยงานของตน</li>
+        <li>กำกับดูแลคู่สัญญาภายนอกให้ปฏิบัติตามระเบียบ</li>
+        <li>แต่งตั้งเจ้าหน้าที่ควบคุมการรักษาความปลอดภัย (จคร.)</td>
+        <li>รับรองความไว้วางใจบุคคลเพื่อเข้าถึงความลับ</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ====== GLOSSARY ====== -->
+<div id="glossary" class="section">
+  <div class="content-header">
+    <h2>📚 คำศัพท์สำคัญตามระเบียบ</h2>
+    <p>นิยามคำศัพท์ที่ใช้ในระเบียบสำนักนายกรัฐมนตรี</p>
+  </div>
+
+  <div class="glossary-search">
+    <input type="text" id="glossSearch" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterGloss()">
+  </div>
+
+  <div class="glossary-grid" id="glossGrid">
+  </div>
+</div>
+
+<!-- ====== QUIZ ====== -->
+<div id="quiz" class="section">
+  <div id="quizMenu">
+    <div class="content-header">
+      <h2>✍ แบบทดสอบ</h2>
+      <p>เลือกรูปแบบการทดสอบที่ต้องการ</p>
+    </div>
+    <div class="quiz-selector">
+      <div class="quiz-mode-card" onclick="startQuiz('all')">
+        <div class="mode-icon">📝</div>
+        <h4>ทดสอบทั้งหมด 100 ข้อ</h4>
+        <p>ครบทุกหมวด ครบทุกเนื้อหา</p>
+      </div>
+      <div class="quiz-mode-card" onclick="startQuiz('random20')">
+        <div class="mode-icon">🎲</div>
+        <h4>สุ่ม 20 ข้อ</h4>
+        <p>ฝึกด่วน เน้นความเข้าใจ</p>
+      </div>
+      <div class="quiz-mode-card" onclick="startQuiz('random50')">
+        <div class="mode-icon">⚡</div>
+        <h4>สุ่ม 50 ข้อ</h4>
+        <p>ฝึกกลาง ครอบคลุมหลายหมวด</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="quizPlay" style="display:none;">
+    <div class="quiz-container">
+      <div class="quiz-meta">
+        <div class="quiz-counter" id="quizCounter">ข้อ 1 / 100</div>
+        <div class="quiz-score-display" id="quizScoreDisplay">คะแนน: 0</div>
+      </div>
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgress" style="width:0%"></div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-q-num" id="quizQNum">ข้อ 1</div>
+        <div class="quiz-question" id="quizQuestion"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-explanation" id="quizExplanation"></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn btn-secondary" onclick="exitQuiz()">← ออกจากแบบทดสอบ</button>
+        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>ถัดไป →</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="quizResult" style="display:none;">
+    <div class="quiz-container">
+      <div class="result-screen">
+        <div class="result-circle" id="resultCircle">
+          <div class="result-pct" id="resultPct">0%</div>
+        </div>
+        <h3 id="resultTitle">ยอดเยี่ยม!</h3>
+        <p id="resultMsg">คุณได้คะแนนยอดเยี่ยม</p>
+        <div class="result-breakdown">
+          <div class="breakdown-item correct">
+            <span class="b-num" id="correctCount">0</span>
+            <span class="b-label">✅ ตอบถูก</span>
+          </div>
+          <div class="breakdown-item wrong">
+            <span class="b-num" id="wrongCount">0</span>
+            <span class="b-label">❌ ตอบผิด</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="exitQuiz()">🔄 เริ่มใหม่</button>
+          <button class="btn btn-secondary" onclick="showSection('content', document.querySelector('nav button:nth-child(2)'))">📖 ทบทวนเนื้อหา</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="donate-banner" id="donateBanner" style="display:none;">
+      <p>☕ หากแนวข้อสอบนี้มีประโยชน์<br><strong>สนับสนุนค่ากาแฟสักแก้วได้เลยครับ 🙏</strong></p>
+      <img class="donate-qr" src="data:image/jpeg;base64,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NdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTstw0YN5vJtNoWa7I3lWm0LNdkbtOTstw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3k2m0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LM9kbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTstw0YN5vJtNoWZ7I3lWm0LNdkbtOTbtw0YN5vJtNoWZ7I3k2m0LNdkbtOTstw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vJtNoWa7I3k2m0LM9kbtOTstw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vJtNoWa7I3k2m0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3k2m0LNdkbtOTstw0YN5vKtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWZ7I3lWm0LNdkbtOTstw0YN5vKtNoWa7I3k2m0LNdkbtOTstw0YN5vJtNoWZ7I3lWm0LNdkbtOTstw0YN5vJtNoWa7I3lWm0LNdkbtOTbtw0YN5vJtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7I3k2m0LNdkbtOTbtw0YN5vKtNoWa7JneVabQs12Ru05Nu3DW0nwxJdYh/mQsqhAlNsbaSFVJSI+jzLWMjMc5VbxIjkJ7b+J5/V2i0xpLf0tZiJ1ZMgGNsAAAAAAwpkwBgGQBgYHoHB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5GB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecPwB6AHnAYHoAeRgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAecBgegB5wGB6AHnAYHoAeRgegB5wGB6AHkYHoAecAegB5GB6AHnAYHoAecBgegB5wGB6AHnAYHoAecAZB0ZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8q5qLwuRP4mVIJvFmppltZuHCmIrU+qiNa9UTiLMdO+dFWTJ2RqnTLZ6SfEzujPST4leoVDtLHhpEh90K13Cn9op73u2o80zrFLvHj7KvIn6rBboz0k+I3RnpJ8Svu921HmmNYo3u2o80xrFHjx9jfn6rBboz0k+I3RnpJ8Sv2921HmmNYpje7ajzTGsU548fY35+qwW6M9JPiN0Z6SfEr7vdtR5pjWKN7tqPNMaxR48fY35+qwW6M9JPiN0Z6SfEr7vdtR5pjWKN7tqPNMaxR48fY35+qwW6M9JPiN0Z6SfEr7vdtR5pjWKZ3u2o80xrFHjx9jfn6rA7oz0k+I3RnpJ8Sv2921HmmdYpje7ajzTGsUePH2N+fqsFujPST4jdGeknxK+73bUeaY1imd7tqPNM6xR48fY35+qwO6M9JPiN0Z6SfEr9vdtR5pjWKN7tqPNMaxR48fY35+qwO6M9JPiN0Z6SfEr9vdtR5pjWKN7tqPNM6xR48fY35+qwO6M9JPiN0Z6SfEr7vdtR5pjWKN7tqPNMaxR48fY35+qwW6M9JPiN0Z6SfEr9vdtR5pnWKN7tqPNM6xR48fY35+qwO6M9JPiN0Z6SfEr9vdtR5pnWKN7tqPNMaxR48fY35+qwO6M9JPiN0Z6SfEr9vdtR5pnWKY3u2o80xrFHjx9jfn6rBboz0k+I3RnpJ8Svu921HmmNYo3u2o80zrFHjx9jfn6rBboz0k+I3RnpJ8Sv2921HmmdYo3u2o80xrFHjx9jfn6rA7oz0k+I3RnpJ8Sv2921HmmNYo3u2o80zrFHjx9jfn6rA7oz0k+I3RnpJ8Sv2921HmmNYpje7ajzTGsUePH2N+fqsFujPST4jdGeknxK+73bUeaY1ije7ajzTOsUePH2N+fqsFujPST4jdGeknxK+73bUeaZ1ije7ajzTOsUePH2N+fqsFls9NPiY3Rnpp8Sv2921HmmdYoWztqPNM6xTvjx9jfn6rA7oz00+I3RnpJ8SvyWdtR5pjWKN7tqPNMaxTmxX7G/b6rBboz0m/Eboz0k+JX3e7ajzTOsUb3bUeaZ1ijx4+xvz9Vgt0Z6SfEboz0k+JX7e7ajzTOsUxvdtR5pnWKPHj7G/P1WC3RnpJ8RujPST4lfd7tqPNM6xRvdtR5pnWKPHj7G/P1WC3RnpJ8RujPST4lfd7tqPNM6xRvdtR5pnWKPHj7G/P1WC3RnpJ8RujPST4lfd7tqPNM6xRvdtR5pnWKPHj7G/P1WC3RnpJ8RujPST4lfd7tqPNM6xRvdtR5pnWKPHj7G/P1WC3RnpN+JjdGeknxK/b3bUeaZ1imd7tqPNM6xR48fY35+qwO6M9NPiN0Z6SfEr7vdtR5pjWKN7tqPNMaxR48fY35+qwWWz0m/Exls9NvxK/b3bUeaZ1in4qhKVulo1ZuJMQ0cvBjEU7HTxP/pyeomP/KyCKi8KKig4m6mLEi2RR0SI57t3fwuXFTtUM1q9tphprbuiJegAcSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgga8Tl9Me1mwngge8Tl7Me1ho6f5M3UfGEzUFrfoaX4E+wnkNjkp6KfA19B8DS3uIbIptP5L6+zzkp6KfAZKeinwPQIuvOSnop8Bkp6KfA9ADzkp6KfAZKeinwPQA85KeinwGSnop8D0APOSnop8Bkp6KfA9ADzkp6KfAZKeinwPQA85KeinwGSnop8D0APOSnop8Bkp6KfA9ADzkp6KfAZKeinwPQA85KeinwGSnop8D0APOSnop8Bkp6KfA9ADzkp6KfAZKeinwPQA85LfRT4DJT0U+B6AHnJT0U+AyU9FPgegB5yU9FPgMlPRT4HoAeclPRT4DJT0U+B6AHnJT0U+AyU9FPgegB5yU9FPgMlvmT4HpTCrgmKgYyW+inwGS3zJ8DWRLSUiFNdyvnYSRccMnE+0zWafJxYcKPMsY+L9hFXjO6S5rD9uS3zJ8Dy7JY1XYJwJjxH4n1unQ51sm6ZYkd/EzHhU/bEc1rFc9URiJwqpz1PT+nCzV4rJasulFl2pBbERiqvGbV9s5N1Zl6bKs3Z0VEVytTHJOMtPTKJVa+sSFU4EBqr9ZGrguJ1NkKbZ+RiqknNMmptU+s9VxU0WrWK6qK2tM6OwRrVT7KfAzkt8yfA8RY8OXhLEivRjE41VTSRbbUGFF3N0/Dxxw4yiImfZfrEe7fZLfMnwGS3zJ8D80lUpSowd0lI7IrfO1T6TM1Bk4KxpiIkNjeNVOeuuh6aavrkt9FPgMlvmT4H4ZCt06pOVkpNMiOTyIpmbrEhIx2QJmYZDiRF+q1V4zukmsP25LfMgyW+ZAio5qORcUU/DCrVPjTrpOHMsWO3jZjwj1d9H7slvop8Bkt9FPgZVyImK8CGrW0lIbM9zLOw91xwycRETLkzENnkt9FPgMlvmQ/FMVqnyszDlo0yxsWL9hqrxmFrdPSfSR7pZu7uJmPCo0k1h+7Jb5kPy1CelabKOmJlyNhtTFT7TEzClYLoseIjGJxqpztVi0q1khEkJaeY5/map2sa+7lp0aaNeC6oz0OVokosZ2V9dXN4EQ7uXxfBY6IxEeqJimBwdjqJJUatRWRJ2E+ZRqMSHDXzeckEnk0idIQx6zGssK1vmT4Ea3voiSEtgmH9p+hJikZ3wd4y3Sfodw/ODNH4S2l0vI//AMh/6HcJxHD3S8j/APyH/odwnERy/wAku4vhDIAK1oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMEDXh8vpj2s2E8kDXh8vpj2s2Gjp/nLL1HxhM9B8DS3uIbI1tB8DS3uIbIot8paK+zIMA4kyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAyDAAHzjMWJBeziykVMT6BTghC1lJnqDHxjcLYsVHNi48KcJ+Sr1Cbqs3Lx4Cue2Sbiq4+bhOzvdhvdTpdzWK5Grw4e0/PYSzyRbKTkWPDxiTDFyVVOHiN1bR2RMsNqT3TENJI1FKnbOmR0diqtble0k21MjPVGjvlpGIrHvTDFCILLScaXtpBgOY5dyi4Y4E9JxFeadLRMLMMa1nVDsWxlXpMpEiRYCTDUTFy4cJ0V28KmTDIszLwXQ5li5L8XYn3t7Xp2SjMkIGMKHGYuVFwPw3Uy8SG2ceuKtWIuDl8vAdmZnHrLkViL6Q3N4cCLEo2Wk3uMJq/WRP9Ry9m4Vn55iU2PJqkeIxVa9y45WB1F5KOWzT8lFxTh4DjbJztEp8GHPz8eK+aY1UazI+yMfwMkfm/dYRYshbOcpjIjll2ouDVXHA7S19ImKxR3QJeIrHNxXgXjOKsM90/bmbn4UN24PRcHKmB1lvJ+ekKHlyOUjnOwc5qYqiEbx+cJV07JcLZN0aUtxDloi7nkpkqiLwKbG8Jy76qZw8GUm05Ok0+o1WvZchHiLGwyt1cmGCn3npisTNpZOUqjHOjS8REysOPhL+38tdVET+OicJbvWH7qEXUJy5yplMV412qSlLJhKw0X0SFqjFm6VbKbmoT1hPauLcf9XCpRijWbNGSdIhNMzC3aXiQ0VUVzVTEhW0lMnqBOMSOqq10VHJF8pLNmqlHqlFgzUxDVkR3AqL5Tib3GPWWgOY1VwXyIcxTpfSTLGtNYcfVajOVOfhVGCrnMkmIqu82Bt6NPpUrwJOYR2KOhtRfbgbqyFmt1sTOJFZ/azTFRFVOFEOUsRKxoNtoUN7Hf2b1TFUNGsTEs/bMTGqSLxmzC2ZfuGVijkVcPMcPYWNBmKxBiuirCcxuTkp/qU7+8B8SHZaOsNeHi4jirIVizdLkIb5uBESbThVyMxKaadi28fm+tIVc50bFfL8yVyI7LRFqtvo09Lw37jjjlKmBLiEMvvC3FrpLK8RGd7/eMt0n6EmKRne/3jLdJ+hzD84M3wltLpeR/wD5D/0O4TiOHul5H/8AkP8A0O4TiOZf5JdxfCGQAVrQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYIGvD5fTHtZsJ5IGvD5fTHtZsNHT/OWXqPjCZ6D4GlvcQ2RraD4GlvcQ2XkKLfKWivsKqImKn43VaQaqtdMw0VPJifaa4JWKqLguSpXKqTs39KTOExFT+0X/V+JbixbkqsuXbWG+mKfzqH2h9MU/nUPtFbu7ZznMXtDu2d5xG7Sl/i/tT5P6WR+mKfzqH2h9MU/nUPtFbu7J3nEbtKO7J3nEb4qPF/Z5P6WR+mKfzqH2h9MU/nUPtFblnZxOOZip/3KY7um+dRe0PF/Z5X6WS+mKfzqH2h9MU/nUPtFbu7pvnUXtGO7pvnUXtDxf255X6WS+mKfzqH2h9MU/nUPtFbe7pvnUXtDu6b51F7Q8X9nlfpZL6Yp/OofaH0xT+dQ+0Vt7um+dRe0O7pvnUXtDxf2eV+lkvpin86h9ofTFP51D7RW3u6b51F7Q7um+dRe0PF/Z5X6WS+mKfzqH2h9MU/nUPtFbe7pvnUXtDu6b51F7Q8X9nlfpZL6Yp/OofaH0xT+dQ+0Vt7um+dRe0O7pvnUXtDxf2eV+lkvpin86h9ofTFP51D7RW3u6b51F7Q7um+dRe0PF/Z5X6WS+mKfzqH2h9MU/nUPtFbe7pvnUXtDu6b51F7Q8X9nlfpZL6Yp/OofaH0xT+dQ+0Vt7um+dRe0O7pvnUXtDxf2eV+lkvpin86h9ofTFP51D7RW3u6b51F7Q7um+dRe0PF/Z5X6WS+mKfzqH2h9MU/nUPtFbe7pvnUXtDu6b51F7Q8X9nlfpZL6Yp/OofaH0vT+dQ+0Vt7um+dRe0Z7tnOdRe0PE/bvlfpZH6Yp/OofaH0xT+dQ+0Vu7um+dRe0Y7um+dRe0PF/bnlfpZL6Yp/O4faP0QpiFHh7pCej2+dCsvd03zmL2iart4sSJZRXPe564rwqpXkwdkarcefvnR0U9Ho821YM2+DERONrjMvPUmWgpBgxoMOG3iai8BAloZ2abXJlrZiIiI/iRxru7pvnMXtFlen1j3V26jSfZYSGln4UysyzudsVVxy0wxP2/S9P51D7RW3u6c5zF7Q7unOdRe0d8WZ/tzydP6WHnVolVRGTToEbDiylP2SErJSkFIckyGxnmYVtbPziLik1Fx95TY0+1dYp0VHwpyI5E8jlxOT01tNIl2OpjX1hYWalIE7CWFMQ2xGL/pch+HezRtHweyctZC8eDVnNlJ9EhR+JHeRTvWqjkxReBTLaLU9Jaa2rf1fmk6bJyCKkrLshY8eSmB9o0CHMQ1hxWI9i8aLxH0BHWfdPT+n45SkSEg9Xy0rDhOXjVqGYtKkY0ykzElYboqcT1ThP0rEY3jeie1TG7wl/wCI34jWXPR6wwTDA185QqbPRkjTMpDiRE/1OThNgj2u+y5F9imREzDsxE+7xBgQ5eEkOExGMTiRD5TlPlZ9iMmoDIrU8jkxP0nhY0NFwWI1P4nPU9HmDLwpeEkKFDRjGpgjUTgPzQaRIQI6zEKVhsirxuROE/Xu0L1jfiekcipii4od1mHNIl8ZmVgzcFYMxDbEYvGjkPwb2KNo+D2Taue1qYuciJ+J43aF6xvxETMexMRPu/PJ0uSkFVZaWZCx48lD9nlPDYrHcDXovsU9nJ1/t2NP6FIzvf7xluk/QkxSM73+8ZbpP0LcPzhVm+EtpdLyP/8AIf8AodwnEcPdLyP/APIf+h3CHMv8ku4vhDIAK1oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMEDXh8vpj2s2E8kDXh8vpj2s2Gjp/nLL1HxhM9B8DS3uIbLyGtoPgaW9xDZeQot8paK+z4TfekX3VK2VXwnM9I7aWUm+9YvuqVrqnhOY6R2019L7yydV/TYWQlpWbr0KFOZKwl48pcEJfSy9lFT7MDtoQvZ+mxKtVIcrDiLDc7/AFIp1toLEVGh0t86tQc5GJiqZRZmjW0eqGKdKzOjvN69lPRgdpBvXsp6MDtIQX3fOc4f8TP0hOY8Ew/4nNi/Lu/XhNsxYGzs/DVIMNqKvlauOBHVsLBzFn/7xAxiy/nTyGvoFrqpSZ6G9Zl74Sr9Zrl4MCcIzINdoCrEaisjQsrDDi4CEzfFMa+yelMsenureYP11CUdLVKPLsYrla9eI/O+E+H9tit9ptiYn2YpiYl4B94EjNzKYwJeJETztQ+cSFEgvyIrFY5ONFQ76S5MTDwDJ+qDSp+ZRFgScV6L6LTkzEERMvyA/bGo9Sl0xiyUZiedWn41RUXByKip5zsaSTEwwDOB6ZDe/wCwxXexB7e48DA9vhvh/barfafWBIzkymMCWiRE/wCVo9DSX5wfojyM3LcMeXfDT/mTA+C4IPQ0YB+mDTp2YTKgysSInna0xGkZuXTGPLxIaf8AMmBzWHdJfnBkNRVXBEVVXyHXGAe1hvYmL2Kifih6gy0eZXCBCdEX/lTEejukvkD9r6PU4TMp8jGRPOrT8iorXYORUVPOI0n2cmJh5NtQLPzdoJp0CURMpqYripqsMeLjJBuohRG1mNlsc1MjjUhlntrqnjr3W0lzdorJztm2wnTeH9oqomCmhJXvfhRIkGSyGOdg5eJCKnw3sXB7Vav4kMNu6uqWWnbbR5Juu05JO9q7CEfKTddpySd7VI9T8U+n+SJLReHZr31NaiYqbK0Xhya981rftJ7S6vxhTb5S66Qu5rFQk4c1Ba3IiJinCfozV130G9olWyPDZqS6NDdYGG3UXiW6vT0mNUBVG72u0+EsV0DKaif6eE5mJCfCerIjVa5ONFQtC5jXJg5EVF85Ct6NHhU+tMjwG5KRm5SonnLcOabTpKrNhisaw4mBGfLx2RYbla5q4oqE+2HrK1igwoj1xiMTBxX9CV7n5hVl5uCqqqNwwJdTXWuqPT2/LRJMePDl4LosVyNY1MVVSM7TXpbjGfLUtqOyVwV/4n6b1LQRJSVbTYDsl0VMXKnmIi/FeFSrBgiY7pW580xOkN5NWyrc29VfNu4fIin5UtFVWuxScf8AE/TQbK1K0D8JWHgxON68R0brpaskNXNjQlXzYqaZnHWdJZ4jJZo5K3NcknorZpXInkU7azd6bZiKyWqTMhXLhloR1WrPz9BjpCnIeGPE5E4DWcKKiocnFS8awRkvSdJWghRoczASJDcitenAqEJ22n6rS7QxoTJl7YblxamPkO2uuq8SfozpaK7KWBxKv4mnvcpf1YM+1OLgXAyYoiuTtlqyzNsesOA3yVbnj/iTFd1WYlVoLd2flRmKuUqkEkhXT1NZeqRJJzvqxU4ENGfHE09FGDJMW9XS3oVyLTpCHAl4isiRFxxRSLN8lW52/wCJ0V6FRWbtBuCOxbA4DikUlhxxFY1Ry3nunRKN1sefqU/MTEzHe+GxqIiKvBjiSmcVdhTO47OpFc3B8Vyr/A7ZDDln8p0bsUfj6ikZ3v8AeMt0n6EmKRne/wB4y3SfoMPzhzN8JbS6Xkf/AOQ/9DuEOHul5H/+Q/8AQ7hOI5l/kl3F8IZABWtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgga8Pl9Me1mwnkga8Pl9Me1mw0dP8AOWXqPjCZ6D4GlvcQ2XkNbQfA0t7iGy8hRb5S0V9nxm+9YvuqVrqnhOY6R20spN96xfdUrXVPCcx0jtpr6T3lk6r+m6sBwWngEq3ick5j3SKrA8qIBN1bpUGs010nHXBj04VGedMkSYY1xzCthgmPNTR/W/zCXU0ZF+8/mXeRRVsWRJJy0WbmocCE1XOc7DgQsRTIS0+zsJkZcFZB4cfYa2kWQoNBdusNkPLThynqaG3tuZaBJRKfIREfFemDlavEU3vOa0RELqUjFEzMtBY5sCo29jrFhtisVzuByYodfaaxUCsVKVSFAZCgMT66tTDynDXXKrrUo5eNcV/kSJb2vuolEcsJ2EWJwIvmI5O6MkRDtNJxzMvpDfZqgQEllfLsc1OHHDEhy1seBO2jjPk1a6G5fq5JqY83MTUZ0WNGe9zlxVVcpu7E0pKraSXhvTFjVxdiaKY9uO6ZUWvuT2xDs7EXewXS8OpVRuKrwthqnB/E6CftZZmgv7na2Er2cCtYicB97cVj6Bsy/cFRsRyIxuHBgi8BA8WK+PFdEiuVznLxquJVSk5Z1mVt7Ri9ITdJW4s1VoqS8RIbcrgweiYH4bW3fydRlHTtMa1sTDKwbxKQ61Va5HNXBU4UVCabsK1EqVHWWjvy3QeDhO5Mc4/yrJjvGT0mEMx4ESXjvgRWq17FwVFJBunlJeanJhJiCyKiM4MpMTXXnUplPtFusNqNbHarlNvc/wB+TPuE8lu7Fqrx10yaOlrVhpGfq7ZyK2HBlYfCrWphieXWnslRnpKw9wxbwKqIh+S9OuRpGQhScB6tWMv1lRcFQh1yq5cXKqr514SvFjm9dZlZkyRS2kQsNAh0G00g5YMODGa5MFVETFDlpS7CSlavEmpqIiyjfrNapqLoZqKlUjy6uVWZGOB0V6NZjSFIZLwHqxY64KqL5MCHbat+yJT1ravdMP0xbU2TpT+52rATJ4FyUQ2kstAtNJruLIMZqpw4ImKFelxe5XOXFV41O7uqmosOvugo9chzFVUx4Cy+Ca11iVdM3dbTRrbd2YSz9VXck/sIvCn4H4bHQYce00rDisa5irwoqcZIN78Jq0yXiYfWy8DgrEcqZT2llbTOLVXesRk0S3X7GyVWkGQYECFBXFFVzW4Lga9Zmytj4TZZ25PjNT62OCridBaeprSrPxplFwdkYJ7Svc3NRZyaiR4z1e97sVVVxKMVJye8rstopPpCbZC2dmqpESAu5NV3AiOw4T8NsLAydSlHTlOY2HFRMcGJwKQ01VY5HMVWqnlRSbrta5Fq1EWBMOy3weBVUlkpOL8olzHeMnpMIek2JI1mE2cYiJCiJlo5PIik5WbrVBn4qw6a2EkVG/WyE4SL7yqYyQtCsSG3JSNwmwumRPpuN7iE8sd9O5XjmaX7Uk2hqtHpzIS1VIao5VyctCHbc1CmVCqtiUxrEh4cOQnAddfEn9jJe87YRXgc6fHpHc71F/XtYJuu05JO9qkIk3XackXe1SfU/FHp/kiS0Xh2a99TWt+0hsrReHZr31Na3gXHzF1fgpt8li7IL/lmS6NDdYkQ0a9FtMpkGUdKZW5NRMcT92eGGn/wf/8AI8+2G8z7PQrmpEaJPVSG72ahCmaxBgQ3I5YbMHYLxcJ9ane1NzEF0OTgJCVyfaxxOAm5qNOzL5iO9XxHqqqql2DDatu6VObNW0aQ+PFiSpc/Bduc3FVMExRCLGorlRqcKqTndxSXU6z7XvaqPjcK4lnUzpXRX08a21a22Fg560VVSahzDWsRMERTQZoqhzqH8CUqtWJSjybpiaiI1qJxecjOs3szD3uh06EjGp/rUz47ZbRpC/JXHE6ykKzNFh0Ckw5RVblt+05PKptIk1AhIrnxWtRPOpX6bttXZx6q+bVMfNwGtjVeoTHA+cirj5nqSnprT6zLnk1j0iEgXp1unTsGHKy72RIrXYqqeQjNT3EZFVN0ej1x/wBTuE8GrHTsjRkyW7p1Sjc8q4zqfg07O2tMSpWdjsycVYmUhxlz325z2ISfHhJGgPhu4nNVDDlnTLq3Yo1x6KwPYsOI5i8CouB+6iVN9JqkKcZxsxP0WpkHU6vTMFUwRXqqew056EflVgnWtn7KrPOqVSizbuOIp8pKAszOwYCcb3Ih8TpLBU7u+0kHFuKQ1Rwt+NSutrJyokq2TpEtBamGTDRFP3nlrcERE8h6PImdZevEaQLxEZ3v94y3SfoSYvERne/3jLdJ+hZh+cKs3wltLpeR/wD5D/0O4TiOHul5H/8AkPO4OZf5JdxfCGQAVrQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYIGvD5fTHtZsJ5IGvD5fTHtZsNHT/OWXqPjCZ6D4GlvcQ2XkNbQfA0t7iGy8hRb5S0V9nxm+9YvuqVrqnhOY6R20spN96xfdUrXVPCcz0jtpr6T3lk6r+m6sDyogEt25nZiQs1Gjy0RYcRreBUIksDyogEqXi8k5j3TuX+SDF/HKId+Ne5+8b8q9z95owa+yvDJ325bWZtNWJpuTFnYioatz3PcquVXKvlUwCUViPZybTPu7e63lO32LsOkveX+5wEObus5Tt9i7DpL3+9IBjt/O1V/hRLid5dOxrq5EcvGicBwSHW3bz7ZK00Jj1wSLwYmjLH4KMU6Xh1V8Ln9zSrU+yvCvxIo4ybbz6TEqNnu6IKZToSouCeYhPhRVReDAr6eY7dFnUR+WrBJ10GVus15uAjHDH+JNF1tJfJUd01EbkrG4eE71ExFNHOniZvq0V8Lmd3yieXc12i5/v2Y9w1F51TbO2jWExyKkBFZwG3ue79mfcKpjTCsidcz43uqv0nBQjokW93wpB9hHflL8HwhTn+cpAui8PR+iU2V8P3cp7/6Gtui8PR+iU2V8X3cp767Cif518fwotXjO0uu5Tf9inFKdrdbym/7FNGb4Sz4vnDq73vBEv0n6Ef2IX/NUp7SQL3vBEv0n6EfWIT/ADVKe8UY/wCFfk/mhJ16ER7LL4N8qoQngT7bqmPqVmIrIbcXNTKwIDexzIiscmDkXBUUl00xNdEeoie7V5JPuec7dJxE4uAjFE4cE4SZrq6TEkaO+bjMyd24UxQl1ExFNEcETN9XPXu5P0nL+fJU+N0vhqN7h+K8yoJOWhWGx2KQkwU/bdL4aje6Q00wp665m1vi+5kvedsIqxJVvi+4kvedsIrLOn+EIZ/nLBN12nJF3tUhEm67Tki72qR6n4u9P8kSWi8OzXvqa1DZWi8OzXvmtRMXYF1J0rCm0a2ljFMRihONmbI0aboMrHjSjHPfDRVVUNrvIoPMmfAonqqxOi+OmtMaq9IfeBIzU29GQJd8RV4sEJ/bYqhNdikjDX/tNjLUanyaosCUhQ1Tyo0jPV8QlHSzr6yi+x928zEmYc7U2qyG3hRi+UlmHDZLwEYxMljE4D6YIh8prHuaLhx5C7DJfJN59WulIpHohG8avxqlW4ko16pBgrhgi8ZxyIrsGt41U2NoVctdm1fwLlqfkknNZPQXRPso5MT06R209Hm2mbWdzZq7KYqcBk1OxFhQ3piiJ5js5O7GiS2CxGbrh50Oko8aDGpcu6C5qt3NOL2H64keHCYr4jka1ONVU8++W8zo30xUiEY3m0mQpdEgslILYf10TgIrO9vNtFBqk82Uln5cOH9pUXynBpxm7BExWNWLNMTb0Sjc99uc9iEqEV3O/anP4EqGDP8AOW3B8IQ9e1S1gVCFPNb9V/1V9pHRO95FM+kLMxYiNxdL4vQgleBcF8hswW1poydRXS2p5CULoqaqrGnnN/5UUi9EVyoicaqT5d9TkkbNwFycFiplKOptpU6eutnUgyDzXpMKRne/3jLdJ+hJikZ3v94y3SfoW4fnCnN8JbS6Xkf/AOQ87hDh7peR/wD5D/0O4TiOZf5JdxfCGQAVrQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYIGvD5fTHtZsJ5IGvD5fTHtZsNHT/OWXqPjCZ6D4GlvcQ2XkNbQfA0t7iGy8hRb5S0V9nxm+9YvuqVrqnhOY6R20spN96xfdUrXVPCcx0jtpr6T3lk6r+m4sG5G2ngq5URE8qkp3hxoT7KR0bEaq5K8CKQbBjxZeJukJ6tcnEqH6Jir1CZhLDjTL3sXyKpffFNrxZTTLFazV+IAGhnAAB211zmttM1znI1MF4VX8Dor3IrIknAyXtVfwXEi6Xmo8nE3SXiLDd50PczUpudbhMR3RETixUonFM5O5fGWIx9r8p9ZWYiSkwyPCdg5i4op8gX6aqYnROdk7XSFoqW2VmojGx8nJc1y/aNbV7q5KfjujSU0kHK4cFTEiKDHiy8RHwYjmORcUVFN/KW7r0pDRjZtyonFiZJw2rOtZat6to0s7qmXUScpMNjTs2kVrVxyUTA21qbU0+zVJdKST2LGyclrGrxEXTVua9NsVjptzUXjwNFHjxpiIsSNEc9y+VVEYbWnW0m9WsaVgmpiJOTMSYiuynxFxVVJEuhiMhzsxlORv1PKpG/sPvKz0zJKrpaK6Gq8eCl+SndXthTjv221l3d7URj6nBVrkdweRSPT7zU7Mzi5UxFdEVPKqn50O469tYhG9u60y7+6WIyHXIyvcjf7JeNcDZXvRGRIcpkPa7B/kXHyEaS03Hk4m6S8RYbl8qKe5qfmp3DumM6JhxZSlW1O53LYyx2dr852d17mstLi5yNTIXhU4xT6y01HlIu6QIiw34YYoXXr3V0VUt221Sxe3EhvpMvkPa7+08i/gcDYnlVKe01M1UpycajZiO6IicKI5Ta2KejbUyiuVETHjUpinZjmq2b9+SLJ0q1UlaZJNiTf3T1Rq4/ichU7u6RXXrOSEy2EsTh4OFD9N5caG+yrkZFaq4pxKRTTrUVemNyZabe1vmxM+LHbTWJX5clddJSVSbqZGSmWx52ZSOjeHBOA21qLV0+zlMWXl3sWLk4MY1eIiyPb2vx4asWccmKeQ0ExMxpqIsSPFc9y+VVLYwWtOtpVzmrEfjD1OTUSdm4sxFcqveqridRdxVINOr6JGdkpFRGopyJlrnMcjmKqKnEqGi1Na9rPW+ltVgrSWdkLUysNsaK36nC1yKQ5bGgQLP1FstAipEReFVQ/NAtXWpaEkOFOvRqJ5zXzk9Mz8ZYs1EWI/zqU48VqT7+i7JlrePZ+cm67Tki72qQj5SbrtOSLvao6n4nT/ACRJaLw5Ne+a1v2k9psrReHJr31Na37Se0ur8FNvksXZDkzJdGhujS2Q5MyXRIbs8m/yl6tPjDGAwMgimxgeXNR6K1eJUwPZjACCrxKDGptbiTKQ13GMuOPkQ4/yYoWWqtIk6xKul5uE17VTypxEb1a6WJuyvp8bFqr9leDA3Ys8aaWYMuCddYcdS7ZVmkQkhS0x9ROJHJjgZqFtK3U2LDjTODV8jEwN426mtK/BysRvnxOloV1ctKxGxp9+6qi45PkJ2yYo9Ua0yT6IwWjT/cC1GJCckLHhe7ymuLG1SzknUaOtNRiQ4eHBgnEcdmhk+Lux3wOU6munq7fp7Q110U1ChTM1Be5Ec/DDFSWscThKVdnBpU8yagzr0c1eJPKd01MlqJjjgZM1q2trDThi1a6S19oHw2UObdFTFiQ1xRSuEyrVmYqt+zlrgTheXUe4bMxIaOwWP9RCC1x4zV0saRMs/Uz+UQ/ZSJV03VJeCiY5T0xT8Cx9PlmysjBgNTBGMREQhO7SmpO2jbEc3FsJMVJ1RMEwK+pt66LOmrpGrJkAyNbCkZ3v94y3SfoSYpGd7/eMt0n6FuH5wpzfCW0ul5H/APkP/Q7hOI4e6Xkf/wCQ/wDQ7hOI5l/kl3F8IZABWtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgga8Pl9Me1mwnkga8Pl9Me1mw0dP85Zeo+MJnoPgaW9xDZGtoPgaW9xDZFFvk0V9nzmGLEgPY3jc1UIanrsq3MTsaKxYeS56qmOJNBknTJNPZC+OL+6Ds1ld9KH/MZrK76UP+ZOPAC3ybqvGog7NZXfSh/zGayu+lD/AJk4geTc8aiDs1ld9KGM1ld9KH/MnHgHAPJueNRB2ayu+lD/AJjNZXfSh/zJx4BwDybnjUQdmsrvpQ/5jNZXfShk48A4B5NzxqIOzWV30of8xmsrvpQyceADybnjUQdmsrvpQ/5jNZXfSh/zJxGCDybnjUQdmsrvnh/zGayu+lD/AJk44IOAeTc8aiDs1ld9KH/MZrK76UP+ZOPAOAeTd3x6IOzWV30of8xmsrvpQ/5k48A4B5N3PGog7NZXfSh/zGayu+lD/mTjwDgHk3PGog7NZXfPD/me4V2VoYMRIkKIxj04nJiTdwAeTd3x6IZmLA2smoe5x5zdGei5VPyZrK76UP8AmTjgOA5HUWj2J6es+6Ds1ld9KH/MZrK76UP+ZOI4Dvk3c8aiDs1ld88P+YzWV30of8yceAcA8m7vjUQdmsrvpQ/5jNZXfSh/zJx4APJu541EHZrK76UP+ZJdjaHNUSgLJzOG6Kq8R03AYwK75rWjSVlMNazrCHKxdrWpyqR48NYeQ92KYn40utrqLjlQ/wCZOAJ+RaI0R8eszq1tn5KLT6NLSsbDLhsRFwNmYQyUTOs6r4jSNAAHHQAAYwGBkAYwGBkAYwGBkAYwMYHowBw14FmKpaJIMOTcxIbFxXHznErdXXfThE3DAurmtSNIUWw1tOsuKsBZCZs6yM+cVixHqmGSdtgDJXa02nWVtaxWNIAARSYUjO9/vGW6T9CTFIzvf7xluk/Qtw/OFOb4S2l0vI//AMh/6HcIcPdLyP8A/If+h3CHMv8AJLuL4QyACtaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBA14fL6Y9rNhPBA94fL2Y9rNho6f5yzdR8YTPQfA0t7iGyNbQfA0t7iGyKLfJfX2ADJxJgyAAAAAAAAAAAAAAAAAAAAAAAAAAMGQAAAAAAAAAAAAAAYBkAYGBkAYMgAAAAAAAAAAAAAAAwZAGDIAGMAZAAAAYUjO9/vGW6T9CTFIzvf7xluk/Qtw/OFOb4S2l0vI//AMh/6HcJxHD3S8j/APyH/odwnEcy/wAku4vhDIAK1oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMKQNeJy9mPawnlSBrxFwt7Mr5EVmw0dP85Zuo+KZ6D4GlvcQ2RztErtNh0mAx01DRUYmKK5D9++Cl88h9pCq1ba+y2to092zBrN8NL55D7SDfDTOeQ+0hzttw7315bMGt3w0vnkPtIY3w0vnkPtIO23B3V5bMGt3w0vnkPtIY3w0vnkPtIO23B3V5bMGt3w0vnkPtIY3w0znkPtIO23B3V5bMGt3w0vnkPtIY3w0vnkPtIO23B3V5bMGt3w0vnkPtIN8NL55D7SDttwd1eWyBrN8NL55D7SGd8NL55D7SDttwd1eWyBrN8NL55D7SGd8NL55D7SDttwd1eWyBrN8NM55D7SGd8NL55D7Q7bcHdXlsgazfDS+eQ+0hnfDS+eQ+0g7bcHdXlsgazfDS+eQ+0g3w0vnkPtIO23B3V5bMGt3w0vnkPtIY3w0vnkPtIO23B3V5bMGt3w0vnkPtIY3w0znkPtIO23B3V5bMGt3w0vnkPtGN8NL55D7SDttwd1eWzBrd8NL55D7SGN8NL55D7SDttwd1eWzBrN8NL55D7SGd8NL55D7SDttwd1eWyBrN8NL55D7SGd8NL55D7SDttwd1eWyBrN8NM55D7SGd8NL55D7SDttwd1eWyBrN8NL55D7SGd8NL55D7SDttwd1eWyBrN8NL55D7SDfDS+eQ+0g7bcHdXlswa3fDS+eQ+0hjfDS+eQ+0g7bcHdXlswa3fDS+eQ+0hjfDTOeQ+0g7bcHdXlswa3fDS+eQ+0Y3w0vnkPtIO23B3V5bMGt3w0vnkPtIY3w0vnkPtIO23B3V5bMGs3w0vnkPtIZ3w0vnkPtIO23B3V5bIGs3w0vnkPtIZ3w0vnkPtIO23B3V5bIGs3w0znkPtIZ3w0vnkPtIO23B3V5bIGs3w0znkPtIZ3w0vnkPtIO23B3V5bIGs3w0vnkPtIZ3w0vnkPtIO23B3V5bJeIjO+DvCW9/8AQ7nfBS1/+ZD7SEeXrVKUnZOXbLxmxFR/DkriW4az3x6K81o7PdvrpeR//kPO4TiOHul5H/8AkP8A0O4Qhl/klLD8IZABWtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABhSK7Y3e1yuWkmKhJ9zblERMnLiKi8H4YEqGMCVLzSdYQvSLxpKE81Vq0TBIkrr1+QzVWr9ZK69fkTbgMC3yLqvHqhLNVav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DA75Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6ISzV2r9ZK69fkM1dq/WSuvX5E24DAeRc8eiEs1dq/WSuvX5DNXav1krr1+RNuAwHkXPHohLNXav1krr1+QzV2r9ZK69fkTbgMB5Fzx6oSzV2r9ZK69fkeXXU2pcn1nSjvbHX5E34GMB5F3PHo5mwVCnbO0DuGf3Pdd1c/+zdimCnTmMDJRMzadZX1jtjSGQAcSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGQBgyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBkAYMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ucjWqqrgiJiqgegaZbW2fa5Wuq8qiouCosRDG++zumZTWIBugaXffZ3TMprEG++zumZTWIBugaXffZ3TMprEG++zumZTWIBugaXffZ3TMprEG++zumZTWIBugaXffZ3TMprEG++zumZTWIBugaXffZ3TMprEG++zumZTWIBugaXffZ3TMprEG++zumZTWIBugaXffZ3TMprEM777O6YlNYgG5B+KQq1PqiPWRm4UwjPtbm7HA/aAAAAGFXBDVzFpqJKTDoExU5aFFYuDmOeiKgG1Bpt99ndMymsQ/VIVqmVRzmyM7BmFamLkhuRcAP3gwnChkAAAAAAA/JP1OSpkJIs9Mw5djlwR0R2CKp+DffZ3TMprEA3QNLvvs7pmU1iDffZ3TMprEA3QNLvvs7pmU1iGwkqhK1KB3RJzDI8LHDLYuKYgfqBg/POT8pToHdE5HZAhY4ZcRcExA/SDTb77O6ZlNYhjffZ3TMprEA3QNLvvs7pmU1iDffZ3TMprEA3QNLvvs7pmU1iDffZ3TMprEA3QNLvvs7pmU1iDffZ3TMprEA3QNLvvs7pmU1iDffZ3TMprEA3QNLvvs7pmU1iDffZ3TMprEA3QNLvvs7pmU1iH1l7TUScmGS8tU5aLFeuDWNiIqqBtQYTiMgAAAAAAAAAYNXNWko0lMOl5qpS8GKxcHMe9EVANqDS777O6ZlNYg332d0zKaxAN0DS777O6ZlNYg332d0zKaxAN0DS777O6ZlNYg332d0zKaxAN0DS777O6ZlNYg332d0zKaxAN0DS777O6ZlNYg332d0zKaxAN0DS777O6ZlNYg332d0zKaxAN0DS777O6ZlNYg332d0zKaxAN0DTb77O6ZlNYh9pO0NHqEwkvKVGXjxVTFGMeiqoGzBhDIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+E53nH6N2w+58JzvOP0btgFQZ/whMdK7ap8D7z/hCY6V21T4ABgZMAMBgAAwGAADAYAAMBgAAwAHGAwA4gBNdwfDK1T3mkwkPXBd6VT3mfqTCABjExlYqBlSrl5HLyqJ/1lLRKuBV28jl5VOmUDlyXLhE/xKp9E3aRGS5cIv8AiVS6Ju0Cb0Mnlq4pjgFdgB6BhAqgZMDEYgRhftyVlOD/AOT+hAZPl+uK2Vles/oQGAwGAADAsVcpyAZ1mJ+hXUsVcouFgGdaifoBIJwF9PBYCJ1mH+pIBH99PICJ1mH+oFcwAAwBnDgxMABgZMABgZMAMBgAAwGAADA6m7TxgUlP+t+hy51F2njApPTfoBaJDJgyAAAAAAAABgrJep4wal76bCzhWO9TxhVP302AcfgMAZRFwAxgMAAGAwAAYDAABgMAAGAwAAYDAyAMYHd3N+MCX6F/6HCHd3N+MGX6GJsQCyCcRkwnEZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHwnO84/Ru2H3PhOd5x+jdsAqDP+EJjpXbVPgfef8ACEx0rtqnwAmC6ixFn7SWZjTdUkd3jNmFYjstU4ME8ync5prGL/tP9V3zNNcZyNmOtO2ISWgHG5pbF6J/qu+YzS2L0T/Vd8zszAHG5pbF6J/qu+YzS2L0T/Vd8zswBxmaWxeif6rvmM0ti9E/1XfM7MAcZmlsXon+q75jNLYvRP8AVd8zswBxmaWxeif6rvmM0tjPJSv6rvmdmYAqXamTgU60s/JyzMiDCjOaxuOOCGoN7bfllVOsO2miAmu4LvSqe8z9SYSHrgu9Kp7zP1JhA0trp6YpllajOyr8iPBgq5jsMcFIAzs2zx8Krqm/Ine33IerdXcVV8oHZZ2bZ6V/pN+RKdmrE0C1tAla5WpLumem2ZcaLlq3KX2IpXotHdtyCpfQoB+XNLYvRP8AVd8zkLfy0K7OWlpiyje4Yk05WxVxy8pE9pMREV/ng2mdI7YBwWdm2ePhZdU35H76Heha2cr0jLx6nlQosdjHt3NvCirw+Qj42lmeU9M61D/MgFtm45KBQ37KewyvGBBl4V4dpqJbOdp9PqG5S8LJyWbm1cMWovlQ5rOzbPSv9JvyMXs+MWpe1n5UONAlqwlUnLyatGplqYvd0rBhboxmCNwdjx8B3+aWxi/7T/Vd8yNbieVc31b9SfAONzS2L0T/AFXfMZpbF6J/qu+Z2YA4zNLYzRP9V3zOhotBp9npBJGmQdxl0crsjKVeFfabIAYOAvp5AROsw/1JAI/vp5AROsw/1Arme4KI6MxqpiiuRFPB9IHfEL302gWOkrqrHxpGXiPpeLnwmucu6O41RPxPvmmsYnD9FJrXfM6mm+DJXoWflQ/SBXC9qztLs1X5WVpUvuEKJL5bm5SriuP4nBkoX8cq5Lqv/spF4HT3eUmSrdspOn1CFusvFyspuKpjg1VJyzTWNXjpX9V3zIZum8YdP/7/AMqlmAONzS2L0T/Vd8xmlsXon+q75nZmAONzS2M0T/Vd8yLL3bLUizE7IQ6TK7g2MxyvTKVceH8SwxCF/vhGldG7aBER1N2njApPTfocsdTdp4wKT036AWiMmDIAAAADAGQAAKx3qeMKp++mws4VjvU8YVT99NgHHkh3R2ZpNp6pOwarLbuyFCRzUylTBcfwI8JZuE8NVHoU2gSBmlsXon+q75jNLYvRP9V3zOzAHGZpbF6J/qu+YzS2L0T/AFXfM7IyBxmaWxeif6rvmM0ti9E/1XfM7MAcZmlsXon+q75jNLYvRP8AVd8zswBxmaWxeif6rvmM0tjNE/1XfM7MAcWt01jE/wBp/qu+ZDV6dCp1nbXJI0yBuMDuZj8nFV4VV2PH7ELLqV4vv5ep1OHtcBHh3dzfjBl+hibEOEO7ub8YMv0MTYgFkE4jJhOIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhOd5x+jdsPufCc7zj9G7YBUGf8ITHSu2qfA+8/wCEJjpXbVPgBYC4zkbMdadsQktCNLjORsx1p2xCS0A01qrSQbK0WJVJiC+LDY5Gq1nHwqcJn5o2jJr4obm+TxfzPSs2lbwJ3z9UbRk18UGfqjaMmvihBAAnfP1RtGTXxQZ+qNoya+KEEACd8/VG0ZNfFDZWeveptoa3L0uBIx4cSOuCOeqYIV2OtuuX/wDIFM99dgFngABVG2/LKqdYdtNEb22/LKqdYdtNEBNdwXelU95n6kwkPXBd6VT3mfqTCBztvuQ9W6u4qr5S1VvuQ9W6u4qr5QBaO7bkFS+hQq4Wju25BUvoUA6kiK/zwbTOkdsJdIiv88G0zpHbAIQNpZnlPTOtQ/zIas2lmeU9M61D/MgFtm/ZT2BQ37KewyqYgRLbO6Sp2ltRNVaBPS8KHHycGvRcUwRENHmGrOk5X4KTtgMAI2u6u2n7G1mPOzU3BjNiQshEZjjjiSSnEMAB8pmOkvLxIyoqpDarlw/AjF1/FHa5WrTZpcFw40JJqif4XNdE7YVBi/fP95QJ0z9UbRk18UGfqjaMmvihBAAnfP1RtGTXxQ5q3t6dOtZZp1Ll5OPBesVr8p+GHBj8yLTKriBg+kDviF76bT5n0gd8QvfTaBb6m+DJXoWflQ/Sp+am+DJXoWflQ/UBGt4120/bKswJ2Vm4MFsKDuao/HFeHE5HMNWdJyvwUnfAYARLYu6WpWZtPLVWYnoEWHBysWsRcVxRUJaQYDADDlwTEjSoX20mnVCPJxKfMudBerFVFTBcCS3pi1fYVKtPymqPWH7QJiz9UbRk18UI/vJtxKW0mpOLKy0WAkuxWqkTDhxOJAGDc2TrEKgWlkqpGhuiQ5eJlOa3jU0wAnfPzRk/2ya+KDPzR9GzXxQgkxiBb2i1SHWqRLVGExzGTDEejXcaH7jnbA8iKV0DTogOVtnbuTsY2XdNS0WMkdVRMjDgwOVz80bRk18UPwX+fdUz3nEMAWBpV9FLqtUl5CFT5hr5h6MRzsMEVSSUKoWLVd+FL6w3aWvAyVjvU8YVT99NhZwrHep4wqn76bAOPJZuE8NVHoU2kTEs3CeGqj0KbQJzPhOzLZKSjTTkVzYTFeqJ5cD7mvr/AIAn+rv2AR0t/FHRVRabNcC/gM/VG0ZNfFCCn/bd7VMATtn6o2jJr4oM/VG0ZNfFCCABO+fqjaMmvigz9UbRk18UIIAE8wr9qPFishpTZpFe5G8aeUk+FE3WEyIiYZTUXBfJiU9lF/vsDpG7S38n3nA6NuwD6qV4vv5ep1OHtcWHUrxffy9TqcPa4CPDu7m/GDL9DE2IcId3c34wZfoYmxALIJxGTCcRkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfCc7zj9G7Yfc+E53nH6N2wCoM/4QmOldtU+B95/wAITHSu2qfACwFxnI2Y607YhJaEaXGcjZjrTtiEloBwl8vi+melZtK3lkL5fF9M9KzaVvAAAAAAB1t13jApnvrsOSOtuu8YFM99dgFngABVG2/LKqdYdtNEb22/LKqdYdtNEBNdwXelU95n6kwkPXBd6VT3mfqTCBztvuQ9W6u4qr5S1VvuQ9W6u4qr5QBZi7uq0+DYemQos7AY9sJEVroiIqFZz2kWIiYJEciJ5EcoFu/pql6Ql9YhF99bm1aQp7ac5JtzIiq5IP1sODy4EK7tF9a/tKSxcR/bVKpJF+uiQ0wyuHygRitFqmj5jVqbKzlIqTLSU575GYa1syxVVYa4JwoWoSBB9UzsoNwhY47mzsoBln2UPSqMDCgfmi1SQl4qwo05Bhvbxtc9EVDx9NUvSEvrEK63rxYjbxKkjYjkTFnAi/8AKhx27RfWv7SgW/gVGTm3qyXmoUVyJiqMein6UIFuLe99qptHPc5O5vKuPlJ6A/LU/Bc10LthUGL98/3lLfVPwXNdC7YVBi/fP95QPB+qBTZ2Zh7pAlI0VmP2mMVUPyliLloUN9gWK9jXL3TE4VT2AQJ9C1TR8xq1PEemzstCWLHlIsJicGU5iomJb7cIPqmdlDgL54UNlgYitY1F7ph8KJ7QK7H0gd8QvfTafM+kDviF76bQLfU3wZK9Cz8qH6VPzU3wZK9Cz8qH6VA/NMVCUlHoyYmoUJypiiPciHz+mqXpCX1iEJX7RHstVJI17mp3L5F/EjLdovrX9pQLdfTVL0hL6xB9NUvSEvrEKi7tF9a/tKN2i+tf2lAty6tUzJX/ABCX4vWIVWtI5r7SVB7XI5ro7lRUXgXhNfu0X1r+0p4VVXjUDAAAH0hQYkeI2HCY573LgjWpiqnzOpu1RHW/pKORFRY3EvsA0f0LVNHzGrUz9C1TDwfMatS3W4QvVM7KDcIK/wDCZ2UA0dhYb4Ni6XDiNVjmwGorVTBUOgMI1GoiNRERPIhkCG7/AD7qme1xC5NF/n3VM9riFwN3YvlhS+st2lsSp1i+WFL6y3aWxAFY71PGFU/fTYWcKx3qeMKp++mwDjyWbhPDVR6FNpExLNwnhqo9Cm0CczX17wBP9XfsNga+veAJ/q79gFRYn219q7Tyeon219q7TyAAAAAAfaU79gdI3aW/k+8oHRt2FQJTv2B0jdpb+T7ygdG3YB9VK8X38vU6nD2uLDqV4vv5ep1OHtcBHh3dzfjBl+hibEOEO7ub8YMv0MTYgFkE4jJhOIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhOd5x+jdsPufCc7zj9G7YBUGf8ACEx0rtqnwPvP+EJjpXbVPgBYC4zkbMdadsQktCNLjORsx1p2xCS0A4S+XxfTPSs2lbyyF8vi+melZtK3gAAAAAA6267xgUz312HJHW3XeMCme+uwCzwAAqjbfllVOsO2miN7bfllVOsO2miAmu4LvSqe8z9SYSHrgu9Kp7zP1JhA5233IerdXcVV8pcGp0+BVadGkZlqugx2Kx6IuCqhxmZyyPNo2tUCuILHLc5ZDm0bWqQbbOmS1GtXPSEm1WwIMTJYiriuAGjJcuE8J1Lom7SIzeWatbVbKRY0WlxGMdGbkuym4gWvQyVwzyWv5zB1SH7qJe1aqdrclKxpiCsONHYxyJDROBVAsCYXjMN4WmVArNez4xal7WflQ40s7WrtLOV6qRalPQIrpiLhlK2JgnAmB+DM3ZDm0bWqBwFxPKqb6t+pPhzNnLBUOy06+bpkGIyJEZkOVz8eA6ZAPy1PwXNdC7YVBi/fP95S31T8FzXQu2FQYv3z/eUDwWKuT5AM61E/QrqdVQLxLQWapqU+nRobICPV+DmIq4qBaIj++nkBE6zD/Ui/PJa/nMHVIa2v3i2gtJTFp9RjQ3wFcjsGswXFAOVPpA74he+m0+Z9IHfEL302gW+pvgyV6Fn5UP0n5qb4MlehZ+VD9KgQJfxyrkuq/wDspF5aW0dgqHamdhzdThRHxYbMhqteqcHGajM5ZDm0bWqBXEFjszlkObRtaozOWQ5tG1qgVxBY11zlkURcJaNj0qkAVuVhSVanJWCipDhRXNbj5kUD8IAAHU3aeMCk9N+hyx1N2njApPTfoBaIyYMgAABDd/n3VM9riFyaL/PuqZ7XELgbuxfLCl9ZbtLYlTrF8sKX1lu0tiAKx3qeMKp++mws4VjvU8YVT99NgHHks3CeGqj0KbSJiWbhPDVR6FNoE5mvr3gCf6u/YbA19e8AT/V37AKixPtr7V2nk9RPtr7V2nkAAAAAA+0p37A6Ru0t/J95QOjbsKgSnfsDpG7S38n3lA6NuwD6qV4vv5ep1OHtcWHUrxffy9TqcPa4CPDu7m/GDL9DE2IcId3c34wZfoYmxALIJxGTCcRkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfCc7zj9G7Yfc+E53nH6N2wCoM/4QmOldtU+B95/whMdK7ap8ALAXGcjZjrTtiEloRpcZyNmOtO2ISWgHCXy+L6Z6Vm0reWkvCs/N2mstGpkkrEjPe1yK9cE4FIizI2n9ZK9tQI4BI+ZC1HrJXtqMyFqPWSvbUCOASPmQtR6yV7ajMhaj1kr21Ajg6267xgUz312G6zIWn9ZK9tTeWLuqr9AtVJ1ObfLrBgOxcjXYrxATQAgAqjbfllVOsO2miN7bfllVOsO2miAmu4LvSqe8z9SYSHrgu9Kp7zP1JhAGMDIAwqFXLyOXtV6ZS0akKWvumtBXLTztSlYkukKPEym5T8FwAh8Ej5kLUesle2ozIWo9ZK9tQI4NnZnlPTetQ/zIdpmQtR6yV7an7KPc5aOQrMnNxYkssOBGa92D+HBFxAndv2U9hkw1MEPQGAZMAAaO1Nq5CyUiycqDYiw4j8hNzTHhOUz32Y9XNdhAO9qfgua6F2wqDF++f7yk9Tt9FmpiRjwWQ5pHRIatTFicaoQJEdlRHOTyqqgeQAAANvZuzk5airJTZFzEjOYr0y1wTBANQfSB3xC99NpIeZC0/rJXtqeoVyVp2RWOWJK4Nci/bUCeab4MlehZ+VD9J8JOG6BJwILuFzIbWrh50TA+4AHJ2pvDo9kZ6HJ1BsZ0SIzLTIbimBpM99mPVzXYT5gSOCOM99mPVzXYT5jPfZj1c12E+YEjP8Asr7CpNp+U1R6w/aThntsw7gSHNcP/IhxE5dPX69ORatKPl0gTjliw8t/DgvDwgRkCR8yFp/WSvbU5m1djKlZCNAhVF0Jzo7Vc3c1x4gOeOpu08YFJ6b9DlzqLtPGBSem/QC0QBheMDJk4Kq3u2eo9Tj0+YZMrFgOyXK1vBifkz32Y9XNdhPmBo7/AD7qme1xC5M1pXpe82C2z31FklVYm7/V4zQZkLT+slO2oHJ2L5YUvrLdpbEguz10FoqXX5KejvltzgRWvdkvXHBFJzTiAyVjvU8YVT99NhZwrHep4wqn76bAOPJZuE8NVHoU2kTEs3CeGqj0KbQJzNfXvAE/1d+w2B+Sqy75ulTUtDwy4sJzG48WKoBUCJ9tfap5JIdcladXqu6SvCuP21MZkLUesle2oEcAkfMhaj1kr21GZC1HrJXtqBHAJHzIWo9ZK9tRmQtR6yV7agR9Kd+wOkbtLfyfecDo27CBIFylpoUxDe6JK4Neir9dfIpPsuxYcvDY7jaxEX4Ae1K8X38vU6nD2uLDqV4vv5ep1OHtcBHh3dzfjBl+hibEOEO7ub8YMv0MTYgFkE4jJhOIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhOd5x+jdsPufCc7zj9G7YBUGf8ITHSu2qfA+8/wCEJjpXbVPgBYC4zkbMdadsQktCMLj40KHY6Ya+Kxq91O4HORPIhJSTUvziF20A+owPn3VL84hdtB3VL84hdtAPpgMD591S/OIXbQd1S/OIXbQD6A+fdUvziF20HdUvziF20A+gwPn3VL84hdtB3VL84hdtAPoD591S/OIXbQws1L+vhdtAKrW35ZVTrDtpojeW1VHWxqatVFRZh2Cp7TRgTXcF3pVPeZ+pMJD1wXelU95n6kwgAeXORrVc5URE41VT591y/r4XbQD6jA+XdUv6+F20Po17XplNVFReJUUDOAMnh8WHCw3R7WY8WUuAHoYHy7rl/Xwu2gSagKuCR4aqvkR6AfYAwBkwfN0xBY7JfGhtcnGiuRDHdUvziF20AjW/bkrKdZ/QgMnu/BzZiy8q2A5IrkmMVRi5SpwfgQT3LMc3i9hQPkD6rKzCcO4RE/7FPkAAPoyBGiNymQnuTzo1VA+Z39yvjAh9WibUOF7lmebxewp3lzcN8vbyHEjMdDb3O/6z0wTyecCxQwPl3VL84hdtB3VL+vhdtAPrgAi4piAIEv45VyXVf1Ui8lC/jlXJdV/9lIvAA9NY57slrVcvmRMT33LM+oi9hQPm37Se0trZfkzTurs2FT2ysxlJ/YReP0FLWWZmIDLN09ro0Nrkl24orkRU4ANzgQjf54RpXRu2k091S/r4XbQhe/ZFmahS1gf2qJDdirPrYcP4ARCdTdp4wKT036HOdyzHN4vYU6a7iDFhW9pUSJDexjY3C5zVRE/iBZ8KfLuqX9fC7aGFmpf18LtoBVy33Leq9Ycc6dLbuBGiW1qj4cJ72rHcqOa1VRTn+5Zjm8XsKBL1wf3tT91pNBC9xP8AdolS3f8AssUbhl/Vx+JMfdcv6+F20A+uAPmkzAVcEjQ1VfIjkPoBkrHep4wqn76bCzhWO9TxhVP302AceSzcJ4aqPQptImJWuHiw4VZqCve1qLBT7S4eUCdjB8+6pfnELtoO6pfnELtoB9MAfPuqX5xC7aDuqX5xC7aAfQHz7ql+cQu2g7ql+cQu2gH0GB8+6pfnELtoO6pfnELtoB9AfPuqX5xC7aGO6pfnELtoB9FK8X38vU6nD2uLBLNS/r4XbQr5fY9kS3iOY9rk7kh8KLj5XAR6d3c34wZfoYmxDhDu7m/GDL9DE2IBZBOIyYTiMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Tnecfo3bD7nwnO84/Ru2AVBn/CEx0rtqnwP0T/hCY6V21T84H2gzcxAbkwY8RiceDXKh9PpKd53G7an5QB+r6Snedxu2o+kp3ncbtqflAH6vpKd53G7aj6Snedxu2p+UAfq+kp3ncbtqPpKd53G7an5QB+r6Snedxu2o+kp3ncbtqflAH6vpKd53G7aj6Snedxu2p+UAZe9z3q57lc5eNVMAATXcF3pVPeZ+pMJD1wXelU95n6kwgc/bp7odiqq9jla5Jd2Cp5Crv0lO87jdtS0FvuQ9W6u4qr5QP1fSU7zuN21LN3cvfFsLTHvcrnLBTFVXFVKtFo7tuQVL6FAOpImv2mI0vTqasGK+GqxFxyXYeQlgiO/zwbTekdsAhn6Snedxu2ps7N1CcdaWmtdNRlRZmHiivXh+shozaWZ5T0zrUP8AMgFtm/ZQyphv2U9gXjArderOzUK8KoshzEVjUyMEa5URPqocf9JTvO43bU6m9nxi1L2s/KhxoEo3KRHz9p5qHNvWOxJfFGxFykxx/EnBKbJc0g9hCDbieVU31b9SfANZU6dJJTJlUlYKKkJ2H1E8xUqL96/3lLfVPwXNdC7YVBi/fP8AeUDwWEuZk5aPYNj4sCG93dMThc1FXyFeyxVynIBnWon6Adv9GyXNIPYQ4a9+BCkrDPjSsNsCJ3QxMqGmSuHD5iQzgL6eQETrMPYoFfPpKd53G7an0gVGd7oh/wB7jfbT/WvnPxH0gd8Q/fTaBb6nKq02VVfLBZsQ/SfmpvgyV6Fn5UP0gQJfxyrkuq/+ykXkoX78qpLqv6qReB2F1UNkW8CnsiMR7Vy8UVMU+ypZH6NkuaQewhXG6bxh0/8A7/yqWYA/I6myWSv90g9hCrdo56bhWin2Q5mK1jY7kRrXKiJwlrnfZX2FSbT8pqj1h+0D8v0lO87jdtSY7jmpP0+pum07oVsRuTun1sOD8SEibbg/B1V6RuwCVPo2RX/4kHsIc1eJKy8rYWqRoECHCiMg/VexqIqcJ16cRy15ni/q3QgVn+kp7ncbtqPpKd53G1in5QBaOw8nLTFjaZFjQIcSI6Aiuc5qKqm++jZHmkHsIaewHIildXadGBDd+CdwQqd3H/d8pXZW5/Vx+BEH0lO87jdtSX7/AD7qme1xC4HSWOn5x9rqY101Fc1ZhuKK9Vx4S06FULF8sKX1lu0tgAKx3qeMKp++mws2VjvU8YVT99NgHIH0gzEaXVVgxXw1XjyXYHzAH6vpKd53G7aj6Snedxu2p+UAfq+kp3ncbtqPpKd53G7an5QB+r6Snedxu2o+kp3ncbtqflAH6vpKd53G7aj6Snedxu2p+UAfq+kp3ncbtqPpKd53G7an5QB+n6Snudxu2p8osaJHflxYjnuwwxcuKnzAA7u5vxgy/QxNiHCHd3N+MGX6GJsQCyCcRkwnEZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHzis3WG6GvE5qop9DAEdRLk7NRor4jo03i9yuX66eX+B5zHWY9dN9tPkSOZAjfMdZj10320+QzHWY9dN9tPkSQAI3zHWY9dN9tPkMx1mPXTfbT5EkACN8x1mPXTfbT5DMdZj10320+RJAAjfMdZj10320+QzHWY9dN9tPkSQAI3zHWY9dN9tPkMx1mPXTfbT5EkACN8x1mPXTfbT5DMdZj10320+RJBgCOMx1mPXTfbT5DMfZj10320+RI4A5yydiqbY9sdlOdFckdUV26LjxHSGDIHO2+5D1bq7iqvlLVW+5D1bq7iqvlAydzRr2q/Q6TApsrCllgwG5LVc1VXD4nCmQJGz4Wo9TKdhfmc/aq3tVthBgwqiyC1sB2U3c2qhzAAyfeQm4khOwZuFgsSA9Htx4sUXE/OAJHz4WnRMEgynYX5mc+Fp/VSnYX5kbgDZWgrkzaKsRqpOIxI0bDKRiYJwJga0ACT7ieVU31b9SfSArieVc31b9SfAPy1PwXNdC7YVBi/fP95S3tUX/AAua6J2wqFF++f7ygeDsbNXmVqy1JSmyEOXdBSIr8XtVVxXD5HHACR8+Fp/UynYX5mqtLeZWrU0labPw4DYSvR+LGqi4pj8zjQAPTHZMRrk40XE8gCRYN9dpYEBkFkKVyYbUamLF4kTDznrPhaf1Up2F+ZHJgDeWqtZP2un4c5UGw2xIcPIRIaYJhiaMADZWfrczZ2sQqpJoxY0HHJR6Ypwpgdqt99p/JClOwvzI4AEj58LTqmCwpTsL8zgJ6biT87Gm4uGXGer3YcWKn5wAJuuD8HVXpG7CESbbg/B1V6RuwCXk4j8FcpECu0mYps0rkgzDcl6tXhwP3pxGQI3S4+zGH30320+RjMfZj10320+RJJgD8dIpkGj0uBT5dXLCgMRjVcvDgftAAhu/z7qme1xC5NF/n3VM9riFwN3YvlhS+st2lsSp9i+WFL6w3aWwAwpw9dupoNoKvGqc3EmUjR1xdkOREO5AEb5jrMeum+2nyGY6zHrpvtp8iSDGIEcZjrMeum+2nyGY6zHrpvtp8iSABG+Y6zHrpvtp8hmOsx66b7afIkgARvmOsx66b7afIZjrMeum+2nyJHMgRvmOsx66b7afIZjrMeum+2nyJIAEb5jrMeum+2nyGY6zHrpvtp8iSABG+Y6zHrpvtp8hmOsx66b7afIkcyBG+Y+zHrZvtp8jZ2duvolmKwypyMSYdGY1Woj3IqYKdqYAJxGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4iOSHDc93E1FVT2fCc7zj9G7YBxz73bIQojob52IjmKqKm5KYzw2N59F1Klc5/whMdK7ap8ALbWftJTbTSLp2lxXRYLXqxVc3DhNqhGlxnI2Y607YhJaAZAAAAAAAAAAAwvEZMAcdPXpWVps7FkpqciNjQXZL0SEq4KfDPDY3n0XUqQTbfllVOsO2miAtfZ21tItS2K+kxnRUgqiPymK3DE3pD1wXelU95n6kwgc7b7kPVuruKq+UtVb7kPVuruKq+UAddTLsrUVmnQZ+SlIb4EZMpjliImKHIlo7tuQVL6FAIUzPWy5jC1qDM9bLmMLWoWUAFa8z1suYwtagzPWy5jC1qFlABWvM9bLmMLWoMz9sce8YWtQsoYXjAqFWaPOUGpxadPsRkxCwy2ouOGKYn4Tsr2fGLUvaz8qHGgdzdVaamWYr0xNVSM6FCiQchFa3HhxJZzwWNw7+i6pStoAsXPXt2QjyMeFDnYiufDc1P7JeNUK7RFRYjlTiVVVDyAB09Cu+tFaSmpUKbLMiS6vViKsRE4U4zmCxVyfIBnWon6ARbmetlzGFrUNfXbvbRWcpqz9SlWQ4CORmUkRF4V4i0hH99PICJ1mH+oFcz01quejU41XBDyfSB3xC99NoHZQro7XxoTIrJKGrXtRzf7VOJT1mftlzGFrULFU3wZK9Cz8qH6QKl2iszU7LzbJSqwmw4sRmW1GuysUNQShfxyrkuq/8AspF4AAAZTjOylbqLWTspCmoEnDdDitRzVWKicCnGp9pPaW1svyZp3V2bAIBzPWy5jC1qHY2Ijw7rIEzL2qXuWJOOR0JGfXxROBeImMhC/wB8I0ro3bQO1S+CxvPoupUznhsbz6LqVK2ACyeeGxvPoupUZ4bG8+i6lStgAsnnhsbz6LqVGeGxvPoupUrYAJmts9L0my7bK/3pZNVWLl/Uwx4uM5HM/bLmMLWodXcH97U/Y0mkCvFJu5tJZ2qy9YqUrDhykm9IsZ6REVUanHwEmpfDY3n0XUqb22nI+qdWdsKoAWTzw2N59F1KjPDY3n0XUqVsAFk88NjefRdSpt7O22odqZiJBpUw+K+EmU9FYrcEKqks3CeGqj0KbQJzAAAwpkwoHLVu8Wzlnqm+n1GafDjsRFVqQ1XgU/Bnhsbz6LqVImvj8YM10bNhwoFk88NjefRdSozw2N59F1KlbABZPPDY3n0XUqM8NjefRdUpWwAWSW+Cxy//ADouqU6az9oKfaWnd30yK6JAy1ZlObhwphjtKkFh7j+QK9cibGgSIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHwnO84/Ru2H3PhOd5x+jdsAqDP+EJjpXbVPgfef8ITHSu2qfACf7jXNSx0wiqif3p3l/BCSkiM9JPiVBlapPyUNYcrORoLFXFWseqJifbfBWNJzWtUC3O6M9JPiN0Z6SfEqNvgrGk5rWqN8FY0nNa1QLc7oz0k+I3RnpJ8So2+CsaTmtao3wVjSc1rVAtzujPST4jdGeknxKjb4KxpOa1qjfBWNJzWtUC3O6M9JPiN0Z6SfEqNvgrGk5rWqN8FY0nNa1QLc7oz0k+JjdGeknxKj74KxpOa1qjfBWNJzWtUD9ttWudbGpqjVVO6HcXtNHkO9FfgWgslSKdO2Vp8xMyUCNFiQWue97EVXL51U3G96j6MldUgEYXCLkStUR3B9ZnGS/ujPST4kLX0OWiTNObS1WSSI1yvSB9TK9uBF++CsaTmtaoFmLeOa6xFWRFRVWXdwIVYyHeivwOqsZVqhPWvpkrNTsaNBix2tfDiPVWuTzKhY1LP0df9sldUgFSMhy/6V+BaC7dyNsHS2uXBUgpwKbdbPUjyUyV1SFeLeVOfp9sqjKSc3Gl4EOKqMhw3qjWp+CAWY3RnpJ8Qj2rxKilRt8FY0nNa1SVLjqjOz1RqLZqaixkbDTBIj1XDhAmbEyYQyAMLxmTC8YFZr2fGLUvaz8qHGnZXs+MWpe1n5UONAAAAAABYq5PkAzrUT9CupYq5PkAzrUT9AJCI/vp5AROsw/1JAI/vp5AROsw/1ArmfSB3xD99Np8zKLguIFv6dEZ9GSv1k+5Z5fwQ/TujPST4lR0r9XRqNSpTKInAiJFXgG+CsaTmtaoHf37JlWqklbwp3L5PapGOQ70V+BO1zcCFW7OTceqQ2zkVszktfHTLVEw4sVJC3vUfRkrqkAqPku48lfgYLFXpUemytgp+NAkYEOI3IwcyGiKn1kK648GABPtJ7S2tl+TNO6uzYVKT7Se0trZfkzTurs2AbUhK/tquqNLwRVwhu2k2n5pumyU85qzUrCjK3iV7UXACn+Q70V+AyHeivwLcb3qPoyV1SDe9R9GSuqQCo+Q70V+AyHeivwLcb3qPoyV1SDe9R9GSuqQCo+Q70V+AyHeivwLcb3qPoyV1SDe9R9GSuqQCKLhV3OLU8v6uKN4yZ90Z6SfEh2+dEocOnrS/7luiuy9w+ple3AijfBWMfCc1rVAs7bR7VshVMHJ3u7y/gVTyHeivwOmspWKjOWop0vMTseLCiR2tex8RVRyY8SoWS3vUfRkrqkAqPku9FfgYVFTjLc73qPoyV1SFcbzYEKVt3UYMCG2HDa9Ea1qYInAByZLNwnhqo9Cm0iYlm4Tw1UehTaBOZhVw4zJ+CuOcyhTz2KqObAeqKnk4AP2boz0k+IWIz0k+JUl9oKxlr/iU1x+tU874KvpOa1qgdVfCivvAmnN4U3NnF7pw2Q70V+BYe62RlavYmXnKhLw5qO570dEjNRzlwdwcKnY73qPoyV1SAVGVrk4VRUME7X00unyVk4MSWk4MF6zCJlMYiLhgQSBlOEzkO9FfgfSU78goqYosRu0tdKWfpDpSCq02WVVhtVcYSeYCpuQ70V+BYW5FUZYNUcuC92ROBfY07JbP0dP9sldUhB97k3MUe2aStNjPlIHcrH7nBdktxVXYrgnsAsDujPST4hHtXicilRt8FY0nNa1TtrpKtUZu3cCFMTseLDWE/Fr3qqLwAWERcTJhOIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhOd5R+jdsPufOND3WE+Gq4I5qtX+IFP5/whMdK7ap+cneNcTSo0d8VarMIr3K7DITynjMJSdKzHYQCCwdXeFZKXsdXYdPlph8dr4KRMp6YLxqcoBkwdFYazkG1VpYVLjxnQWPY52U1MVTBCUswtJ0rMdhAIMME5uuHpTWqqVWY4E9BCFalKtkqlMyrXK5IMRzEVfLgoH5jJgkO7q7mTtnTpmZmJyLAdBiI1EY1FxAjwE6ZhKTpWY7CDMJSdLTHYQCCxxk6ZhKTpaY7CDMLSk/3WY7CAdzYngsdTEXm7dhvsSD5m9efslMPoEvT4MaFILuLYj3KiuRPKfLP1VtFS/bUD9V/nDN0tf+V5D5M1NgJfQ18apKsgtP4GpB+tlY+fE/dmEpOlpjsIBFlguXFJ6w0tSikSTN1khYyWfaOWno0eNTk3ZkN7URHKnkU0y381XyUqX7agTqqlXLyOXtV6ZTrs/VV0VL9tSOq/WIlerUzU4sNsN8w7KVreJANcS5cJ4TqXRN2kRkuXCeE6l0TdoE3oMQh+OrzjqfSZucY1HOgQnPRq+XBMQP2YmFXhIMW/qrIvgqX7amM/NVX/AGqX7agc3ex4xal7WflQ40m2SsDKXlyjLVzs3ElY899qFDTFrcn6v6H3zCUnSsx2EAgwwSPeJdrJWNo8Gdlp2LHdEi5Cte1Ew4COAAAAFirlOQDOtRP0K6nd2SvSn7JURKXLyMGMxIjn5T3Ki8OHyAshiR/fSv8AkCJ1mHsU4rP1VtFS/bU0trb0561lEdTJiRhQWLER+UxyqvBj8wODAAAAAT3cPyVnetfohKJF9w/JWd61+hKAHF3teLyof9n5kKzlmL2vF5UPaz8yFZwMp9pPaW1svyZp3V2bCpSfaT2ltrL8mKd1dmwDagAAAAAAAAACG7/PuqZ7XELk0X+fdUz2uIXA3di+WFL6y3aWxKnWL5YUvrLdpbEDBWS9PhvBqfvpsLNkeWjuhp9o63MVSNUI0J8dcVa1qKiAV3JYuF4K1UcfUptN7mFpWlZjsIfhqVPZcwxlRpr1nnzq7k5sb6qNROHyATJifgry/wCAT/V37CGc/VW0VL9tT4zt+NUnZKNKupku1sZisVUevBigEYv+8d7VPJlVxVV85gCyNzfi+lekftO7OEub8X0r0j9p3YEaX58joHWU2FfiwN+fI6B1lNhX4D7SnfsDpG7S38n3lA6NuwqBKd+wOkbtLfyfeUDo27APqvGV4vv5ep1OH+ZxYhThbX3WyNr60lTmJ6LAekJsPJY1FTgVV/UCtx3dzfjBl+hibEO5zCUnS0x2ENzZW6mQsrW4dUgT8aM9jVajXNRE4QO+QyYTiMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBk8PekNqvcuDWpiq+ZAPWAOWfeXY+G9zH1uA1zVwVMF4F+BjObY3TsD4O+QEU36cspfqrdqkaErXh0udt9XYdUsvAdUpOHBSE6LCXgRyKqqnD7Tk82VstBTHxb8wNjc34wZbon7CyCEA2Fs/VbFWmhVq0Um+QkIbHNfGiYKiKqcHESol5tjcPDsD4O+QHURPsO9hUav8oJ/rD9pY915lj3IrW1uAqqmCcDuH+RCdSu/tVUanMzkpR40WBHiOfDe1Uwc1V4F4wOMJ1uG8BVDp02EaZsrZaCj/ABb8yXLn7P1Wz9InYNVlHysSJFRWtfhiqYASKZMGQBgyYVcAKo235ZVTrDtpoiQbV3e2qn7T1CalaPGiQYsZzmORU4U+JqM2VstBx/i35gSDcF3pVPeYTCQ5dtEbd5BnIdq3fRjppWrBSLw5WHHxYncZzbG6dgfBfkB+m33IerdXcVV8pYe2N4FlahZOpSkpWIMWPFgq1jERcVX4FeVQDAMnQyFgrUVOThzklSI0aBFTFj2qmCp8QOdJcuE8J1Lom7Tjc2VstBR/i35nbXbwIt303Nx7VMWmQ5liNhOi/wCpf4YgTWhq7Tcman1aJ+VTUJedY1f98gfB3yPyVe31l6pSJuQkatCjzMzBdDhQ2ouL3KmCJxAVrXjUwdUt2dsVXFKHHwX8W/MJdlbLi+g4/wAU+YE33S+Lqm+x/wCZTsiOLF2no1kLLylDr0/DkahLZW6wImOLcVVU4vwVDe5zbG6dgfBfkBzV+3JWU6z+hAZMd7trqDaCzsvL0uow5mKyPlK1uPFgQ4AB7hw3RYjYbEVXPXBqJ5VOnS7O2KpilDjqnkXFPmByoOqzZWy0FH+LfmM2VstBR/i35gcqDqs2VstBR/i35jNlbLQUf4t+YHKg6rNlbLQUf4t+ZhbtLYtarlocdERMV4U+YHLA9xIboUR0N6YOaqoqeZTwBPlw/JWd61+hKBCt0Fr6DZ+z01LVSow5aK+Yymtdjwpgd/nNsbp2B8HfID817Xi8qHtZ+ZCs5YO2tp6Na+zEzRKDPw56oTGTuUBmKK7BUVeP8EImzZWx8lDjr7Fb8wOWT7Se0trZfkzTurs2FdEuztijkxocdP4t+ZNNHt9ZelUmVkJ2rwYMzLwmw4sNyLi1yJwpxAdwDlM5tjdOwPg75G2otpKRaFkR9KnWTTYS4PVmPAv8QNqDCGQAAAAGAIcv8+6pntcQuT5fFZqsWhhyCUqSfNLCV2WjFTgItzZWy0FH+LfmB+CxfLCl9ZbtLYlbqDYa0lDrknVKlS4svKSsVIkaK9UwY1ONeMmbObY3TsD4O+QHVmDlc5tjdOwPg75G/p1Tk6tJQ52Rjtjy8RMWvbxKB+sia/vwLTumXYSyRxfDZ6rWhpUjCpUm+afDiqrmsw4EwAr2Dqs2VstBR/i35jNlbLQUf4t+YHKg6rNlbLQUf4t+YzZWy0FH+LfmBM9zfi+lekftO7OPuvpU9RbGS8lUZd0vMMe9XMcqYpwnYARpfnyOgdZTYV+LA358joHWU2FfgPtKd+wOkbtLfyfeUDo27Cn8s5GTUJ7lwa16Kq/xLLy15dj2SsJjq5ARWsaipgvm9gHXg5XObY3TsD4L8hnNsbp2B8F+QHVmDlc5tjdOwPgvyP2Uu3FnK1PNkqdVIUxHciqjG44rh/ADfGTCcRkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfCc7zj9G7Yfc+E53nH6N2wCoM/3/ADHD/wAV20+B95/whMdK7ap8AJ/uM5GzHWnbEJLROAjW4zkbMdadsQktAOEvk4Lv5npWbSt/GWQvl8X0z0rNpW8D0xfrt4PKW5s+n+X5DoGbCorPtt9qFurP8n5Dq7NgGwwMYYHo8o7hwA9AxiYxA9GFMmFAxh+IwMooAhO/zBJqlonovIgJgv8AO+6X7riHwAAAFo7tk/yHS+hQq4Wju25BUvoUA6jAiO/vgp1N6R2wl0iK/wA8G03pHbAIQVcTaWZX/M1N61D/ADIas2lmExtPTetQ/wAyAW2an1UCpwhv2UMrxgVmvZ8YtS9rPyocadlez4xal7WflQ40DOJgAD9VM8JyvSt2lvoSf2LPdQqDTPCsr0zdpb+F9yz3UA9YDAyecQM4DAGEUDOB85hP7vE9xdh9T5THe0T3F2AVBqK/4nNdM/8AMp+Y/RUfCc10z/zKfADAAA7O6bxh0/8A7/yqWXRMCs903jDp/wD3/lUswi4gYcn1V9hUq0/Kao9YftLau+yvsKl2n5TVHrD9oGqJtuET/Dqr0jdhCRNtwfg6q9I3YBLyGTCcRhVwA9AxiMfwAyDGP4DH8AMYcJnAxiZQDR20xSyFUVF/+O7YVQLX205H1TqzthVAAWbus4bvqb7i7SshZu6zgu+pvuLtA7AxgZMYgZwGBkAYwGBkwoBE8pk848OBnH8AI1vz5HQOspsK/FgL8+R8DrKbCv4BDKriYC8AAAADu7m8c4Mvw/8ABibEOEO7ub8YMv0MTYgFkE4jJhOIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhOd5x+jdsPufCc7yj9G7YBUGf8ITHSu2qfA/RP+EJjpXbVPzgWAuM5GzHWnbEJLQjS4zkbMdadsQktAOEvl8X0z0rNpW8shfJ4v5npWbSt4GWfbb7ULdWf5PyHV2bCorPtt9qFurP8n5Dq7NgGwIZvprtVpNakYdPqEeWY+CquSG9URVxJmIKv58PU/oV2gcHvytLpyd1ynUXc2nrs/binS03VZqNCe9Ucx8RVReAj06267xgUz312AWeQKABWi19q6/K2rqUCBV5uHDZHcjWtiqiIhpd+VpdOTutU9235ZVTrDtpogP21CsVKqq1ahOxplWfZ3V2VgfiAAAAAWju25BUvoUKuFo7tuQVL6FAOpPxVGj06rNa2oScGZazhakVuOB+wAaVLGWa0HJapD1DsjZ6DFbFhUaTZEYqK1zYSIqKbkxiARMEwC8ZkwvGBWa9nxi1L2s/Khxp2V7PjFqXtZ+VDjQAAA/VTPCsr0rdpb+F9yz3UKgU3wnK9K3aW/hKm5M91APZA17loqzS7bvl5GpzMvB7nY7IhxFRMVxxJ4K83zy8eLb1zmQYj07mh8LWqvnA5TflaXTk7rVO3uktHWqlbdkvO1OZmISy71VkSIqpjihGvcc1zaNq1O8ual40K3sN0SDEY3ud6YuaqeYCxB85jvaJ7i7D6HzmF/u8T3F2AVAqPhOa6Z/5lPzn76jJzK1KaVJaNhuz/wDQvnU/P3HNc2jatQJkuXoNJqtm5uNP06XmYjZnJR0ViOVEwJG3mWa0HJalDjLi4cSDZecSJDcxVmuJyKnkJNxAj+8KjU2gWNnKlSJGDIzkLJyI8BiNe3FyIuCoQdvytKv++TutUn69rxeVD/s/MhWcDdb8rS6bndapqIsWJHiuixXq97lxc5VxVVPAAE3XB+Dqr0jdhCJNtwfg6q9I3YBLycRzd4U1HkrEVOZloz4MaHCxa9i4KinSJxHK3meL+rdD+oFeN+dpV/3yd1qjflaXTk7rlNKAN1vytLpyd1yjflaXTk7rlNKAJwuTrNTqsWo93z0aZyEbk7q7KwJbQhe4P72p+xpNAGjtpyPqnVnbCqBa+2nI+qdWdsKoADaylp65IS7ZeUqs1BhMTBrGRFRENUAN1vytLpyd1qkm3K1yq1arz7J+fjzLWQkVqRHq7BcSGCWbhPDVR6FNoE5gAAYUyYUCAb1rR1qnW5mJaSqczLwWw2KjIcRUROA4zflaXTk7rlOgvj8YM10bNhwoGxnrQVepwUgT9RmJmGi4o2LEVURTXAAfWVRFm4LXIiosRqKi+0tNKWOs26UgudRJNVWG1VVYSeYq1Kd+wOkbtLfyfeUDo27ANUtjLNaDktUhBV8FOk6ZbVJeRlocvC7lY7IhtwTHF3D/ACLHqV4vv5ep1OHtcBHh3dzfjBl+hibEOEO7ub8YMv0MTYgFkE4jJhOIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPnGh7rBfDxwy2q3H2n0MYAQ7HuGSPMRIv00qZb1dhufFip4zAppv8Apky4ACGd8GZv/L+4fSO7f3jdccnDHgww/gFv+VP9k/qGlv05Zy/VW7VI0Ake2N7K2ss/EpX0ZuG6Oa7Ly8cMFI4AAyz7bfahbqz/ACfkOrs2FRWfbb7ULdUDk/IdXZsA2JwdvLt0trPy8ytQ7m3FitwyccTvDGAENZgU03/TGbpLuf8ANST/AHZ3B9bccnJyvJxkynI3o+L+p+4m0Dh8/wAuhE1gz/LoRNYQ0AJmzTJa/wDzB9JrL93/ANtuWRjk4+TEZgU03/TJHsRw2Opi/wD67dhvgIazAppv+mMwKab/AKZMoAhrMCmm/wCmMwKab/pkygCGswSJ/va6sxnNWwH+V/o7uv6P/s92y8Mv8cCZlQq5eRy9qnTKB3uf5dCJrDrrA3irbaZmYPcHc24NR2OVjiVsJcuE8JVLom7QJvQ/JVJxadTJmcyMvcITomT58ExP1mrtOn+Wan1WJ+VQItW/1UXwImsGf1V/2T+oQ27hco8gEy5v85v+be7u4u7v+Bk5WTk/V4/4DMCmm/6Z2d03i6pvsf8AmU7ICudu7sksZSYU99ILM7pEyMnIwwOSo1BqNenGStPlnxXuXBVROBvtUsJeVZ2PaeRp9Og4ojpnGI5P9LcDVTMxRbs6WknTILY07FThVVxXH8TsRNp0hyZ0jWWks/dNI0VIdQtHPMa5io5IbXYIinXzN6FAlHLChrFiq3gRWt4FOUp9BtHbiZSbqkZ8GUdwpjwcH4IdjI3a2fk0xdBfGXy7ouJb20p8pVd17fGPRqnXu09F4JOKqew+MS9OkRXZUSmK93nc3FTr0sfZ9Ew+jIPwM70KBouB2R3Y+DTJy47OfRdEp2EPUO9OkQnZUOmKx3nRuB1+9CgaLgdkzvPoGi4HZO92Pg0ycuUzvSHMogW92QVOGSinV7z6BouB2RvPoGi4HZOd2Lg0ycuNW8+iquK0nh9xDGc+i6JTsIdnvPoGi4HZMb0KBoyB2R3Y+DTJy5eUvVocL6qykSC1VxwYw6Kk2zotZwSXmka/yMeuSqmJiw9nphqt+j4bMfRTA5isXWQIcJY9FjxYUdvCjXO4zsbdv05rkr+23tdI1W0kq6gulWQpObVMZtr8pWYcPCn8Di8wSL/vf9M/XRra1izU82m1+E50LHDLXjT2KSnKTMKcgMjwHo9j0xRUUrvSarK3iyIswKab/pjMCmm/6ZMoIJoazApptdWO6syf90yfpL6Q+vlfZycOAmUhK/zwjSujdtA++f1U/wBk/qGM5a3g/wCVvo/uT6R/st2ysrI/HAhxVx4TqLtF/wA/0lP+t+gHe5gk02urGYFNN/0yZUQAQ1mBTTf9MZgU03/TJlAEM7nmU+vj9Jd38GH2cnAZ/l0ImsPd/nBCpntcQuBK9avsWr0eakPojc+6Iasyt0xwxIoAAEnWVufS0ln5aq/Siwd3bjkZGOBGJZu6vhu+pnuLtA4rMCmm/wCmdXYK7neVPTEwk/3Tu7EZhk4YcJ3QwAyAABheIyYAja2N0yWrtBFqv0puG6Na3IyMcMEwNHmBTTf9MmXAAV1tzdeljaPDqH0j3TlxUZkZGBH5YC/PkdA6ymwr9iB9pTv2B0jdpb+T7ygdG3YVAlO/YHSN2lv5PvKB0bdgH2Uju291e/CvJVFqXc+EFsLIyMeJVXH+ZImAwAhrMCmm/wCmb2xt0yWTtBDqqVNZjIY5uRkYcZJAwAJxGTCcBkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgyYAhO+KzdZq9qoExT6bMTMJJZGq+GxVTHFSP941qdBTuqUtZgMAKp7xrU6CndSo3jWp0FO6lS1mAwAqo2w1p0cirQp3BF4f7JSwNJtjZ2TpMrKzNYlIUaFCax7HRERWqicKKh1ERPqO9hUav8Ffn+nftAs5v6svp2S1yDf1ZfTslrkKpgC1m/qy+nZLWoc/bi0FItDZOdplIqEvPTsdiJDgQHo57lx8yFczrbrlxvApif867APw7xrU6CndSo3jWp0FO6lS1mAwA4uzNqqFSbOyMhP1WWl5mBCRkSFEiIjmKnkVDa7+rL6dktchXC23LKqdYdtNEBazf1ZfTslrkG/qy+nZLXIVTAFrN/Vl9OyWuQb+rL6dktchVMAWs39WW8tdktchXW3s3Lz1tKjMysVsaDEi4te1cUU50yBgk65etU2jT9QfUZ2DKtfDRGrFeiY8JGJkC1aW6svp2S1qH4a3a+z8/RJ2UlKvKxo8eA9kOGyIiq5ypwIiFYTaWZ5TU3rUP8yAfrWw1qMVwoc7qlCWGtRoKd1Slq2p9VPYF4wI+sDXaVZux8lSqzPwZGdgo7dIEd6Ne3FyqmKL+B0jbcWZe9Gsrcm5zlwREipwqQJex4xal7WflQ83Y0NlbthLQ4rMqFBXdHIvFwAT1au0MGiUKJOI5HPemELDyqpxFibMxbRTz63V0WJDysWNdw5SnytdGiWjtpL0OC9Ugw3ZOCEp0+ShU6RhSsFqNbDaicBfM7df8AVEfnZ9ocJkJiMhtRrU4kTyHiPMwZWGsSPFaxieVy4H4bQ1qFQaTFnX4KrE+q1fKpBtoLWVO0ExukeKrIafZhtXBEI48U39Ur5Ip6JmiW4s/CerFqEJVTzOPO/wAs7pCF2iAMV86mDT40cs/kSsBv8s7pCF2jaUusSVYgrGkY7YrEXBVQrViTDdB4CmOlKsuCKV1WY802nRITlwTFfIc/EtzQIUV0N8/DRzVwVMeJTfRPu3exStNV8KzPSu2kMOKMkynlyTSE7b/LO6Qh/Eb/ACzukIfxK/pxcYL/ABo5U+RKx0haOk1NcmUnYUR3mRyYmzTBSsUKYjSz0iQYr4bkXFFauBKFgrfzE7NQqVUVR2KYMiKvD/EryYJrGsLMebunSXZWmszJ2gkXw4sNqRkT6kRE4UU4Kxtcm7N191BqT1SE9+S1XeRfISxxoR1efRGsgw65L4tjQXJlKnEQx21/CUskaflCRWrw7D0aCx9WWsWel5l64xEbku9qG/QqmNJ0WxOsahEV9VAq1Ynqc+nSEeabDhuRywmKuHCS6MDjqqa2GtToKd1SnRWAslaCQttTJqbpE3Bgw4uL3vhKiImBYrAYIAQyYwMgAABDd/n3VM9riFyaL/PuqZ7XELgAAALN3V+L6m+4u0rIWbur8X1N9xdoHYLxH4KlWqdR4bIlSnYMq164NWK9ExU/epE1/XBRad0y7AO639WX07Ja5D1CtrZqNFbChVqUe964Na2KiqqlUTYUHw/IdYZtQC3SLjgejxD+w32HsAAAI/vipU/V7LQYFPlIszFSYRVZDbiuGBCW8a1Ogp3VKWswRRgBViVsPads3Bc6hzqNSI1VVYK8HCWhlEVsrBa5MFRjUVP4H2wQYIBkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+M09zJWK5q4KjFVF83AB9gVjnLy7Yw5yMxlcmEa2I5ETg4Ex9h8c51s9OzHwb8gLRA4K6SuVOv2YjTdUm3zMZswrUc/jwwQ7xAMgADxE+w73So1f5QT/WH7S3MT7DvdKjV/lBP9YftA14BLt0Fk6FaCkTsaq06FNPhxURrn48CYe0CIjrbrvGBTPfXYTpmxsZoKX+K/M0drrKUOylmputUOnw5Kflm5UGPDxxYv8QJGBV7ObbNP9+mP/wDH5GUvOtnj4emPgnyA/DbfllVOsO2miLH0CxFm67Q5OqVSlQpicmoaPixX44vcvlNlmxsZoKX+K/MCrwLQ5sbGaCl/ivzGbGxmgpf4r8wKvAtDmxsZoKX+K/MZsbGaCl/ivzAq8C0ObGxmgpf4r8xmxsZoKX+K/MCrwLQ5sbGaCl/ivzGbGxmgpf4r8wKvG0szynpnWof5kLG5sbGaCl/ivzPcC7myMrMQ5iBRYDIsJyOY5MeBU/iB0zfsp7DK8ZhvEZXjArNez4xal7WflQ7G4mWZhUZtUTKaiNx//wB9hx17PjFqXtZ+VDt7i/BtU95NggfSyMJJu8ycjqmO5xHub8SXUInsFy+qPtdtJY8hbm94VYvaUQ3s1VYtUhU9rlyYSYuTHjVSO/adfedyui+6mw483Yo0pDHlnWzIMG9s9ZGp2iynSsPCG3gV7uInMxHrKuImZ0hoiYbofAUx0hzeaWr+uhne2Es3M2bpkWWmnNc578pFaZs2Ss00hpxUtW2sunifdu9ilaar4VmuldtLLRExYqedCIp26yrTE7GjNjQ8mI9XJj7Svp7RWZ1W56zaI0R4nEDt5i6utQYLojHw3qiY4IcZMQIsrHfAitVr2LgqKnEbK3rb2Y7VtX3fNT3Kx3yszDjQlVrmORUVDx5An2k9pKUYWQs9OLUKHKzKrir4aYn4rby3ddk52FxfUx+B6sVyUkfc/U+1qeTc90SnmR83o/8Ahyl0L1dRJtrlxRsbg/DgJDTiQjS6hzmWeqTmrg5HqqL+OSRnVLyLXy9TmYUKtx2sZEVGomHAmPsO5fnJj+ELMAq7nOtnp6Y+DfkSvc7aSsWhkqhEq09EmnQntRivw4EwKliSwYQ563lQm6XY2pTklGdBmIULFj28bVA6IFXc51s8fDsx8E+RnObbPT0x/L5AWhBo7HTszUbKU+bm4rosaLBRz3u41U3gEN3+fdUz2uIXJov8+6pntcQuAAAAs3dX4vqZ7i7Ssh0NOt3aekyTJOQq0aBLw0wZDbhgn8gLVETX9+Bad0y7CN85ts1/32Y/l8js7uZqPeDUJmUtXEWqQZdiPhMi/wClcePgAiI2FC8PSHWGbULI5sbGaCl/ivzPy1K72ylPpszOSlGgwo8CG58N6Y4tciYovGB2UP7DfYh7KvuvMtk1yo2uzCIi+ZPkec51s9OzHwb8gLRAq7nOtnp2Y+DfkM51s9OzHwb8gLRAhe6W2NoK/aeLK1SpxZmC2ArkY/DDHH8CZ0AyAAAMKQnexbS0VBtgknTKpFloHczH5DcMMVV3Dw+xAJtBV3OdbPT0x8G/I6+7C29pK3bKBJVGqxpiA6E9ysdhgqpgBOYMJxGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8JzvKP0bth9z5TENYsCJDTgV7Vai+1AKfz/AIQmOldtPgS1MXE1aNMxYravLIj3q7BYa+VfafPMJWNLyurX5gdVcXyNmOtO2ISWhDtNtBBudl1s/UoLp+LGd3QkSCuSiIvBhgvsP2Jf3SNETWsT5ASuCKc/dI0RNaxPkM/dI0RNaxPkBKcT7DvYVGr/ACgn+sP2kxuv5pLkVPoiZ4Uw+8T5ELVKabO1KZmmtVrY0Rz0ReNMVA/KTrcN4BqHTpsIKJEu6vGkrF0+ZlpmSizCxoiPRWORMOACw5yN6Pi+qfuJtOXz90jRE1rE+RpbXXv020Vm5ulQabHhPjtwR7noqJ/ICJAABa2xHI6l9XbsN+QvQL6KZSKHKSESmTER8vDRiua9ERcP4Gyz90jRE1rE+QErAinP3SNETWsT5DP3SNETWsT5ASsCNqNfNTK3V5amwqZMQ3zMRGI5z0VEx/gSOnGB6AAAAAAAAMLxmTCgVmvZ8YtS9rPyodvcV4NqnvJsP02zuiqNprUTVWgVGBBhx8nBj2KqpgiJ5zfXfWGm7GSU7DmpqHMLGwVNzbhgdj3cn2aGwfL6o+87aSwpE9g+X9R9rtpLHEhbm91eL2QXedyui+6hx53l49Knpq1MWJAlYsRmSmDmtVUOU+gqrzCN2FNmO0dsMd6z3S/AicKIWEsXLQpaysgkNqJlQkc5fOpBbaDVMtP7jG4/QUnyy8N8GzchDiNVrmwWoqKnCilPUTrEaLsEaTLbAGTG1wGDIDrCkI3pS0KXtLjDYjctmUuHlUm5SH7zqZOzdoWvl5aJEbufG1uKcZfgnSyjPGtUepxGU409p+76CqvMY3YUylDquKf3GN2FN02hhisp1sXyUkfc/U+1qeTc90SnzshDfBszJw4jVY9rOFqpxcJ9bUcnJ7olPO//AGf/ANeh/wCHFXVcnKn7zvykG1nwzN9K7aTpdMxYtAqDEXBXRFTHzcBzc9cbVpydjTDarLNSI9XIiw14Mf4ncvzkxfCERE3XB+Dqr0jdhp8wlY0vK6tfmbCmTSXLMfKVRq1B1QXLYsD6qNw4OHEqWJlTiOWvM8X9W6H9Tkkv7pGiJrWJ8j4zl5MjeBLPsvJyMaWj1FNyZFiORWtXzqgEIAlZbhauv+7yurX5hLhavpeV1a/MCU7AciKV1dp0ZqrN0uJRbPydNixGxHy8NGK5qYIuBtQIbv8APuqZ7XELlkbx7BzdtGSjZabhS+4KuOW1VxxODzCVfS8rq1+YEVAkqq3K1Ok0uYqEWqS72S7Fe5qQ1xVE/iRqAAAAli4Tw1UehTaROh2d3NtZWxc/NTMzKxJhI0NGojHImHCBZk19e8AT/V37COc/dI0RNaxPkeIt9FMrUJ1MhUyYhvm03FrnPTBFdwY8QEHRPtr7VPJKy3D1Z/1kq0tw8P3a/MZhKvpeW1a/MCKQbm1VnI1la3EpUxHZGiQ2o5XsTBFxTE0wElXGcsY/Vl2lgSr93trZex9ciT8zLvjsfCVmSxcFJKS/qkaImtYnyAlcEVQ796TFjMhtpMyivcjcViJ5f4EowYm6wmRETBHNR2C/iB6Urxffy9TqcPa4sQpGF4F1tQtfaNKnLT8GAxIDYeS9iquKKq+f8QIDO7ub8YMv0MT9DdZhKxpeV1a/M6Owt1FQsraWFVJiowIzGMc1WMYqKuP8QJTTiMmE4jIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwZAGAZMAV/v05Zy/VW7VI0JWvppVQnrXQIkrJR4zElmplQ2K5McV8xHe92taLm9UoGtB+2Zo1Tk4KxpmRjwYacb3w1RD8QADDE2LLP1iIxHspk05rkxRUhLgoGuBst7la0XN6pRvcrWi5vVKBrQbLe5WtFzeqUb3K1oub1Sga0Gy3uVrRc3qlG9ytaLm9UoGtBst7la0XN6pRvcrWi5vVKBrQbLe5WtFzeqUb3K1oub1SgfvsFy4pPWGlqkKw2No9RkbXU2am5GPAgQo7XPiRIao1qedVLF74qLpWU1yAbQGs3xUXSsprUG+Ki6VlNagGzBrN8VF0rKa1D9EpU5GeVzZSbgx1bxpDejsAP1mAh5iRGQmK+I5GtamKuVeBEA9A1u+Ki6VlNag3xUXSsprUA2R8433bvdU/DvioulZTWofWDUJOehRFlJqFHRqcO5vR2Aj3J9kZ2C5f1D2u2ksET2D5fVH2u2ksF2b3hVi9nh0NjlxViKvsG4wvVt+BxtpLxIFn6q+RiSr4itRFxRTVZ35XmT/AInIx3n2dnJSPdI+4wvVt+B6RETgQjdL35VVRO4n/E76lzzalTZeda3JSMxHYebEjalq+7tbVt7P2AAgmAADB5dDY9cXMRfah68h+X6QgpPdyK5EiYYonnCNpiPd99xherb8BuEL1bfgejJ3WUtIYRERMETD2GqtRybnuiU2xqbUcm57olO0+UI29pchc/4Gnem/QkVvEhHVz/ged6b9CRW/ZQnl+co4vjD0Qhf74RpXRu2k3EN3402en6hTFlJSNHRsNyKsNiuw4SpYhg6m7TxgUnpv0NRvdrWi5vVKdLd3RKrLW7pcaPT5mHDbGxc50NUROACygCGQMGQAMA/LN1GTkcnuuahQMri3R6NxPzb4qLpWU1qAfmtpyPqnV3bCqBaK1VYpk7ZioS0tPy8aNEgOayGyIiq5cOJEK373K1oub1Sga0Gy3uVrRc3qlG9ytaLm9UoGtBst7la0XN6pRvcrWi5vVKBrTYULw9IdYZtPW9ytaLm9Up+6iWfrEOuST30yaa1I7FVVhLgnCBamH9hvsQ9HlifUb7D0oFbr4/GDNdGz8pwp3V8fjBmujZsOFAAAD7SnfsDpG7S38n3lA6NuwqBKKiTkFVXBEiNxX+Ja2VtDRmykFFqkoipDbwLFTzAbgGt3x0XSkrrUP2Ss5LzsLdZWPDjQ8cMqG5FTED7mDIAwZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGMQMmBiAGAwGIA4S+TxfzPSs2lbyyF8vi/melZtK3gemfeN9qFuaByfkOrs2FRmfbb7S3NA5PyHQM2AbDAYGTGIDAYGQBjAYGTADAYDEAMBgMTIHO295D1bq7iqqlqrfch6t1dxVXygAAAJcuE8JVPom7SIyXLhF/wASqXRN2gTehq7Tcman1aJ+VTaIau03JmpdWiflUCpK/aX2mDLuNTAAmm4rwbVPeTYQsTTcV4NqnvJsOx7uT7P02D5fVH3nbSWFInsHy+qPvO2ksFub3V4vZBl5vK6L7qHIHX3m8rovuocgbsfwhhv8pZb9pPaWIsmv+V6dh6huwruhKthLeyMGlsp1SiJBdARGscvlQq6iszX0W4LRFvVJoNBv1oGkYZsqdVZKqQliyUdsVjVwVUMM1mG2LRL9pjELxGtfX6bDerXTLEVq4KhzTVG161+U6Niq4IcDbGPFlq5Diwnq17Wcae06mNaWlshq7ulq4JxIR7XKo6qz74+GDeJvsLKV9Xl/8h1FdvSk+rtrN2jhVKC2DHcjZhvBh5zoccCGoMaJLxWxYTlRzVx4CRLOWkh1JiQI2DYyJ8Tt6cO9F10X0pf3dEam0/Jue6JTa4+Q11fl4k1Q5uBCblPfDVGp+JXX5Q9S3xlxlz/gad6b9CRW/ZQiK7uvwrPTkej1FiwVixOBzuDBcMCW2PRzUVFRWrxKhbm+Uyhin8dHvAYAFK0wGAGIGQYGIGTAxAEOX+fdUz2uIXJov8+6pntcQuBu7F8sKX1lu0thgVQsXywpfWG7S14DAYGTGIDAYGQBjAYGQBgKZMKBW6+PxgzXRs2HCndXx+MGa6Nn5ThQAAAAAAhYi4/kEvXImxpXgsPchyCXrkTY0CRADGIGQYMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD5TLlhy0WI37TWKqfA+p8JzvOP0btgFeJq9+2EKbjQ2T0JGtiORE3FvFifLPFbPn8LUNOOn/AAhMdK7ap+cCyl1lpKnaezcadqkVsWM2OrEVrUbwYJ5jt0I0uM5GzHWnbEJLQDXV2hSNoqa+n1GG6JLvVFVrXYcKfictmdsbzCNr3HdDgA4Vbn7HNaqtkYqKnCn9s4i6evStVSp6PT5Schtl5Z6w4aLCRVRqLgnCWIeqZDvYVHr/ACgn+nftA6nPFbPn8LUNJUuotTVbVUubmKrGbFfCio1qtYjcEw/ArkTrcNwUKodOmwCVwYxGKAZMKMUGIEBWmvUtXTLRz0nLTkNsGDFVrEWC1cEQ1WeK2fP4WoaaO2/LGqdYdtNEBYW6a11YtVAnn1WO2KsFzUZksRuGPsJHIeuC70qnvM/UmEDnbfch6t1dxVXylqrfch6t1dxVUATrYy7Gy1ZspI1Cdk4r48aHlPckZyYqQUWju25BUvoUA1uZ2xnMIuvccvbaWhXVy8vNWUb3LEm3KyKsT+0xRPaTGRFf54NpnSO2AcSl8NskTDu6FqGn6adefaitVGXpc7OQ3y03EbBitbCRFVrlwXhI9NpZnlPTetQ/zIBPuZ6xq8KyMXFf+u4ZnbG8xi69x3LV+qnsCqgFWbwKPJ0G2U7TZCGrJeDk5DVdiqYtReMkS4pf7hU2pxqqfqcTez4xal7WflQ3dydX7ktFFkH/AGZmGuHtQDpLCrkXhVFjuBcp20llCH4GVQb01WM7JhxoqqqrwcC8JL7XI5EVFxReFC7N/UqsXtKEb0peJDtS6I5q5D2pgpxiE03lWbWq0vu2CirGl0xwRONCF3IrHKjkVFRcMFNeG2tdGTLWYtqwOFOIAvUmUvnJhuiX/ApjpSHSYboPAUx0hnz/AAX4PmkF/wBlfYRBUHf4hH99dpL7/sO9hD9Q8IR/fXaZMfuy/wDKzpWr8+Pt+IAL3gayH0gTEWWipFgvcx6Ljiinz/iMRo7EzWdYSPZu0cOpQUgzDkSYbwcP+o6FSG4Ed8vGbFhOVrmrimCkh2ctJCqUNIEVUbGROLzme9NPV9D0XWxk/C/u1dubEsrcHuyRYjJyGmKZPBlGmsZbOPITP0JW3KxzFyGPd5CTuPgOLttYiFWILp2SakObYmVwJ9slW0THbZ6FqzH5Q7Jj2q1HIqK1U4F859CLLF20mJGZSiVvFqtXJbEfxovmJPhxGuaitcitVMUVCFqdsp1tFn0Q0Nt6nNUayVQqMk9GTECHlMcqY4L7DfIcreZ4v6t0P6laaF88Vsk/+fC1DRnitlz6DqGnDDA6LZWRqExVbLyE9NuR0aNCRz1RMMVN0c5YDkRSurtOjA0No7H0e1SQkq0B0VIOORkvVuHwNFmdsZzCNr3HdLgMUA46QurspTp2DOS0nFbGguRzFWMq4KdinEMRigBSD7d3l2noVr52nSM3DhwILkRjVhIvkJw4Csl6njBqXvpsA/Tnitnz+FqGjPFbPn8LUNOGAHc54rZ8/hahozxWz5/C1DThgB3OeK2fP4WoaZzxWz5/C1DThQBsa5XJ60VSfUajESJMPREc5G4Jwfga4AAAAAAAydNQLwrRWZp30fS5qHCgK9YmS6EjlxXDHhX2HMADuc8Vs+fwtQ06q7i8W0lorXwadUZmHEl3w3KrWwkbxEOHd3N8F4Mv0MT9ALIJxGTCcRkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfCc7zj9G7Yfc+E53nH6N2wCoM/4QmOldtU+B95/whMdK7ap8ALAXGcjZjrTtiEloRpcZyNmOtO2ISWgGptLaGVsvSH1OcbEdBY5GqjExXhOKz5Wa5vO9hPmbC+XxfTPSs2lbwLALfhZp+LUl5xFXgT6ifM42Yufr9ZmIlTl48qkGbcsViOcuKIvCmPARkz7bfahbqz/J+Q6uzYBB2Yy03OJLtr8jf2fqMG6CXiU2vo6LFm3JFYssmUiInB5cCYiCr+fD1P6FdoHV58rM83nOwnzGfKzXN53sJ8yvwAsDnys1zed7CfMwt+VmubzvYT5lfwBKU9ddW7VzkWuyUaWZLTzliw0e5cpEXz8B+fMbabnEn21+RMdiORtL6u3Yb8DgLsLE1Kx0GdZUIkF6x1ardyXHiO/AA1Np6bGrFm56nS6tSLMQlY1XcWJCeY20vOJPtr8iwQAr6lxtpk/+TJ9tfkTPZCkzFDszJU2aVrosCHkuVq4opuwAOEvPsXUbYSkpCp74LFgPVzt0XDE7sAV9W4203OZPtr8j7Sl0deoM3Cq03GlXQJJ6R4iMcqqrW8K4cBPhqrTcman1aJ+VQOIS/GzTUw7nnOwnzGfKzXNpzsJ8yAF+0vtAErViwtTvGqUW1NIiQYcnO4LDbGVUemSmSuOH4oeqJdFaui1eXn4M1KNdBeirg9eFPL5CQLpfF1TfY/8AMp2SgR3eRZ+LMU6FV4LP71L4ZeR5Tb2DtKyt0psGK9O6oDclyLxqdPHgMjw3QojUcx6YKikU2js9ULGVVtXo7nugOdi9qJwJ+Cl1Zi9e2VNvxt3QllWo9qtciKi8aKcZaW7enVl6x5VUlY/lyU4HH6LL2+p9chsgxnpAmsMFY5eNfwOsRUVMUXFCH5Y5T/G8IWjXU1xkRUY+C9vkXFT55q6//wBHtKTdiCzyLK9iqEc1df8A+j2lJBsBZ6ds7TIsvOZOU9+KZKnWgjbLa0aSlXFWs6ww9MWKn4EfTdjanFm4sRqw8HOVU4SQhgQrbRXn6ameNLI43k1T/p/FRvJqnnhfFSRwS3JZv+two43k1Tzwvio3k1T/AKfxUkcHNyT/AK3CjjeTVPPC+Kn0gWQrEtGbFhPYx7V4FRykhqmJjA7uSR/x2KJ1iX5KZ3Ykq1s6jd1Tgxb5T9igFc+r0Kx2xo4y29jIdZlFmpGG2HOs4UcnBlGisdbCPSY6UOvK5jmrktfEXhT8CT1OOtpYiDXIbp2W/spxiYpgn2sC6l4n8bK7109auvhvRzUcjspqpii+c1FsKRHr1l56mSrmtizEPJar+I4exdtpiSmkolaxbkrkse/jRST2PRzUVFxaqcCoQvSaz6p0v3ICW4202PfEn21+QzG2l5zJ9tfkWBQEE2psvTI1Gs5JU+YVqxYEJGOVq8BtjIA5m1tt6bY9IC1CHGekdVRu5oinM58rNc2nOynzNPf591TPa4hcCwOfKzXN53sJ8xnys1zed7CfMr8ALA58rNc2newnzIdtrW5a0NqZypyjXtgxnYtR6YLxGgAA6GydjqhbCZjS9PiQmOgtynboqohzxLNwnhqo9Cm0D8GYy03OJLtr8j4zVytopOUizMSYk1ZCYr3YOXHBP4FiDX17wBP9XfsAqI5MHKhg9RPvF9q7TyB2tm7rq3aejw6nJRpZsGI5URIjlReD+BtcxlpucSfbX5Ej3N+L6V6R/wCY7sCsVqbt6vZGnMnqhFl3w3PyESG5VXH4HIFgb8+R0DrKbCvwHuExYsVsNFwV7kRMfxJFh3IWkiwmRGzEng5qKmL18v8AAj2U79gdI3aW/k+84HRt2AQJmMtNziS7a/IZjLTc4ku2vyLBACvuYy03OJLtr8jpbAXXVuzFqYNTnY0s6ExjmqkNyqvCnsJdAGE4jIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+E53lH6N2w+5hUxTACoc9ITiz8wqSkbBYrv9C+c+H0fO80jatS3qSctzeF2EHcctzeF2EAjy5CDFgWPmGxYbmKs07gcmHkQklDwyEyGmENjWp5mpgewOGvghRI1gZlkJjnu3VnA1MV4yuv0fO80jatS4ESE2ImD2tcnmcmKHjuOW5vC7CAVEZTp1Xt/ukbj9WpbKgoraBIoqYKkBmKL7D9PcctzeF2EPqiIiIiJgieQD0QbfpLR49dkFgwYkREgrirWqvlJyPk+XhRFxiQmPX/maigVB+j53mkbVqeYklNQmK+JLRWNTjVzFRC33cktzeF2EOSvPloDLA1JzYMNqoxOFGoi8YFZwABaaxU/KMshTGvmYTVSA1FRXpwcBvfpGS53B1iFQUmZhrURseIiJ5EeqDuuZ5xF7agW++kZLncHWIPpGS53B1iFQe65nnEXtqO65nnEXtqBb76RkudwdYg+kZLncHWIVB7rmecRe2o7rmecRe2oFvvpGS53B1iH3ZEZEajmORzV4lRcUUp33XM84i9tSz13DnPsLS3OcrlWCmKqoHUAAAau0qK6zVSa1FVVlomCJ7FNoeXNRyKipii8eIFPlp87j3pG1aj6PneaRtWpbxJOWT/48LsIYWTlubwuwgHIXWzECUsBToMxGZCiNR+LHuRFT6y+RTrvpGS53B1iFcL1IsWBeDUYcGI6GxFZg1jlRE+qhyHdczziL21At79IyXO4OsQ+UWap0ZjocWYl3scmCtc9Co/dczziL21M91zOHfEXtqBYGt3fU2oxVmKJNwpeY48ljkwNB3Pb6ixVhQt3mGM4EVFykIop9eqdLmEjyk7GhvT/nU7am3016ThJDmYUOZw8q8ClsZZj39Vc4on2dOlrLdQ0yXST8U88NDO/G3PMnatDVpfvMYfWosJV8+6f/AEZz7x9Bw9Z/9EtyPqjtzy2e/G3PMXatBvwtzzF2rQ1mfeNoSHrP/o6Gw96L7W2ibS30uHARYbn5aPx4sPw/Eblfqbc/Z+HfhbnmLtWg34W55i7VoSzuTPQb8BuTPQb8Bu1+ptz9kTb8Lc8xdq0G/C3PMXatCWdyZ6CfALCZ6DfgN2v1NufsibfjbnmLtWg34255i7Vobe39477GVaBIspzJhIsLdMpXYYcOHmOVz7xtCQ9Z/wDQ3a/U25+zZLbG3OGPcLtWg34W55i7VofoshexEtNaSWpL6VDgpGyvro/HDBMfMSikJnoN+Bzcj6m3P2RLvxtzzF2rQ9JbC3PMXatCWdyZ6DfgNyZ6DfgN2Pqbc/ZE2/C3PMnatDC2wtxzF2rQlrcmeg34HCXhW+dYqZlIMOnsmO6GquKuwww/gNyv1NueXA1iHaGtRkjzFKcyL5Xsh5KqdrYKuVeXaymVaUj5H+iK9OI5fPvG0HC1n/0bay970S0FopOlOpEOEkzEyVej8cP5HbZYtGkwVxaTrEpWa7Dj4vIezGTimChEwQoXPQMGQIbv8+6pntcQuTRf591TPa4hcD01rnuRrGq5y8SIh9/o+d5pG1amysaiOtfTGqiKizDeBfaWq7jlubwuwgFQvo+d5pG1aj6PneaRtWpb3uOW5vC7CDuOW5vC7CAVC+j53mkbVqSjcc10jWJ9021YDXQURFiJkovD+JNncctzeF2EIsvzakrRqesBEgq6MuKw/q48H4ASj9IyXO4OsQ/BXJ6UiUKeYyZhOc6A9ERHpivAVQ7rmecRe2p++hTUwtdkUdHiKix2IqK9VReED8r6fO5a/wB0jca/8NTz9HzvNI2rUt2yUl8hv93hcSf6EPXcctzeF2EA426CFEg2BlmRGOY5Ij+ByYL9o7k8Q4bIaYMYjU8yJgewI0vz5HQOspsK/Fgb8+R0DrKbCvwH2lO/IK+aI3aW3k6hJJJwUWbg47m3/iJ5ioScCn2WbmfJMRe2oFvfpGS53B1iH2hRocdmXCiNe3ixauKFPEm5nnEXtqWEuTiPi2EVz3ucvdcRMXLivE0CQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwqmT5TD1hy8SI3jYxVT+CAe0cimcSAJm+y00GaiwmwpTBj1amLF8i+0+efG1HqZPsL8wLB4hOE467S1U/a2z8WfqDYbYrI6sRIaYJhgh2KAFVEGJzF4NoJuzFlo1Tkmw3RmPa1EemKcKkRJfjaj1Mn2F+YFhMRiV8z42o9TJ9hfmM+NqPUyfYX5gWDxGJXzPjaj1Mn2F+Yz42o9TJ9hfmBYPE5G9Fcbv6n7ibSKs+NqPUyfYX5mvrl69er9IjUybhSyQYyYOVjFRQOHAAGTBONnLn7PVagSc/MRZpIkeEj3I16ImK/wADZZjbL+unO2nyAr6YLB5jbL+unO2nyGY2y/rpztp8gK+mCbrT3QWeo1m56oy8WaWLLwle1HPTDH4EJLgBgtFdsv8AkOl9ChV47mjXtWgodKgU6VhSywYDclqvYqrh8QLI4jEr5nxtR6mT7C/MZ8bUepk+wvzAsHiMSvmfG1HqZPsL8xnxtR6mT7C/MCweJhVK+58bUepk+wvzGfG1HqZPsL8wNTez4xal7WflQ402Vfrc1aKsR6pOIxI0bDKRiYJwJga0AAAAAAGTBLV3N2VEtVZZtTn4kwkZYz2YQ3IiYJhhtAiU7+5ZF3/w+rRNrSRMxtl/XTnbT5G3s1djRbLVZKlIxZh0ZGKzCI5FTBcPkB2IBkDAMmFQCBL98d9Ukv8A+r/7KReWftTdzR7XT8OcqESO2JDZkJuTkRMMfYaPMbZf10520+QEXXTeMOn/APf+VSzKHE0C6mhWcrEGqSUWZWNBxyUe5FThTDzHbImAAxjiHcSr+BBVZvltHT6zNykGFKKyDFcxuUxccEX2gTriQlf54RpfRu2mqz42o9TJ9hfmdBZqWZfDCjTVolWG+QVGQ+5/qoqLwrjiBDCodTdon/5ApK+Tdv0JZS46zC/8ac7afI/HVrvKPYSmRrS0uJHdOU9u6QkiuRWqv4gSmimcSvmfG0/kgyfYX5jPjaj1Mn2F+YFg8RiV8z42o9TJ9hfmM+NqPUyfYX5gdBf4qblTPa4hc6W1duqpbBsBtRZBakBVVu5oqcZzQG8sXywpfWG7S1+JT6mz8Wl1GBPQEasWA9HtRyYpih32fG1HqZPsL8wLB4jEr5nxtR6mT7C/MmOxFZmbQWVk6nNoxsaO3FyMTBOMDoCJr+/AtO6ZdhLPkImv78C07pl2AQabCheHpDrDNqGvNhQvD0h1hm1ALcw/sN9iHs8Q/sN9iHsAAAI0vz5HQOspsK/Fgb8+R0DrKbCvwGeMHuXaj5iFDXic9EX4k+QLkrMxpeHEWNNormI5cHp5U9gEAIhYe5DgsCvXImxp8sx1l0/40520+Ry9obTTt1NS3t0FsN8osNJjGYTKdlOxReLyfVQCcMTGV5CvufG1HqZPsL8zpbvrz65ae1UKmT0OXbBfDc5VhtVFxT+IEvGTCcRkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfCc7zj9G7Yfc+E53nH6N2wCoM/4QmOldtU+B95/whMdK7ap8ALAXGcjZjrTtiEloRpcZyNmOtO2ISWgHCXy+L6Z6Vm0reWQvl8X0z0rNpW8AAAAB0tmrB1q1ctFmKYyE5kJ2S7Lfhwgc0Dv8y1rvUy2tQ/DWbrrR0KlxqjOw4KQIKYuyYiKoHHAGQLWWI5G0vq7dhvyKrNXs2YpdnZKRmYkdIsCEjXYQ8UxQ2ueqyPrpnVKBIAI/wA9VkfXTGpUZ6rI+umdUoG+t9yHq3V3FVfKT/WLx6BaylTNApkSM6cnmLCgo+HgiuXzqR/mXtcv/CltagHAA7/Mta/1MtrUGZa1/qZbWoBwAO/zLWv9TLa1BmWtf6mW1qAcADv8y1r/AFMtrUGZa1/qZbWoBwAO/wAy1r/Uy2tQZlrX+pltagHAA7/Mta/1MtrUGZa1/qZbWoBwAO/zLWv9TLa1BmWtf6mW1qAcADv8y1r/AFMtrUGZa1/qZbWoBwBYq5PkAzrUT9CNMy1r/Uy2tQl+7Wz8/ZiyjabUWsbHSM9/1HYpguGGwDrgAAAAAAwq4AZBy9pbwKJZSdhylTfFbFiMy25DMpMDT56rI+tmdUoEgAj/AD1WR9dM6pRnqsj66Z1Sgd877K+wqVaflNUesP2k7LfRZFyYJFmMV4PulI7nrq7S1yejVWThQFl5t6xYauiYLkrxARwTdcH4OqvSN2HIZlrXepltahJd1Vj6rZKUnoVUZDa6O9FbkPyuBEAkFOI5a8zxf1bof1OpTiNFbWlTNbsnP02URqx48PJYjlwTECqIO/S5e13qZbWoMy9rvVS+tQDgAfrqdOmKTUY0hNIiRoDla9GrimJ+QADf2YsZVrWujJTGQ3LBwyst+B0GZe13qZbWoBwAO/zLWv8AUy2tQZlrX+pltagHAFm7q/F9TfcXaRHmXtd6mW1qE1WFo83QbJSVNnUakeC1UdkrinGB0RE1/fgWndMuwlnyHA3qWSqlrabJwKYyGr4MRXOy3YcGAFcjYULw9IdYZtQ6/Mta/wBTLa1D9dLuftXKVWVmIsKXyIUVrnYRU4kUCf4f2G+xD2eGYo1EVPIegMgACNL8+R0DrKbCvxYG/PkdA6ymwr8B9pTv2B0jdpb+T7ygdG3YVAlO/YHSN2lv5PvKB0bdgH1Urxffy9TqcPa4sOpEV5l3VftTapKjTYcF0HudkP68TBcUV3zQCEju7m/GDL9DE2IfTMta/wBTLa1DqLurtrQWatbCqNQhwUgMhvaqsiYrioEyJxGTCcRkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfCc7zj9G7Yfc+E53nH6N2wCoM/4QmOldtU+B95/whMdK7ap8ALAXGcjZjrTtiEloRpcZyNmOtO2ISWgHCXy+L6Z6Vm0reWQvjRzrAzLWoq/2rOL2lctyi+rd2VA8A+iQYnq39k+apguCgCdbhuGhVDpk2EFE53EPayhz6Oc1MYyca4eQCWMDkb0UTN/U/cTadXu0P1jO0hyd5z2xLA1JrHNc5WJgiLw8YFYwe9yi+rd2RuUX1b+yB5xMHvcovq39kblF9W/sgeAe9yi+rf2RuUX1b+yBvrBcuKT1hpalEQqxYOG9tt6U5zFREmG4qqYFpEjQ8fvGfED6YDA8btD9YztIemuRyYoqKnnQDOAwMgDGAwMgDGAwMgDGAwMgDGAwMgDGAwMgDGBjA9HzWI1q4Oe1F8yqB9AfPdofrGdpBu0P1jO0gH0B892h+sZ2kG7Q/WN+KAfQwphFx4jIECX78qpJP8A9X/2Ui8lC/jlXJdV/wDZSLwAAAy37Se0trZjhszTl/8A12bCpSfaT2ltrL8mKd1dmwDaYDAHl0RrPtORPaoHpEwCoi8Z4SND9YztDdofrGdpAPeBjA87tD9YztIYWND9YztAVat9y3qvWHHOnR28hvdbaqOaxyosd2Cohz+5RfVv7KgTBcH97U/Y0mjAhi4VjmRanlNVMWtwxQmcBgMDCuw4VVEQ87tD9Y34oB7wMI3A87tD9YztIN2h+sZ2kA9mMDzu0P1jO0gbEa5fquavsUD3gFQyAMIhkGFAyD57qxFwV7UX8VG7Q/WM+KARxfnyOgdZTYV+J/vxex9j4CNe1V7pTiX8CAAPtKd+wOkbtLfyfeUDo27CoEn35A6Ru0t5JxofccD+0b923/UnmA/SqDA8LGh+sZ2kPTXI5MWuRU86AZwMYcOJ6AGDIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+E53nH6N2w+58JzvOP0btgFQZ/wAITHSu2qfA+8/4QmOldtU+AFgLjORsx1p2xCS0I0uM5GzHWnbEJLQD5TEtBmYaw48JsRi8OS5MUPzJRKVo+X1aH7jIGuiUSl5Lv7hL8Xq0Kp11qMr081qIjUjuRETycJbqJ9h3ulRq/wAoJ/rD9oGvP0S9QnJRqtl5mJCRy4qjHKmJ+cAfu+m6ppCY1inT3cz83P23p0tNzMSPBe9UdDiOVzV4PMcUdbdd4wKZ767ALIJRKXo+X1aD6Epej5fVofuMgfg+hKXo+X1aD6Epej5fVofvAH4PoSl6Pl9Wg+hKXo+X1aH7jIHKW1psjJ2OqcxLSkKFFhwHK17GIitX8FK2fTVU0hMaxSzlvuQ9W6u4qr5QP3fTdU0hMaxSzF3cWJHsNTIsV7nvdCxVzlxVSrJaO7bkFS+hQDqQAAAAAAAAYMgAAAAAAr7fHUp6Vt2+FLzUWEzuaGuS16omPCWCK531+MB/VYf6gcb9NVTSExrFH03VNITGsU/CAP3fTdU0hMaxT3ArVUWYhotQmPtJ/wARfOa4+kDviH76bQLfU5cqnSqquKrBYq/BD9J+am+DJXoWflQ/SBAl/HKuS6r/AOykXkoX8cq5Lqv6qReAAAGU+0ntLa2X5M07q7NhUpONPaW1svyZp3V2bANqQzfpPzcnUKYktMRISOhuxyHKmPCTOQhf74RpXRu2gRh9NVTSExrFH01VNITGsU/CAP3fTdU0hMaxR9N1Tn8xrFPwgC0FiabIzlkKbMTMpCixYkFFc97EVXL+JvfoSl6Pl9WhrLAch6V0DTogPzS0jKSiqstLw4WVx5DcMT9BkAaO2D3wrJVN8Nytc2XcqKi8KcBV36bqmkJjWKWhtpyPqnVnbCqAH7vpuqaQmNYo+m6ppCY1in4QB+76bqmkJjWKSlcbPzc5WKg2ZmYkVGwUVEe5Vw4SHyWbhPDVR6FNoE5gAAYUyYUCvF7lTnpa3kzCgTcaGxIbMGteqJxHE/TdU0hMaxTrL4/GDNdGzYcKB+mYqM7NQ0ZMTUWK1Fxwe9VQ/N5QAMoqtXFOBT9qVqqIiIlQmERP+op+EAfuStVTSExrFJ+uXmY81YZYsxFfFf3XETKeuK4YNK6Fh7j+QK9cibGgSIAYAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8JzvOP0bth9z4Tnecfo3bAKgz/hCY6V21T4H6J/whMdK7ap+cDtLIXl1GyFLfISkrBisfEWIqvxxxN8t+9b8lPlvipFoAnWwl6lTtTaaFTJmUgQocRjnZTMcUwQlZOIrfc34wJbon7CyCAeYn2He6VGr/KCf6w/aW5ifYd7Co1f5QT/AE79oGvJGu3u7p9sadMzM3MxYKwYiNRGYcPARyTrcNw0KodOmwD6ZiKJpCZ+CH5Z+76Qu9k32nkJmLHmJFMtkOLhguPB5CXMDkb0U/8Ax/U/cTaBGmfet6Plfioz71vR8r8VItAEpZ963o+V+KjPtXNHy3xUi0AWRu1txO2zgzj5yBDhLAVEbuflxO7IeuC70qnvM/UmED8FZpkOs0iZp0Zzmw5hisc5vGiKR1mJomkJr4ISmMAIsW4mhp/uE18ENDPXkVGwc3Es1Iy0GPLyC7mx8THKVPxJwVCrt5HL2q9MoHVZ963o+V+KjPvW9HyvxUi0ASln3rej5X4qM+9b0fK/FSLQBKWfet6Plfioz71vR8t8VItAFrbFV2PaSy0pVZiG2HEjo7FreJMFVDfHG3TeLqm+x/5lOyA5C8a101Y+jQZ2Ugw4r4kXIVH8SEa5963o+V+KnVX7clZTrP6EB8IEpZ963o+V+KjPvW9HyvxUi0ASln3rej5X4qbql2Ulb15TfPVIz5aYc5YG5wcMnBvEv8yEyxVynDYBnWon6Aa7MRRNITXwQ5m3111NspZl1TlZuNEiJFazJfhhguPyJ4wQ4C+nkBE6zD/UCuZ6Y7IiNd6Kop5AEnwL8a1LwIcFshLKkNqNTj4kQ9pfvW8fB8t/Mi0AdDbC103bGowp2cgw4T4UPc0RnFhjic8ABvrFUKBaW1EtSpiI+HDjZWLm8aYJj+hLWYmiaQmfghHV03jDp/8A3/lUsuiInkAi7MTREXgqEyq+xCSadJtp8hAk2OVzILEYirxqiH6cEABTkrZ3fyNs48vFm5iLCWXaqNRnlxOuMARZmIomkJr4Iae1t0NKoFmZ2pwJ2YiRJaHlo12GCk14HK3mJ/8Aj+rdD+oFXxwGABIlGvjq1GpMvToMlLvhy7EY1zlXFT92fet6PlfipFo4QJSz71vR8r8VGfet6PlfipFoAkeq3zVerUyYkIslLsZHYrHObjiiKRwAAAAA6Wx1s5yxs1HmJOBDiujMyVR+OBzQAlLPvW9HyvxUZ963o+V+KkWgCUs+9b0fK/FRn2ri8VPlv5kWgCbabY2TvRk22nqUeJLTEdVY6HC+yiNXBNh+vMRRNITXwQ3FznDd9K9I/wDMd3gBAN4l2lOshQoc/KzUaK98VGK1+GBGZYC/PkdA6ymwr8B9JdiRY8OGvE5yNX+Kk4wLjKLFgQ3rPzKK5qKvAnlQhCU78gdI3aW/k0/uUDo27AIzzE0RP9wmfghpKraiZukm0szSoLJqArUmFiRvtYuxTDg91CbFQrxffy9TqcPa4D9+fet6Plvip0dhL1Kpam08KlzUpAhQ3sc5XMxx4CCju7m/GDL9DE2IBZBOIyYTiMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4zLXPlYrG8KuYqJ8D7GAK1zd1dr4s5GiMpaq10RyouWnFifLNRbHRS9tCzOAArNmotjope2gzUWx0UvbQsyMAIRu0sFaOg2xgT9RkFgy7Ib0V2Ui4KqE3JxDAAeH4q1yJ5iutYuvtbNVibjwqYrocSM5zVy04UVSxuAwArNmotjope2hK90lm6rZqkzkCqy24PiRUc1MUXFMCQhgA8hzlvaZN1ix09ISUPdY8VqIxuOGPCdGMAKy5qLY6KXtoZzUWx0UvbQszgAKzZqLY6KXtoM1FsdFL22lmRgBG10Nl6vZqBPsqstuCxnNViYouOBJRjAyB+afnpemyUWcmom5wYLcp7vMhyudexyf7qnYU2NvuQ9W6u4qqvGBZnOvY5eD6VTsKRZaSxdetZX5ut0aSWYkZt+XCi5SJlJ/EjniLR3bcgqX0KAQdmotjope2hqK9ZCt2ahw4lVk1gNirg1Vci4lsCI7/OCm03pHbAIQAAAz5OIwAJzu8vBs1Q7FyNPn6gkKYhZWUzJVcMXKp02dex2lU7ClZgBONvapKXj0mDTLLxO7pqDE3V7ETJwbxY8JH+ai2Oil7aG+uJ5VTfVv1J8wArHFuttdBhOiRKWqNYiqq5acCHIqioqovGhcCpp/hc10TthUGL98/wB5QPBYq5PkAzrUT9CupYq5PkAzrUT9AJBXiOPvPos/aCyD5Cmwd2jrGY9GYonAmPzOwGAFZs1FsdFL20MOuqtg1quWlrgiYr9dCzWB85jveJ7i7AKdxYboMR8N6YOYqtVPxQ8H6aj4TmumftU/MAAAHT3d1WTots5Ofn4u5S8LKyn4Y4YtVCcs69jk/wB1TsKVnAFmM69jl4qqnYcdbKzMKblocxBdlQ4jUc1fOhTpv2kLa2X5M07q7NgG2AAA5W8zxf1bof1OqOVvM8X9W6H9QKumTAA6mQu2tTU5KFOSlOV8GM3KY7LRMUP05qLY6KXtoTvYHkPSugadFgBU6vWTrNmkhLVZRYCRccjFUXE0pNF/n3VM9riFwPvJycafnIUpLsy4sVyNY3HjU6vNRbHRS9tDUWL5YUvrLdpbDACs2ai2Oil7aDNRbHRS9tCzIArNmotjope2gzUWx0UvbQsyAKzZqLY6KXtofOPdfa2WgPjxqYrYcNqucuWnAiFnT8FeT/AJ/q79gFRFTBVRfJwGD1E+2vtPIFkbm/F9K9I/ad2cJc34vpXpH7TuwI0vz5HQOspsK/Fgb8+R0DrKbCvwH1lnNZNQnu4Ea9FVfNwlkJe9Sx8OVhMdVERWsaipkLx4FagBZnOvY5f91TsKQzepXafaG1yT1MjpGgdzMZlYKnCiux2ocYAB3dzfjBl+hibEOEO7ub8YMv0MTYgFkE4jJhOIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGT4Taq2UjKiqipDcqKnsA+2JkqnOWutCydjtbV5tESI5ETdF4OE+O/C0WmZvWKBbIFTd+FotMzesUb8LRaZm9YoFsgVN34Wi0zN6xRvwtFpmb1igWyBU3fhaLTM3rFG/C0WmZvWKBbIFTd+FotMzesUb8LRaZm9YoFsgVN34Wi0zN6xRvwtFpmb1igWyBU3fhaLTM3rFG/C0WmZvWKBbIFTd+FotMzesUb8LRaZm9YoFscTJFVyVXqFVlqis/NxZhWObk7o7HAlUDnbfch6t1dxVUuPMS8KagPgR4bYkJ6YOa5MUVDUbz7O8X0PKapAKnlo7tuQVL6FD9q2Os7oaU1SEDW1rtVo1rZ+Qp0/HlZWDEyYcKE9Ua1PMiAWVIiv8APB1M6R2wirfhaLTE3rFJEujivtTOz0KuuWosgsRYbZj66NXHyYgRCC2G8+zuhpTVoa60Nk6BBs7UIkKkyrHsl3q1yQ0xRcFArADK8amAALC3ZWao0/YOnzM3TZeNGfl5T3sRVX6ynWbzrO6HlNWgEO3E8qpvq36k+Ia6QoNKpkVYsjIQZeIqYK6GxEVUNigH5an4LmuhdsKgxfvn+8pb6p+C5roXbCoMX75/vKB4LFXKcgGdaifoV1NlI2hq9NgdzyVRjwIWOORDeqJiBbkYlTt+FotMzesU7a6O0NXqVt2S85UJiPC3B65ER6qmPABPZ4mO9onuLsPZ4mO9onuLsAp/UfCc10z/AMyn5z9FR8JzXTP/ADKfAAYJruXoVLqlmpuLPSMGYe2ZwR0RiKqJgSNvOs7oeU1SAVOBbHedZ3Q8pqkG86zuh5TVIBU9v2k9pbWy/JmndXZsPi6x9nUaqpR5TVoV4rtp63JVyclZWpzMKDCjOaxjIiojUReJALRgqbvwtFpmb1ijfhaLTM3rFAtkcpeZ4v6t0P6leN+FotMzesU39h67VKzbCnU+pT8ealY8XJiQYj1c1yeZUA4YFsEsdZzQ8pqkM7zrO6HlNUgH57A8iKV0DToz5S8vBlIDIECG2HDYmDWtTBEQ+oEN3+fdUz2uIXJov8+6pntcQuBu7F8sKX1lu0tiVOsXywpfWW7S2IAxiCu95Npa1I25qEvK1OZgwmOTJYx6oicAFiBiVO34Wi0zN6xSTLla3VKrV59k/PRphrISK1Ij1XDhAmY19e8AT/V37DYGvr3gCf6u/YBUWJ9tfau08nqJ9tfau08gWRub8X0r0j9p3Zwlzfi+lekftO7AjS/PkdA6ymwr8WBvz5HQOspsK/AAfaURHTcFrkxRYjUVP4lppWyFnnSkFy0iVVVhtVVWGnDwAVTMlsFsdZ3Q8pq0IJvgp8pTbapLyUvDl4XcrHZENuCY4u4QOEO7ub8YMv0MTYhwh3dzfjBl+hibEAsgnEZMJxGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8JzvOP0bth9z4Tnecfo3bAKgz/hCY6V21T4H3n/AAhMdK7ap8AAJFsDdjAtjRIlQiT75dWRVh5KMx8n/wBnU5g5PTEXVgQiCbswcnpiLqxmDk9MRdWBCIJuzByemIurGYOT0xF1YEIgm7MHJ6Yi6sZg5PTEXVgQiCbswcnpiLqxmDk9MRdWBCIJuzByemIurGYOU0zF1YEIg2FdpzaRWpuQbE3RIERWZSphjga8Ca7gu9Kp7zP1JhIeuC70qnvM/UmEAYMgDBVy8jl7VemUtGVcvI5e1XplA5cly4TwlU+ibtIjOrsPbiLYuPMxoUo2YWO1GqiuwwAtAhq7Tcman1aJ+VSJc/k4nFR4esPTL45m0L0o76YyE2eXcFiI/FW5XBjh/ECIV41BNiXCSbuH6Yi8P/TGYSU0zE1YHWXS+Lqm+x/5lOzNNZWgtszZ+XpLIyxmwMcHqmGOKqv6m5AAAD8lT8FzXQu2FQYv3z/eUt9U/Bc10LthUGL98/3lA8AEl2Gusl7XWdSqRKg+A5YroeQjMeLD5gRod/ct4wIfVn7UOvzByemIurPjMWRh3TQ99EvMunnsXcdxc3JT63lx/gBMZ85jveJ7i7CFc/k5oeFrDDr+ZyIxzFo8JMpFTHdAIsqPhOa6Z/5lPzH1mYqx5iLGww3R6uw82K4nyAnu4fkrO9a/RCUCttiby49jKXFkoUgyYSLE3TKc7DDgwOkz+Tmh4WsAm4EI5/JzQ8LWDP5OaHhawCbXfZX2FSbTcpqj1h+0klL+5x31foeGmPB94p+9lzstaJiViJU4kJ06m7KxGYo3HhwAhME3Zg5PTEXVjMHJ6Yi6sCETqbtPGDSem/QkXMHJ6Yi6s2VnbnZaz9elaqypvirLPy0YrMMQJLQGE4j0AAAEN3+fdUz2uIXJov8APuqZ7XELgbuxfLCl9ZbtLYlTrF8sKX1lu0tiBgrHep4wqn76bCzhG1pboZa0demKrEqcSC6O7FWIzFEAr6SxcJ4aqPQptNtmDk9MxdWdPYe7mDYudjzEKefMLGZkqjm4YcIHbmvr3gCf6u/YbA19e8AT/V37AKixPtr7V2nk9RPtr7V2mEAsfc54vpXpH/mO7K72SvXmLKUCHSodOZHSG5zstz8McVxN1n8nNDwtYB0l+fI6B1lNhX47u2l50e2VJZT4sgyXRkTLykficKB9ZTv2B0jdpb+T7ygdG3YVAlO/YHSN2lv5PvKB0bdgH1Urzffy9TqcPa4sMpXi+/l6nU4e1wEeHd3N+MGX6GJsQ4Q7u5vxgy/QxNiAWQTiMmE4jIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+E53nH6N2w+58JzvOP0btgFQZ/wAITHSu2qfA+8/4QmOldtU+AFgLjORsx1p2xCS0I0uM5GzHWnbEJLQDIPx1KpSdIlXTc/MMgQWrgr3rgiGmzhWT05K9oDpQc3nCsnpyV7QzhWT05K9oDpAc3nCsnpyV7QzhWT05K9oDpDBzecGyenJXtH3kbZWdqU4yUkqrLxo8RcGsa7hUDfGAgAqjbfllVOsO2miN7bfllVOsO2miAmu4LvSqe8z9SYSHrgu9Kp7zP1JhAAADClXLyOXtU6ZS0a8RXi3li7R1C2VRmpOkzEWDEi4texvAqAR2Do831rNBzXZPwVWzdYobGPqchFlWxFwasRMMQNWbSzXKem9Zh/mQ1ZsaBGhy9oJCNFejIcOYY5zl4kRFAty37Kew9HMtvBsmiJ/jkt2j1nCsnpyV7QHSA5vOFZPTkr2hnCsnpyV7QHSA5vOFZPTkr2hnBsnpyV7QG5qfgua6J2wqDF++f7ylnKhb2y0WnzDGVqWc50NyIiO41wKxRFRYjlTiVVA8lirk+QDOtRP0K6k5XT2soNHsW2VqFTgy8buh7sh7sFw4AJaI/vp5AROsw/1N3nBsnpyV7Rxd61rKDV7FvlKfU4MxGWOx2Qx2K4cIEGAGWornIiJiqrggGAdEywNqokNr2UWZVrkxRUbxoZzfWs0HNdgDnAdHm9tZoOa7Ize2s0HNdkDnAbufsdaGlyj5uepceBAZ9p7m4IhpAMp9pPaW2svyYp3V2bCpKfaT2ltbL8mad1dmwDbAwaurWko9DexlTn4Us6ImLEiLhiBtTBzecGyenJXtH3k7aWcqE3DlJOrS8aNEXBrGuxVQN8DCGQAAAhu/z7qme1xC5NF/n3VM9riFwN5YvlhS+sN2lsCpVlZmDKWnp8xMREhwocdrnOXiRMSyGcGyenJXtAdKDm84Vk9OSvaGcKyenJXtAdIDm84Vk9OSvaGcKyenJXtAdIa+veAJ/q79hq84Vk9OSvaPw1m3ll49FnIUKtSz3vguRrUdwquAFZ4n219q7Tyen8Ll82J5AA3VOshX6tJtm5Clx5iC5cEexuKH6c31rNBzXZA5wG3qdla5RZdJipU6NLQlXJRz24JiagD7SnfsDpG7S38n3lA6NuwqBKd+wOkbtLfyfeUDo27APqpXi+/l6nU4e1xYhSD727KV2tWzSap1NjzEHuVjctjcUxRXcH8wIkO7ub8YMv0MTYhp831rNBzXZOxutsjX6RbWBN1Clx4EFsJ6K97eBFwAndOIyYTiMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Tnecfo3bD7nwnO84/Ru2AVBn/CEx0rtqnwPvP+EJjpXbVPgBYC4zkbMdadsQktCNLjORsx1p2xCS0A4O+XxfzPSs2lcCyF8vi+melZtK3gAAAAAA6267xgUz312HJHW3XeMCme+uwCzyAACqNt+WVU6w7aaI3tt+WVU6w7aaICa7gu9Kp7zP1JhIeuC70qnvM/UmEAAAMKEQyABEV/ng6m9I7YS6RFf54NpnSO2AQgAZwUDAAAAAAAAMmAABkwABkwAB9IHfEP302nzPpA74h++m0C31O8GSvQs2IfpPzU1f8NlehZsQ/TiBkGMUGIHGXteLyoe1n5kKzlmL2vF5UP8As/MhWcDKfaT2ltrL8mKd1dmwqSn2k9pbWy/JmndXZsA2pCN/nhKldG7aTeQhf74RpXRu2gREdTdp4wKT036HLHU3aeMCk9N+gFojJhFQYgZBjEyBDd/n3VM9riFyaL/PuqZ7XELgAZMAADOCgYAM4L5gMAAAAALI3OeL6V6R/wCY7o4S5xcLv5XpH/mO7xAjW/PkfA6ymwr8WBvz4bHQOspsK/AfaU79gdI3aW/k+8oHRt2FQJRMZ2B0jdpb+T7zgdG3YB9lCIFXAYgZMKgxGIBDJhFxMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Tnecfo3bD7nwnO84/Ru2AVBn/CEx0rtqnwPvP+EJjpXbVPgBYC4zkbMdadsQktCNLjORsx1p2xCS0A4S+XxfTPSs2lbyyF8vi+melZtK3gAAAAAA6267xgUz312HJHW3XeMCme+uwCzwAAqjbfllVOsO2miN7bfllVOsO2miAmu4LvSqe8z9SYSHrgu9Kp7zP1JhAAAADAxRQMkRX+eDaZ0jthLhEd/ng2mdI7YBCBsaBBhzFfkIEZiPhxJhjXNXiVFU1xtLM8p6Z1qH+ZALIpd3ZNUT/BJbsmc3Vk9CS3ZOkav1U9hkDms3Vk9CS3ZMZurJ6EluydMAIavgstRKHZyWmKbT4MtFdHyVcxuCqmBDJPl+3JWU6z+hAYH6aexsSoS0N7cprorUVPOmJZuHd3ZR0NqrRZZVVqf6SstM8KSvTN2lv4X3LPdQDnM3Vk9CS3ZGbqyehJbsnTGMQOazdWT0JLdkZurJ6EluydLiMQOazdWT0JLdkJd3ZRq4tossipwouSdMYA8Q4aQ2NYxERrUwRE8iHtU4BiMQIavhtTW6HaKVgU2oRZaE+XynNYuCKuJH2cS1mm5ntHVX8cq5Lqv6qRgBvKhbO0NVk3yc9VI0eA/DKY9cUU0hgAZT7Se0trZfkzTurs2FSm/aQtrZfkzTurs2AbYhC/3wjSujdtJuISv98I0ro3bQIhP0SM9M02bhzcpFdCjwlxY9vGinwMYAdLnEtZpuZ7QziWsw8NzPaOaAFr7FzceeslTpqZiuixokFFc93Gqm9OcsDyIpXV2nRAQ5f591TPa4hcmi/wA+6pntcQuBt7Ky8GctPTpeOxIkKJHa1zV4lTEsfm7smv8Askt2Suli+WFL6y3aWwA5rN1ZPQkt2SALxJCVpdtZ+TkoDYMCG/BrGpgicBaUrHep4wqn76bAOPJIucoVMr1VnoVTk4cyyHCRWo9McFxI3JYuE4K1UehTaBJ2bqyehJbsjN1ZPQkt2TpQBzWbqyehJbsmFu7smn+yS3ZOmCrwAV+t/XanZG1MakUKciSMlCa1zIMJcGoqpipzWcS1mm5ntG1vj8YM10bPynCgSpdvUpy2tfi060cd1RlWQVe2FGXFEdjxkopd3ZPQkt2SJLjOWMfqy7SwKAc227yyjHI5tFlkVFxRcniOjY1GIjWpgiJgiGQBhSEb2rW16i2ySUp1SjS8HuVjshi4Jiqu4f5E3KV4vv5ep1OH+ZwGhziWs03M9o7C662FoKxbWBJz9TjzEB0J6qx7uDFCKju7m/GDL9DE2IBZBOIyYTiMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Tnecfo3bD7nwnO84/Ru2AVBn/AAhMdK7ap8D7z/hCY6V21T4AWAuM5GzHWnbEJLQjS4zkbMdadsQktAOEvl8X0z0rNpW8shfL4vpnpWbSt4AAAAAAOtuu8YFM99dhyR1t13jApnvrsAs8AAKo235ZVTrDtpoje235ZVTrDtpogJruC70qnvM/UmEh64LvSqe8z9SYQAAAwpGVob5JegVyZpbqW+K6Xfkq9HJwkmqVcvI5e1XplAkTP5K6Hi9tDjrwbxIVtZaVgw5J0vuDlcquXHE4QAZU/VS5xKfVJWcVquSBFbEyU8uC4n5ABNaX+SqJ4HidtDOf2V0NE7aEJgCbM/kroeL20GfyV0PE7aEJgCZ49cbfKxKJLwlp7pZd3WI9cpF8mB+fMFNL/vELsKa+4nlVN9W/UnwCGJW4malpqFGWrw3bm9HYZC8OCkzMbkw2t8yIhkyAI8tlepBsjXnUuJT3x1SG1+WjsOP/AP4SGVzvr8YD+qw/1A6zP5K6Hi9tDeWOvVgWtrzaXDp74CrDc/LV2PFh8yu539yvjAh9WifoBYw8xHZENz/RRVPR85jveJ7i7AInj37ysvMRYK0iIqw3q3HLThwXA8Z/JVf9midtCG6j4Tmumf8AmU/OB1Vv7Yw7Z1aBPQ5V0ukKFueSq448OJyoAAAAZRcFxJgpV+EtTqXLSa0mI9YENGK5Hpw4EPACbM/kroeJ20PhMSy31Kk3Lr9HJT0yFR/1srHhIaJuuD8HVXpG7APwLcHNL/vMLsKau0dzkxZ6hTVVfVIcVsszKViMXhLAIcteZ4v6t0P6gVdMoYAEtWevol6JQpSmupcSIsvDRmWjk4TZZ/JXQ8XtoQmAO3vCt/Btq2VSHJultwVccp2OOJxAAG7sXywpfWW7S2JU6xfLCl9ZbtLYgCsd6njCqfvpsLOFY71PGFU/fTYBx51931toVi56ZmYko6Y3aGjERq4YcJyAAmzP5K6Hi9tBn8ldDxe2hCYAmzP5K6Hi9tBn8lV/2eL20ITAG/traNlqrRRarDgLASI1rchVxwwTA0AAHT2CtbDsdWolQiSyzCPhKzJRcCRM/kqn+zxO2hCgAmzP5K6Hi9tBn8ldDxe2hCYAmzP5K6Hi9tCN7d2ph2vtAlUhy7pdNxbDyHLjxKq4/wAzmwAO7ub8YMv0MTYhwh3dzfjBl+hibEAsgnEZMJxGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8JzvOP0bth9z4Tnecfo3bAKgz/AIQmOldtU+B95/whMdK7ap8ALAXGcjZjrTtiEloRpcZyNmOtO2ISWgHE3tSkzPWGmIEpAiRoqxGKjGNxVeEr9vYr2iJzUqW2VOEYAVJ3sV7RE5qVG9ivaInNSpbbAYAVJ3sV7RE5qVG9ivaInNSpbbAYAVJ3sV7RE5qVOpu3oFXk7dU6PM02ZhQmvXKe+GqInAWNwGSnmAygMmAKo235ZVTrDtpoje235ZVTrDtpogJruC70qnvM/UmEh64LvSqe8z9SYQAAAwVcvI5e1XplLRlXLyOXtV6ZQOXP1SVMnqk5zZKUizCtTFyQ2q7A/KS5cImNSqXRptAjjexXtETmpUxvYr2iJzUqW2wGAFSd7Fe0ROalRvYr2iJzUqW2wGAFSd7Fe0ROalRvYr2iJzUqW2wGAEIXK0epU6001EnJGPAY6XwR0RiomOJOCGMkyBkAACAb4KJVKhbl8eUp8xHh9zsTKhw1VMUxJ+POAFSd69e0ROalTuboaHVZC3LI83T5iBDSXemXEhqiY8BPuARqJ5EAyeI6KsCIicOLV2HsKBVGoWYrrqjNObSZtyLGeqKkJfOp+fevXtETmpUtrkpjiMAKfTlPnKfESHOS0SA9yYo2I1UVUPzEn378FqpLqv6qRgB9pWUmJ2OkCWgvjRXcTGJiqn7969e0ROalTfXTeMOn+x/5VLLogFSt69eX/aJzUqayJDfBiOhxGq17VwVqpwopcdyfVX2FS7Tcpqj1h+0DVExXIVan06QqTZ2cgy6viNVqRHo3HgIdMgW1S1FBw8MSeuQ563lXptVsZUpKnz0CamYsLBkKFERznL+CIVq4fOdTdrw2/pKL679ANXvYryf7ROalTG9ivaInNSpbZE4BgBUnexXtETmpUb2K9oic1KltsBgBUCcpc/TslZyTjS+VxboxW4n5CaL+uCFTPa4hcDd2L5YUvrLdpbEqfYvlhS+st2lsAMFc7y6DVpy3dRjy1NmY0Jz0weyGqovAWMMZIFSd7Fe0ROalRvYr2iJzUqW2wGAFSd7Fe0ROalRvYr2iJzUqW2wGAFSd7Fe0ROalRvYr2iJzUqW2wGAFSd7Fe0ROalRvYr2iJzUqW2wGAFQpujVOQhJFnJGPLsVcEdEhq1MT8RYC/LgsfA6ymwr+BlEVyoiJiq8SGzSzNdVEVKTNqi8SpCXhPwya/wB9gdI3aW+k0/ucDo27AKoJZevaInNSp+KckpqQjbjNy8SBEwysiI3BcPOXCVCvF93L1Opw9rgI8O7ub8YMv0MTYhwh3dzfjBl+hibEAsgnEZMJxGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8JzvOP0bth9z4Tnecfo3bAKgz/hCY6V21T4H3n/CEx0rtqnwAn+4zkbMdaXYhJicRVOiW2tBZ2TWUpc+svBc7LVqMauK/wAUNjnWtpph2rZ8gLN4jErJnWtppl2rZ8hnWtppl2rZ8gLN4jErJnWtppl2rZ8hnWtppl2rZ8gLN4jErJnWtppl2rZ8hnWtppl2rZ8gLN4jErJnWtppl2rZ8hnWtppl2rZ8gLN4jErJnWtppl2rZ8hnVtpph2rb8gNZbbljU+sO2miP0Ts7HqE3Fm5p+XGiuynu86n5wJruC70qnvM/UmEh64LvSqe8z9SYQMYjE01r56YptlKjOSsTc48GCrmOwxwUr6t61s9MO1bPkBZpVKu3kcvar0yn6M61s9MO1bPkStZixVAtZQJSuVqQSan5tmXGiq9yZS+xFwAryS5cJ4SqfRN2nf5qLF6HbrH/ADNrQrH0OzcWJEpMkku6KmD1Ryrin8VA3ZkwiGQAAAAAAAAMKuAxPzT73wpCYiw1wcyG5UXzKiFb4l6ts2xHIlYciIqoibm35AWZxGJWTOtbTTLtWz5DOtbTTLtWz5AWbxCKVkzrW00w7Vs+R2F19u7R2gtgyRqdQWPAWA92RkNThTDDiQCazJgyAMGTAECX8cq5Lqv/ALKReShfxyrkuq/+ykXgdndN4w6f/wB/5VLMFZ7pvGHT/wDv/KpZgDDvsr7CpVp+U1R6w/aW1d9lfYVKtPymqPWH7QNUASpdBZGiWlkqhEq0kkw6C9qMVXKmHB+CgRWdTdp4wKSv/W/QnJLqbF6HbrH/ADNTaixlAslZ6crtFkElZ+Th5cGMj3LkO8+CqBIqKMSsuda2emHatnyGda2emHL/APzb8gLNmTSWPnpmpWVp85NxN0jxoKOe7DDFTdgQ3f591TPa4hcmi/z7qme1xC4G8sXywpfWG7S1+JTySnY9Pm4U3LP3ONCdlMdhjgp1Gda2mmXatvyAs3iMSsmda2mmXatnyGda2mmXatnyAs3iMSsmda2mmXatnyGda2mmXatnyAs3iMSsmda2mmXatnyP2Ui8+2EzV5SBGqznQ4kZrXN3NvCir7ALH4mTwzha1VXyHoDIAAjS/PkfA6ymwr8W5rlnqbaOUSUqkvu8FrspG5Spw/wNCl1FjNDtX/8Ao75gVqk+GdgdI3aW/k+84HRt2HLNursax6PZSGtc1cUXdHcfxOthw0hsRjUwRqYInmQDKleL7+XydTh7XFiFTE5+s2Fs7aGe7tqlPbMR8hGZavcnAmOCcC/ioFVDu7m/GDL9DE2ITBmosXoZusf8z91IsDZuhT7Z6m05IEw1FRHo9y4IvtUDok4jJhOBDIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+E53nH6N2w+58o7FiwIkNFwV7FRP4oBT+f8ITHSu2qfAlWYuMrkaZixUqEoiPerkTBeDFT55h69pGU+CgRcCUcw9e0jKfBRmHr2kZT4KBFwJRzD17SMp8FGYevaRlPgoEXAlHMPXtIynwUZh69pGU+CgRcCUcw9e0jKfBRmHr2kZT4KBFwJRzD17SMp8FGYevaRlPgoEXAlHMPXtIynwUZh69pGU+CgRcCUcw9e0jKfBRmHr2kZT4KBurgu9Kp7zP1JhOEu0sRPWMgzkOcmIUbuhWq1YePBgd2BztvuQ9W6u4qr5S29paZFrNnZ2nQXtZEmISsa53EiqQzmHrukZT4KBFxaO7bkFS+hQi3MPXdIynwUmKydIjUGzcnTI72viS7Mlzm8SgbkAAAAAAAAAAADAH5an4LmuhdsKgxfvn+8pcGchOmJONBaqI6IxWoq/ihBr7ia657nJUZThVV4lAi0Eo5h69pGU+CjMPXtIynwUCLjv7lfGBD6tE2obLMPXdIynwU6WwF1tUsnadtTm5yBFhpCczJYi48OAEqmTBkAYMmFAgS/jlXJdV/VSLywF5F21StlWpedk5qBBZCg7mqRMccccTkMw9e0jKfBQNDdN4w6f/AN/5VLMER2Kulq1mrUStVmZ2WiQ4OVi1iLiuKYEtooB32V9hUq0/Kao9YftLau4UVCEqvcpWqhV5qchz8q1kaK56IqLiiKoERE23B+Dqr0jdho8w9e0jKfBSQbtbET1jJWcgzsxCjLMPRzVh48GCAdyhy15ni/q3Q/qdShprXUeNX7MztLl3tZEmIeS1zuJAKmglHMPXfJUZT4KMxFe0jKfBQJYsByHpXQNOjNVZmlxaLZ6Sp0Z7XxJeEjHObxKptQIbv8+6pntcQuWPvKsLPWzbJtk5iFB3BVyt0x4cTgcw9e0jKfBQIuBKOYevaRlPgozD17SMp8FAi4Eo5h69pGU+CjMPXtIynwUCLgSjmHr2kZT4KMw9e0jKfBQIuNhQfD0h1hm0kHMPXtIynwU/TTrkK3J1KWmn1CVVsKK16oiLiuCgTfD+w32Iezw1FRqJ5j2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMKmJkAYwBkAYBkAYBkAYBkAYBkAYBkAYBkAYGBkAYwMgAYGBkAYwCJgZAAAAAAAAAAAADBkAYwBkAYBkAYwMZPCegBgyAAMYGQBjAGQBjAImBkAYVMRhgZAGMBgZAGAqYmQBjAYGQBjAyABhU/EYGQBgGQBgGQBgGQBgYGQBjAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q==" alt="PromptPay QR Code">
+      <p class="donate-note">สแกน QR ด้วยแอปธนาคารหรือ PromptPay</p>
+    </div>
+</main>
+
+<script>
+// ====== DATA ======
+
+const glossaryData = [
+  { icon: '🛡', term: 'การรักษาความปลอดภัยแห่งชาติ', def: 'มาตรการและการดำเนินการที่กำหนดขึ้นเพื่อพิทักษ์รักษาและคุ้มครองป้องกันสิ่งที่เป็นความลับของทางราชการ ตลอดจนหน่วยงานของรัฐ เจ้าหน้าที่ของรัฐ และทรัพย์สินมีค่าของแผ่นดิน ให้พ้นจากการรั่วไหล การจารกรรม การก่อวินาศกรรม การบ่อนทำลาย และการก่อการร้าย' },
+  { icon: '🔐', term: 'สิ่งที่เป็นความลับของทางราชการ', def: 'ข้อมูลข่าวสาร บริภัณฑ์ ยุทธภัณฑ์ ที่สงวน การรหัส ประมวลลับ และสิ่งอื่นใดบรรดาที่ถือว่าเป็นความลับของทางราชการ' },
+  { icon: '⚙️', term: 'บริภัณฑ์', def: 'เครื่องจักร เครื่องมือ เครื่องกล สิ่งอุปกรณ์ และสิ่งอื่นที่ กรช. ประกาศกำหนด' },
+  { icon: '🪖', term: 'ยุทธภัณฑ์', def: 'สิ่งของทั้งหลายที่ใช้ประจำกาย หรือประจำหน่วยกำลังถืออาวุธของทางราชการ และสิ่งอื่นที่ กรช. ประกาศกำหนด' },
+  { icon: '🏰', term: 'ที่สงวน', def: '(1) สิ่งปลูกสร้างเพื่อการป้องกันประเทศ ฐานทัพ โรงงานอาวุธ คลังยุทธภัณฑ์ อู่เรือรบ สถานีวิทยุ/โทรเลข (2) ชุมทางการขนส่งทางรางทุกระบบ โรงงานผลิตน้ำหรือกระแสไฟฟ้าสาธารณูปโภค (3) สิ่งอื่นที่ กรช. ประกาศกำหนด' },
+  { icon: '🔑', term: 'การรหัส', def: 'การใช้ประมวลลับ หรือรหัสแทนข้อความ หรือการส่งข่าวสารที่เป็นความลับ' },
+  { icon: '🔒', term: 'ประมวลลับ', def: 'การนำตัวอักษร ตัวเลข คำพูด สัญญาณ สัญลักษณ์มาใช้แทนความหมายอันแท้จริงตามที่ตกลงกันไว้เพื่อรักษาความลับในการส่งข่าวหรือติดต่อสื่อสาร' },
+  { icon: '🕵️', term: 'การจารกรรม', def: 'การกระทำใด ๆ โดยทางลับเพื่อให้ได้ล่วงรู้หรือได้ไปหรือส่งสิ่งที่เป็นความลับของทางราชการให้แก่ผู้ไม่มีอำนาจหน้าที่ หรือผู้ที่ไม่มีความจำเป็นต้องทราบโดยมีเหตุผลเชื่อได้ว่าเป็นผลร้ายต่อความมั่นคงแห่งชาติ' },
+  { icon: '💥', term: 'การก่อวินาศกรรม', def: 'การกระทำเพื่อทำลาย ทำความเสียหายต่อทรัพย์สิน วัสดุ ข้อมูลข่าวสาร อาคาร สถานที่ ยุทธปัจจัย ที่สงวน สาธารณูปโภค หรือรบกวน ขัดขวาง แก้ไข เปลี่ยนแปลง หน่วงเหนี่ยวระบบการปฏิบัติงาน ซึ่งทำให้เกิดความปั่นป่วนทางการเมือง การทหาร การเศรษฐกิจ' },
+  { icon: '🔥', term: 'การบ่อนทำลาย', def: 'การกระทำที่มุ่งก่อให้เกิดความแตกแยก ความปั่นป่วน ความกระด้างกระเดื่อง ซึ่งนำไปสู่การก่อความไม่สงบหรือความอ่อนแอภายในชาติ เพื่อเปลี่ยนแปลงระบอบหรือล้มล้างสถาบันการปกครอง' },
+  { icon: '💣', term: 'การก่อการร้าย', def: 'การกระทำที่สร้างความปั่นป่วนให้ประชาชนเกิดความหวาดกลัว หรือเพื่อขู่เข็ญหรือบีบบังคับรัฐบาล หรือองค์การระหว่างประเทศ ให้กระทำหรือละเว้นกระทำการอย่างหนึ่งอย่างใด' },
+  { icon: '💎', term: 'ทรัพย์สินมีค่าของแผ่นดิน', def: 'วัตถุ อาคาร สถานที่ หรือสิ่งอื่นใดที่มีคุณค่าต่อสภาพจิตวิทยาของสังคม ประชาชนมีความศรัทธาและหวงแหน หากสูญหายหรือถูกทำให้เสียหายจะกระทบต่อความรู้สึกของประชาชน' },
+  { icon: '✅', term: 'เข้าถึง', def: 'การที่บุคคลมีอำนาจหน้าที่ หรือได้รับอนุญาตจากผู้บังคับบัญชาให้ได้ทราบ ครอบครอง ดำเนินการ หรือเก็บรักษาสิ่งที่เป็นความลับของทางราชการ รวมถึงการได้รับอนุญาตให้อยู่ในที่ซึ่งน่าจะได้ทราบเรื่องความลับนั้น' },
+  { icon: '⚠️', term: 'รั่วไหล', def: 'สิ่งที่เป็นความลับของทางราชการได้ถูกครอบครองหรือได้ทราบโดยบุคคลผู้ไม่มีอำนาจหน้าที่' },
+  { icon: '🏛', term: 'กรช.', def: 'คณะกรรมการนโยบายรักษาความปลอดภัยแห่งชาติ — ผู้กำหนดนโยบายและมาตรการการรักษาความปลอดภัยแห่งชาติ มีรัฐมนตรีที่นายกรัฐมนตรีมอบหมายเป็นประธาน' },
+  { icon: '🏢', term: 'หน่วยงานของรัฐ', def: 'ส่วนราชการตามกฎหมายว่าด้วยการปรับปรุงกระทรวง ทบวง กรม รัฐวิสาหกิจ และหน่วยงานอื่นของรัฐที่อยู่ในกำกับของฝ่ายบริหาร แต่ไม่รวมถึงองค์กรปกครองส่วนท้องถิ่น' },
+  { icon: '👤', term: 'เจ้าหน้าที่ของรัฐ', def: 'ผู้ซึ่งปฏิบัติงานในหน่วยงานของรัฐ และรวมถึงคณะกรรมการหรือบุคคลซึ่งมีกฎหมายให้อำนาจดำเนินการที่เกี่ยวข้องกับสิ่งที่เป็นความลับของทางราชการ' },
+  { icon: '🔍', term: 'เจ้าหน้าที่ควบคุมการรักษาความปลอดภัย (จคร.)', def: 'เจ้าหน้าที่ที่ได้รับการแต่งตั้งและมอบหมายจากหัวหน้าหน่วยงานของรัฐ เพื่อทำหน้าที่ดำเนินการ ควบคุม กำกับดูแล ตลอดจนให้คำปรึกษาเกี่ยวกับการรักษาความปลอดภัยของหน่วยงานนั้น' },
+  { icon: '🤝', term: 'องค์การรักษาความปลอดภัย', def: 'สำนักข่าวกรองแห่งชาติ (ฝ่ายพลเรือน) ศูนย์รักษาความปลอดภัย กองบัญชาการกองทัพไทย (ฝ่ายทหาร) หรือกองบัญชาการตำรวจสันติบาล (ฝ่ายตำรวจ) แล้วแต่กรณี' },
+  { icon: '🔏', term: 'การประชุมลับ', def: 'การร่วมปรึกษาหารือเรื่องที่เกี่ยวข้องกับสิ่งที่เป็นความลับของทางราชการ รวมถึงการหาข้อยุติ การอภิปราย การบรรยายสรุป และเหตุการณ์ที่ปรากฏในการประชุมลับนั้น' },
+];
+
+const allQuestions = [
+  { q: 'ข้อใดคือความหมายที่ถูกต้องที่สุดของ "การรักษาความปลอดภัยแห่งชาติ" ตามระเบียบนี้', opts: ['การป้องกันความลับของทางราชการไม่ให้รั่วไหลเท่านั้น', 'มาตรการและดำเนินการเพื่อพิทักษ์รักษาและคุ้มครองป้องกันสิ่งที่เป็นความลับของทางราชการ หน่วยงานของรัฐ และทรัพย์สินมีค่าของแผ่นดิน', 'การจับกุมผู้กระทำการจารกรรมข้อมูลของรัฐบาล', 'การรักษาความสงบเรียบร้อยภายในอาคารที่ทำการของรัฐ'], ans: 1, exp: 'ตามข้อ 4 การรักษาความปลอดภัยแห่งชาติหมายถึงมาตรการพิทักษ์รักษาความลับราชการ หน่วยงานรัฐ เจ้าหน้าที่ และทรัพย์สินมีค่าของแผ่นดิน' },
+  { q: '"สิ่งที่เป็นความลับของทางราชการ" ตามระเบียบนี้ครอบคลุมถึงสิ่งใดบ้าง', opts: ['ข้อมูลข่าวสาร บริภัณฑ์ ยุทธภัณฑ์ที่สงวน', 'การรหัส และประมวลลับ', 'สิ่งอื่นใดที่ถือว่าเป็นความลับของทางราชการ', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 4 ความลับราชการรวมถึงข้อมูล บริภัณฑ์ ยุทธภัณฑ์ การรหัส และประมวลลับ' },
+  { q: 'คำว่า "บริภัณฑ์" ตามระเบียบนี้หมายถึงข้อใด', opts: ['อาวุธปืนและเครื่องกระสุน', 'เครื่องจักร เครื่องมือ เครื่องกล สิ่งอุปกรณ์ และสิ่งอื่นที่ กรช. ประกาศกำหนด', 'ยานพาหนะทุกประเภทที่ใช้ในราชการ', 'เอกสารและทะเบียนประวัติของเจ้าหน้าที่รัฐ'], ans: 1, exp: 'ตามข้อ 4 บริภัณฑ์หมายถึงเครื่องจักร เครื่องมือ เครื่องกล สิ่งอุปกรณ์ และสิ่งอื่นที่ กรช. กำหนด' },
+  { q: 'ข้อใดจัดเป็น "ที่สงวน" ตามระเบียบที่แก้ไขเพิ่มเติมล่าสุด', opts: ['ฐานทัพเรือ และอู่เรือรบ', 'โรงงานผลิตและจ่ายน้ำ หรือกระแสไฟฟ้าอันเป็นสาธารณูปโภค', 'ชุมทางการขนส่งทางรางทุกระบบ', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 4 (ที่แก้ไขปี 2560) ที่สงวนครอบคลุมถึงฐานทัพ การขนส่งทางราง และระบบสาธารณูปโภค' },
+  { q: 'การนำตัวอักษร ตัวเลข หรือสัญลักษณ์ มาใช้แทนความหมายที่แท้จริงเพื่อการสื่อสารลับ เรียกว่าอะไร', opts: ['การรหัส', 'ประมวลลับ', 'ยุทธภัณฑ์', 'บริภัณฑ์'], ans: 1, exp: 'ตามข้อ 4 ประมวลลับคือการนำอักษร/เลข/สัญลักษณ์มาใช้แทนความหมายจริงเพื่อสื่อสารลับ' },
+  { q: '"การจารกรรม" มีลักษณะการกระทำอย่างไร', opts: ['การกระทำโดยทางลับเพื่อให้ได้ไปซึ่งความลับของรัฐส่งให้ผู้ไม่มีอำนาจหน้าที่', 'การทำลายทรัพย์สินของทางราชการให้เสียหาย', 'การสร้างความปั่นป่วนให้ประชาชนหวาดกลัว', 'การโฆษณาชวนเชื่อเพื่อล้มล้างรัฐบาล'], ans: 0, exp: 'ตามข้อ 4 การจารกรรมคือการกระทำทางลับเพื่อให้ล่วงรู้ความลับรัฐส่งให้ผู้ไม่มีหน้าที่' },
+  { q: 'หากมีการกระทำที่มุ่งก่อให้เกิดความแตกแยก ความปั่นป่วน เพื่อให้เกิดการเปลี่ยนแปลงระบอบปกครอง เรียกว่าอะไร', opts: ['การก่อการร้าย', 'การก่อวินาศกรรม', 'การบ่อนทำลาย', 'การจารกรรม'], ans: 2, exp: 'ตามข้อ 4 การบ่อนทำลายมุ่งก่อความแตกแยก ปั่นป่วน เพื่อเปลี่ยนแปลงระบอบปกครอง' },
+  { q: 'การกระทำที่สร้างความหวาดกลัว เพื่อขู่เข็ญหรือบีบบังคับรัฐบาล ให้กระทำหรือไม่กระทำอย่างใดอย่างหนึ่ง คือความหมายของข้อใด', opts: ['การจารกรรม', 'การก่อการร้าย', 'การก่อวินาศกรรม', 'การบ่อนทำลาย'], ans: 1, exp: 'ตามข้อ 4 การก่อการร้ายเป็นการสร้างความหวาดกลัวเพื่อขู่เข็ญรัฐบาล' },
+  { q: '"ทรัพย์สินมีค่าของแผ่นดิน" มีลักษณะสำคัญอย่างไร', opts: ['เป็นทรัพย์สินที่มีราคาสูงที่สุดในตลาด', 'เป็นวัตถุ หรือสถานที่ที่มีคุณค่าต่อจิตวิทยาของสังคม และประชาชนมีความศรัทธาหวงแหน', 'เป็นเงินงบประมาณแผ่นดินที่เก็บรักษาไว้ในคลัง', 'เป็นเครื่องเพชรพลอยในพิพิธภัณฑสถานแห่งชาติเท่านั้น'], ans: 1, exp: 'ตามข้อ 4 ทรัพย์สินมีค่าของแผ่นดินเน้นคุณค่าทางจิตวิทยาและความศรัทธาของประชาชน' },
+  { q: 'เมื่อบุคคลได้รับอนุญาตจากผู้บังคับบัญชาให้ทราบ หรือครอบครองสิ่งที่เป็นความลับของทางราชการ เรียกว่าอะไร', opts: ['การเข้าถึง', 'การรั่วไหล', 'การจารกรรม', 'การไว้วางใจ'], ans: 0, exp: 'ตามข้อ 4 การเข้าถึงคือการได้รับอนุญาตให้ทราบ ครอบครอง หรือดำเนินการความลับราชการ' },
+  { q: '"การรั่วไหล" หมายความว่าอย่างไร', opts: ['การที่น้ำท่วมเอกสารราชการจนเสียหาย', 'การที่ความลับของทางราชการถูกครอบครองหรือรับทราบโดยผู้ไม่มีอำนาจหน้าที่', 'การที่เจ้าหน้าที่รัฐลาออกโดยไม่บอกล่วงหน้า', 'การที่ระบบคอมพิวเตอร์ขัดข้องจนข้อมูลสูญหาย'], ans: 1, exp: 'ตามข้อ 4 การรั่วไหลคือความลับถูกครอบครองโดยผู้ไม่มีอำนาจหน้าที่' },
+  { q: '"กรช." ย่อมาจากชื่อคณะกรรมการใด', opts: ['คณะกรรมการรักษาความปลอดภัยแห่งชาติ', 'คณะกรรมการนโยบายรักษาความปลอดภัยแห่งชาติ', 'คณะกรรมการบริหารการรักษาความปลอดภัย', 'คณะกรรมการป้องกันการจารกรรมแห่งชาติ'], ans: 1, exp: 'ตามข้อ 19 กรช. ย่อมาจาก คณะกรรมการนโยบายรักษาความปลอดภัยแห่งชาติ' },
+  { q: 'ใครคือผู้รักษาการตามระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการรักษาความปลอดภัยแห่งชาติ', opts: ['รัฐมนตรีว่าการกระทรวงมหาดไทย', 'รัฐมนตรีว่าการกระทรวงกลาโหม', 'นายกรัฐมนตรี', 'เลขาธิการสภาความมั่นคงแห่งชาติ'], ans: 2, exp: 'ตามข้อ 6 กำหนดให้นายกรัฐมนตรีรักษาการตามระเบียบนี้' },
+  { q: 'องค์การรักษาความปลอดภัยฝ่ายพลเรือน คือหน่วยงานใด', opts: ['สำนักข่าวกรองแห่งชาติ', 'ศูนย์รักษาความปลอดภัย', 'กองบัญชาการตำรวจสันติบาล', 'สภาความมั่นคงแห่งชาติ'], ans: 0, exp: 'ตามข้อ 7(1) สำนักข่าวกรองแห่งชาติ เป็นองค์การรักษาความปลอดภัยฝ่ายพลเรือน' },
+  { q: 'ศูนย์รักษาความปลอดภัย (ศรภ.) เป็นองค์การรักษาความปลอดภัยฝ่ายใด', opts: ['ฝ่ายพลเรือน', 'ฝ่ายตำรวจ', 'ฝ่ายทหาร', 'ฝ่ายบริหาร'], ans: 2, exp: 'ตามข้อ 7(2) ศรภ. สังกัดกองบัญชาการกองทัพไทย เป็นฝ่ายทหาร' },
+  { q: 'กองบัญชาการตำรวจสันติบาล ทำหน้าที่เป็นองค์การรักษาความปลอดภัยฝ่ายใด', opts: ['ฝ่ายพลเรือน', 'ฝ่ายทหาร', 'ฝ่ายตำรวจ', 'ฝ่ายปฏิบัติการพิเศษ'], ans: 2, exp: 'ตามข้อ 7(3) กองบัญชาการตำรวจสันติบาล เป็นฝ่ายตำรวจ' },
+  { q: 'ใครมีหน้าที่รับผิดชอบในการรักษาความปลอดภัยภายในหน่วยงานของรัฐ', opts: ['นายกรัฐมนตรี', 'หัวหน้าหน่วยงานของรัฐนั้น ๆ', 'ผู้อำนวยการสำนักข่าวกรองแห่งชาติ', 'เจ้าหน้าที่รักษาความปลอดภัยประจำประตูชัย'], ans: 1, exp: 'ตามข้อ 8 กำหนดให้หัวหน้าหน่วยงานของรัฐมีหน้าที่รักษาความปลอดภัยในหน่วยงานตน' },
+  { q: 'หากหน่วยงานของรัฐจ้างบริษัทเอกชนมาทำงาน ใครมีหน้าที่กำกับดูแลให้บริษัทนั้นปฏิบัติตามระเบียบความปลอดภัย', opts: ['หัวหน้าหน่วยงานของรัฐผู้ว่าจ้าง', 'บริษัทเอกชนผู้รับจ้างรับผิดชอบเองทั้งหมด', 'สำนักข่าวกรองแห่งชาติ', 'กระทรวงแรงงาน'], ans: 0, exp: 'ตามข้อ 8 วรรคสอง หัวหน้าหน่วยงานต้องกำกับดูแลคู่สัญญาภายนอกให้ปฏิบัติตามระเบียบ' },
+  { q: 'การเข้าถึงความลับของทางราชการ เจ้าหน้าที่รัฐควรยึดถือหลักการใด', opts: ['ทราบทุกเรื่องเพื่อให้ทำงานได้กว้างขวาง', 'จำกัดให้ทราบเท่าที่จำเป็น (Need to know)', 'ทราบตามลำดับยศ ใครยศสูงทราบได้มากกว่า', 'ทราบตามความสนิทสนมกับผู้บังคับบัญชา'], ans: 1, exp: 'ตามข้อ 11 ยึดหลักการจำกัดให้ทราบเท่าที่จำเป็นเพื่อปฏิบัติภารกิจ' },
+  { q: 'ชั้นความลับของทางราชการแบ่งออกเป็นกี่ชั้น', opts: ['2 ชั้น', '3 ชั้น', '4 ชั้น', '5 ชั้น'], ans: 1, exp: 'ตามข้อ 15 แบ่งออกเป็น 3 ชั้น คือ ลับที่สุด, ลับมาก และ ลับ' },
+  { q: 'ความลับซึ่งหากรั่วไหลจะทำให้เกิดความเสียหายต่อความมั่นคงของรัฐ "อย่างร้ายแรงที่สุด" คือชั้นใด', opts: ['ลับที่สุด', 'ลับมาก', 'ลับ', 'ปกปิด'], ans: 0, exp: 'ตามข้อ 16 ลับที่สุด (TOP SECRET) คือหากรั่วไหลจะเสียหายร้ายแรงที่สุด' },
+  { q: 'ความลับชั้น "ลับมาก" (SECRET) หมายถึงความเสียหายระดับใดหากเกิดการรั่วไหล', opts: ['เสียหายร้ายแรงที่สุด', 'เสียหายร้ายแรง', 'เสียหายทั่วไป', 'เสียหายเล็กน้อย'], ans: 1, exp: 'ตามข้อ 17 ลับมาก (SECRET) คือหากรั่วไหลจะเสียหายร้ายแรง' },
+  { q: 'ความลับชั้น "ลับ" (CONFIDENTIAL) หมายถึงความเสียหายระดับใดหากเกิดการรั่วไหล', opts: ['เสียหายต่อความมั่นคงและผลประโยชน์แห่งรัฐ', 'เสียหายร้ายแรง', 'เสียหายร้ายแรงที่สุด', 'ไม่ก่อให้เกิดความเสียหาย'], ans: 0, exp: 'ตามข้อ 18 ลับ (CONFIDENTIAL) คือหากรั่วไหลจะเสียหายต่อความมั่นคงและผลประโยชน์รัฐ' },
+  { q: 'ใครเป็นประธานคณะกรรมการนโยบายรักษาความปลอดภัยแห่งชาติ (กรช.)', opts: ['นายกรัฐมนตรี', 'รัฐมนตรีที่นายกรัฐมนตรีมอบหมาย', 'เลขาธิการสภาความมั่นคงแห่งชาติ', 'ปลัดสำนักนายกรัฐมนตรี'], ans: 1, exp: 'ตามข้อ 19(1) ประธานคือรัฐมนตรีที่นายกรัฐมนตรีมอบหมาย' },
+  { q: 'ใครทำหน้าที่เป็นเลขานุการของคณะกรรมการ กรช.', opts: ['ผู้อำนวยการสำนักข่าวกรองแห่งชาติ', 'ผู้บัญชาการตำรวจแห่งชาติ', 'เลขาธิการสภาความมั่นคงแห่งชาติ', 'เลขาธิการคณะรัฐมนตรี'], ans: 2, exp: 'ตามข้อ 19(21) เลขาธิการสภาความมั่นคงแห่งชาติเป็นกรรมการและเลขานุการ' },
+  { q: 'การประชุม กรช. ต้องมีกรรมการมาประชุมไม่น้อยกว่าเท่าใดจึงจะเป็นองค์ประชุม', opts: ['1 ใน 3 ของกรรมการทั้งหมด', 'กึ่งหนึ่งของกรรมการทั้งหมด', '2 ใน 3 ของกรรมการทั้งหมด', 'ไม่น้อยกว่า 5 คน'], ans: 1, exp: 'ตามข้อ 22 การประชุมต้องมีกรรมการไม่น้อยกว่ากึ่งหนึ่งจึงจะเป็นองค์ประชุม' },
+  { q: 'ในการลงคะแนนเสียงของ กรช. หากคะแนนเสียงเท่ากัน ให้ดำเนินการอย่างไร', opts: ['ให้ประธานในที่ประชุมออกเสียงเพิ่มขึ้นอีกเสียงหนึ่งเป็นเสียงชี้ขาด', 'ให้เลื่อนการประชุมออกไปก่อน', 'ให้ถือว่ามตินั้นตกไป', 'ให้เลขานุการเป็นคนตัดสิน'], ans: 0, exp: 'ตามข้อ 22 หากคะแนนเสียงเท่ากัน ให้ประธานออกเสียงชี้ขาด' },
+  { q: 'หน่วยงานใดทำหน้าที่เป็นสำนักงานเลขานุการของ กรช.', opts: ['สำนักข่าวกรองแห่งชาติ', 'สำนักงานสภาความมั่นคงแห่งชาติ', 'สำนักนายกรัฐมนตรี', 'กองบัญชาการกองทัพไทย'], ans: 1, exp: 'ตามข้อ 23 ให้สำนักงานสภาความมั่นคงแห่งชาติ ทำหน้าที่เป็นสำนักงานเลขานุการ กรช.' },
+  { q: 'ให้นายกรัฐมนตรีจัดให้มีการทบทวนการปฏิบัติตามระเบียบนี้อย่างน้อยทุกกี่ปี', opts: ['ทุก 1 ปี', 'ทุก 3 ปี', 'ทุก 5 ปี', 'ทุก 10 ปี'], ans: 2, exp: 'ตามข้อ 13 ให้นายกรัฐมนตรีจัดให้มีการทบทวนอย่างน้อยทุก 5 ปี' },
+  { q: 'การรักษาความปลอดภัยเกี่ยวกับบุคคล มีวัตถุประสงค์หลักเพื่ออะไร', opts: ['เพื่อตรวจสอบว่าใครมาทำงานสาย', 'เพื่อเลือกเฟ้นและตรวจสอบบุคคลให้เป็นที่เชื่อแน่ว่าไม่เป็นภัยต่อความมั่นคง', 'เพื่อให้เจ้าหน้าที่ทุกคนรักกัน', 'เพื่อจัดลำดับยศและตำแหน่ง'], ans: 1, exp: 'ตามข้อ 24 เพื่อเลือกเฟ้นบุคคลที่เชื่อแน่ว่าไม่เป็นภัยต่อความมั่นคง' },
+  { q: 'ข้อใดคือมาตรการหลักในการรักษาความปลอดภัยเกี่ยวกับบุคคล', opts: ['การตรวจสอบประวัติและพฤติการณ์', 'การรับรองความไว้วางใจ', 'ถูกทั้ง ก. และ ข.', 'การตรวจสุขภาพจิต'], ans: 2, exp: 'ตามข้อ 25 ประกอบด้วยการตรวจสอบประวัติพฤติการณ์ และการรับรองความไว้วางใจ' },
+  { q: 'บุคคลประเภทใดที่ต้องได้รับการตรวจสอบประวัติและพฤติการณ์', opts: ['ผู้ที่รอการบรรจุเป็นเจ้าหน้าที่รัฐ', 'ผู้ที่ขอกลับเข้ารับราชการใหม่', 'ผู้ได้รับทุนการศึกษาที่ต้องกลับมาทำงานใช้ทุนให้รัฐ', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 26 ครอบคลุมทั้งผู้รอการบรรจุ ผู้กลับเข้ารับราชการ และผู้ได้รับทุน' },
+  { q: 'หากผลการตรวจสอบประวัติปรากฏว่าเจ้าหน้าที่รัฐมีพฤติการณ์น่าสงสัยว่าเป็นภัยต่อความมั่นคง หัวหน้าหน่วยงานควรทำอย่างไร', opts: ['ไล่ออกทันทีโดยไม่สอบสวน', 'ย้ายออกจากตำแหน่งหน้าที่นั้นโดยเร็ว', 'ตักเตือนเป็นลายลักษณ์อักษร', 'นิ่งเฉยไว้เพื่อดูพฤติกรรมต่อ'], ans: 1, exp: 'ตามข้อ 26 วรรคสาม ให้ย้ายผู้นั้นออกจากตำแหน่งหน้าที่นั้นโดยเร็วและพิจารณาดำเนินการต่อไป' },
+  { q: 'การตรวจสอบประวัติและพฤติการณ์ "โดยละเอียด" ใช้กับบุคคลกลุ่มใด', opts: ['ผู้ที่จะเข้าถึงความลับชั้น "ลับที่สุด" หรือ "ลับมาก"', 'เจ้าหน้าที่รัฐทุกคนโดยไม่มีข้อยกเว้น', 'ผู้ที่มาติดต่อราชการทั่วไป', 'เฉพาะหัวหน้าหน่วยงานเท่านั้น'], ans: 0, exp: 'ตามข้อ 27 ระบุให้ตรวจสอบโดยละเอียดสำหรับผู้เข้าถึงความลับชั้นลับที่สุด หรือลับมาก' },
+  { q: 'ใครมีหน้าที่รับรองความไว้วางใจบุคคลเพื่อให้เข้าถึงสิ่งที่เป็นความลับของทางราชการ', opts: ['ผู้อำนวยการสำนักข่าวกรองแห่งชาติ', 'หัวหน้าหน่วยงานของรัฐนั้น ๆ', 'นายกรัฐมนตรี', 'เลขาธิการคณะกรรมการกฤษฎีกา'], ans: 1, exp: 'ตามข้อ 28 ให้หัวหน้าหน่วยงานของรัฐมีหน้าที่รับรองความไว้วางใจบุคคล' },
+  { q: 'ก่อนที่บุคคลจะได้รับการรับรองความไว้วางใจ จะต้องผ่านขั้นตอนใดก่อน', opts: ['การทดสอบสมรรถภาพทางกาย', 'การอบรมหรือชี้แจงเรื่องการรักษาความปลอดภัยและลงนามบันทึกรับรอง', 'การสาบานตนต่อหน้าพระพุทธรูป', 'การฝึกอบรมหลักสูตรต่อต้านการจารกรรม'], ans: 1, exp: 'ตามข้อ 28 วรรคสอง ต้องผ่านการอบรมและลงนามบันทึกรับรองการรักษาความลับ' },
+  { q: 'ในกรณี "จำเป็นเร่งด่วน" หัวหน้าหน่วยงานสามารถรับรองความไว้วางใจได้หรือไม่', opts: ['ไม่ได้ ต้องรอผลการตรวจสอบประวัติครบถ้วนเท่านั้น', 'ได้ โดยมีเงื่อนไขว่าหากผลการตรวจสอบภายหลังพบว่าไม่เหมาะสม ต้องให้พ้นหน้าที่', 'ได้ โดยไม่ต้องตรวจสอบประวัติในภายหลัง', 'ได้ เฉพาะบุคคลที่หัวหน้าหน่วยงานรู้จักเป็นการส่วนตัว'], ans: 1, exp: 'ตามข้อ 28 วรรคสาม กรณีเร่งด่วนรับรองได้แต่มีเงื่อนไขหากผลตรวจสอบภายหลังไม่ผ่านต้องพ้นหน้าที่' },
+  { q: 'หน่วยงานของรัฐต้องจัดทำทะเบียนใดเพื่อเก็บข้อมูลระดับความไว้วางใจของเจ้าหน้าที่', opts: ['ทะเบียนประวัติอาชญากรรม', 'ทะเบียนความไว้วางใจ', 'ทะเบียนรับ-ส่งความลับ', 'ทะเบียนควบคุมบุคคลภายนอก'], ans: 1, exp: 'ตามข้อ 29 หน่วยงานต้องจัดให้มีทะเบียนความไว้วางใจของเจ้าหน้าที่ทุกคน' },
+  { q: 'เมื่อบุคคลจะพ้นจากหน้าที่ที่เกี่ยวข้องกับความลับ ข้อใดคือสิ่งที่หน่วยงานต้องปฏิบัติ', opts: ['คัดชื่อออกจากทะเบียนความไว้วางใจ', 'ให้บุคคลนั้นคืนข้อมูลข่าวสารและหลักฐานทั้งหมด', 'ให้บุคคลนั้นลงชื่อในบันทึกรับรองการรักษาความลับเมื่อพ้นหน้าที่', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 31 ต้องคัดชื่อออก คืนเอกสาร และลงชื่อในบันทึกรับรองเมื่อพ้นหน้าที่' },
+  { q: 'บุคคลที่พ้นหน้าที่ไปแล้ว หากกลับเข้ามาทำงานที่เกี่ยวกับความลับอีกครั้ง ต้องทำอย่างไร', opts: ['ใช้การรับรองความไว้วางใจเดิมได้เลย', 'ต้องตรวจสอบประวัติและพฤติการณ์ใหม่ตามระเบียบ', 'ทำงานได้ทันทีถ้าเว้นระยะเวลาไม่เกิน 1 ปี', 'ไม่สามารถกลับเข้ามาทำงานเกี่ยวกับความลับได้อีก'], ans: 1, exp: 'ตามข้อ 32 เมื่อกลับเข้าทำงานต้องตรวจสอบประวัติและพฤติการณ์ใหม่' },
+  { q: 'การรักษาความปลอดภัยเกี่ยวกับสถานที่ ครอบคลุมถึงสิ่งใดบ้าง', opts: ['อาคาร และที่สงวน', 'ระบบสาธารณูปโภคและข้อมูลสารสนเทศ', 'เจ้าหน้าที่ของรัฐในสถานที่นั้น', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 33 ครอบคลุมอาคาร ที่สงวน ข้อมูล สาธารณูปโภค และเจ้าหน้าที่' },
+  { q: 'ภยันตรายที่เกิดจาก "ปรากฏการณ์ธรรมชาติ" ในระเบียบนี้คือข้อใด', opts: ['การจลาจล', 'พายุ น้ำท่วม แผ่นดินไหว', 'การก่อวินาศกรรม', 'การโจมตีของฝ่ายตรงข้าม'], ans: 1, exp: 'ตามข้อ 34(1) ระบุถึง พายุ น้ำท่วม ฟ้าผ่า แผ่นดินไหว ฯลฯ' },
+  { q: 'ภยันตรายที่เกิดจากการกระทำของ "มนุษย์" แบบไม่เปิดเผย คือข้อใด', opts: ['การโจรกรรม การจารกรรม', 'การจลาจล', 'ฟ้าผ่า', 'การอภิปรายไม่ไว้วางใจ'], ans: 0, exp: 'ตามข้อ 34(2) การกระทำไม่เปิดเผยโดยมนุษย์ ได้แก่ โจรกรรม จารกรรม วินาศกรรม' },
+  { q: 'การรักษาความปลอดภัยสถานที่ต้องจัดทำแผนการรักษาความปลอดภัย โดยคำนึงถึงสิ่งใดเป็นสำคัญ', opts: ['จำนวนพนักงานทำความสะอาด', 'ระดับความสำคัญของหน้าที่และภารกิจของหน่วยงาน', 'สีของอาคารที่เหมาะสม', 'ความสะดวกของประชาชนเป็นอันดับแรก'], ans: 1, exp: 'ตามข้อ 36(1) พิจารณาจากระดับความสำคัญของหน้าที่และภารกิจ' },
+  { q: 'มาตรการ "การใช้เครื่องกีดขวาง" ในการรักษาความปลอดภัยสถานที่ มีวัตถุประสงค์เพื่ออะไร', opts: ['เพื่อความสวยงามของสถานที่', 'เพื่อป้องกัน ขัดขวาง หรือหน่วงเหนี่ยวบุคคลและยานพาหนะที่ไม่มีสิทธิเข้า', 'เพื่อประหยัดงบประมาณค่าไฟฟ้า', 'เพื่อระบุอาณาเขตพื้นที่ของหน่วยงานเท่านั้น'], ans: 1, exp: 'ตามข้อ 37(2) ใช้เครื่องกีดขวางเพื่อป้องกันหรือหน่วงเหนี่ยวผู้ไม่มีสิทธิเข้า' },
+  { q: 'การจัดให้มี "แสงสว่าง" ในการรักษาความปลอดภัยสถานที่ มีประโยชน์อย่างไร', opts: ['เพื่อให้เจ้าหน้าที่อ่านหนังสือได้สะดวก', 'เพื่อปกป้องพื้นที่สำคัญและเพิ่มประสิทธิภาพในการตรวจสอบพื้นที่', 'เพื่อความสวยงามในเวลากลางคืน', 'เพื่อไล่แมลง'], ans: 1, exp: 'ตามข้อ 37(3) เพื่อปกป้องพื้นที่สำคัญและเพิ่มประสิทธิภาพการตรวจสอบ' },
+  { q: 'เจ้าหน้าที่รักษาความปลอดภัยสถานที่ ประกอบด้วยกลุ่มใดบ้าง', opts: ['เจ้าหน้าที่เวรรักษาความปลอดภัยประจำวัน', 'ยามรักษาการณ์', 'นายตรวจเวร', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 37(7) ประกอบด้วยเวรรักษาความปลอดภัย นายตรวจเวร และยามรักษาการณ์' },
+  { q: 'การป้องกันอัคคีภัยในหน่วยงานของรัฐ ต้องปฏิบัติอย่างไร', opts: ['วางแผนและกำกับดูแลตามกฎหมายและมติคณะรัฐมนตรีที่เกี่ยวข้อง', 'ซื้อเครื่องดับเพลิงมาวางไว้เท่านั้น', 'ไม่ต้องทำอะไรเพราะมีประกันภัยแล้ว', 'ให้พนักงานทุกคนทำหน้าที่ดับเพลิงเองโดยไม่มีแผน'], ans: 0, exp: 'ตามข้อ 37(8) ต้องวางแผนตามกฎหมายและมติคณะรัฐมนตรีที่เกี่ยวข้อง' },
+  { q: 'หน่วยงานของรัฐควรทบทวนและซักซ้อมแผนการรักษาความปลอดภัยสถานที่บ่อยแค่ไหน', opts: ['ทุกเดือน', 'อย่างน้อยปีละ 1 ครั้ง', 'ทุก 2 ปี', 'เมื่อเกิดเหตุร้ายขึ้นเท่านั้น'], ans: 1, exp: 'ตามข้อ 36 วรรคสอง ต้องทบทวนและซักซ้อมแผนอย่างน้อยปีละ 1 ครั้ง' },
+  { q: '"การประชุมลับ" ตามระเบียบนี้หมายถึงอะไร', opts: ['การพูดคุยกันส่วนตัวของหัวหน้าหน่วยงาน', 'การร่วมปรึกษาหารือเรื่องที่เกี่ยวกับสิ่งที่เป็นความลับของทางราชการ', 'การประชุมนัดหมายทานข้าวของเจ้าหน้าที่รัฐ', 'การแอบประชุมโดยไม่แจ้งให้ใครทราบ'], ans: 1, exp: 'ตามข้อ 39 หมายถึงการปรึกษาหารือเรื่องความลับราชการ รวมถึงการบรรยายสรุปด้วย' },
+  { q: 'ใครเป็นผู้รับผิดชอบหลักในการรักษาความปลอดภัยของการประชุมลับ', opts: ['ผู้อำนวยการศูนย์รักษาความปลอดภัย', 'หัวหน้าหน่วยงานของรัฐเจ้าของเรื่องที่จะประชุม', 'ตำรวจสันติบาล', 'ผู้เข้าประชุมที่มีอาวุโสสูงสุด'], ans: 1, exp: 'ตามข้อ 41 หัวหน้าหน่วยงานรัฐเจ้าของเรื่องเป็นผู้รับผิดชอบจัดประชุม' },
+  { q: 'ข้อใดเป็นข้อห้ามในการเข้าร่วมประชุมลับ', opts: ['ห้ามนำเครื่องมือสื่อสารเข้าสถานที่ประชุม', 'ห้ามนำเครื่องบันทึกภาพหรือเสียงเข้าสถานที่ประชุม', 'ห้ามนำข้อมูลข่าวสารออกนอกสถานที่ประชุมโดยไม่ได้รับอนุญาต', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 43 ห้ามนำเครื่องมือสื่อสาร เครื่องบันทึก และห้ามนำข้อมูลออก' },
+  { q: 'หากการประชุมลับมีความสำคัญมาก หน่วยงานรัฐสามารถขอความช่วยเหลือจากใครได้', opts: ['สื่อมวลชน', 'องค์การรักษาความปลอดภัย (เช่น สำนักข่าวกรองฯ)', 'บริษัทรักษาความปลอดภัยเอกชน', 'องค์การสหประชาชาติ'], ans: 1, exp: 'ตามข้อ 46 หากสำคัญมากขอความช่วยเหลือจากองค์การรักษาความปลอดภัยได้' },
+  { q: 'การกำหนดพื้นที่รักษาความปลอดภัยในการประชุมลับ ควรดำเนินการเมื่อใด', opts: ['เมื่อเริ่มการประชุมไปแล้วครึ่งหนึ่ง', 'กำหนดไว้ล่วงหน้าก่อนเปิดการประชุมลับ', 'หลังจากประชุมเสร็จสิ้น', 'เมื่อมีผู้คัดค้านผลการประชุม'], ans: 1, exp: 'ตามข้อ 45(1) ต้องกำหนดอาณาเขตและมาตรการไว้ล่วงหน้าก่อนเปิดประชุม' },
+  { q: 'ในการแถลงข่าวเกี่ยวกับการประชุมลับ ข้อใดปฏิบัติได้ถูกต้อง', opts: ['แถลงทุกเรื่องที่คุยกันในที่ประชุมโดยไม่มีข้อยกเว้น', 'จัดสถานที่แถลงข่าวไว้นอกพื้นที่รักษาความปลอดภัย', 'ให้ใครก็ได้ที่เข้าประชุมเป็นคนแถลงตามความสมัครใจ', 'แถลงข่าวผ่านโซเชียลมีเดียส่วนตัว'], ans: 1, exp: 'ตามข้อ 48(1) ควรจัดสถานที่แถลงข่าวไว้นอกพื้นที่รักษาความปลอดภัย' },
+  { q: 'การบรรยายสรุปเรื่องที่เป็นความลับ ผู้บรรยายต้องแจ้งสิ่งใดต่อผู้ฟัง', opts: ['แจ้งรายชื่อผู้จดบันทึกการประชุม', 'แจ้งชั้นความลับของการบรรยายนั้น ๆ ทั้งตอนเริ่มและตอนสิ้นสุด', 'แจ้งงบประมาณที่ใช้ในการจัดประชุม', 'ไม่ต้องแจ้งอะไรเพราะเป็นความลับอยู่แล้ว'], ans: 1, exp: 'ตามข้อ 49(3) ต้องแจ้งชั้นความลับทั้งเมื่อเริ่มและสิ้นสุดการบรรยาย' },
+  { q: 'เมื่อพบเห็นการละเมิดมาตรการรักษาความปลอดภัย เจ้าหน้าที่รัฐควรทำอย่างไรเป็นอันดับแรก', opts: ['รีบดำเนินการเบื้องต้นเพื่อลดความเสียหายให้เหลือน้อยที่สุดและรายงานผู้บังคับบัญชา', 'ถ่ายคลิปวิดีโอไปโพสต์เตือนภัย', 'รอจนกว่าหัวหน้าจะมาเห็นเอง', 'ลาหยุดงานเพื่อหลีกเลี่ยงความผิด'], ans: 0, exp: 'ตามข้อ 51 ให้รีบดำเนินการลดความเสียหายเบื้องต้นและรายงานผู้บังคับบัญชา' },
+  { q: 'หากมีข้อมูลข่าวสารลับ "สูญหาย" ต้องรายงานอย่างไร', opts: ['รายงานปากเปล่าต่อเพื่อนร่วมงาน', 'รายงานรายละเอียดต่อผู้บังคับบัญชาและบันทึกลงในทะเบียนควบคุมข้อมูลข่าวสารลับ', 'ไม่ต้องรายงานถ้าข้อมูลนั้นไม่สำคัญมาก', 'ประกาศหาคนเก็บได้ผ่านวิทยุกระจายเสียง'], ans: 1, exp: 'ตามข้อ 52(5) ต้องรายงานรายละเอียดและบันทึกลงในทะเบียนควบคุมข้อมูลลับ' },
+  { q: 'เมื่อปรากฏหลักฐานชัดเจนว่าเกิดการ "จารกรรม" ในหน่วยงาน หัวหน้าหน่วยงานควรทำอย่างไร', opts: ['สอบสวนเองโดยไม่บอกใคร', 'รายงานและแจ้งเรื่องให้เจ้าหน้าที่ผู้มีอำนาจหน้าที่ด้านสืบสวนดำเนินการ', 'ทำลายหลักฐานที่เหลือเพื่อป้องกันความอับอายของหน่วยงาน', 'ประกาศยกเลิกชั้นความลับของเรื่องนั้นทันที'], ans: 1, exp: 'ตามข้อ 52(6) หากสงสัยว่าเกิดการจารกรรม ให้แจ้งเจ้าหน้าที่ผู้มีหน้าที่ด้านสืบสวน' },
+  { q: 'หลังจากเกิดเหตุละเมิดความปลอดภัย หน่วยงานเจ้าของเรื่องเดิมควรพิจารณาเรื่องใดเป็นสำคัญ', opts: ['พิจารณาว่าสมควรลดหรือยกเลิกชั้นความลับของข้อมูลนั้นหรือไม่', 'ขจัดความเสียหายที่จะมีต่อความมั่นคงของรัฐ', 'พิจารณาลงโทษผู้ละเมิดตามกฎหมาย', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 53 และ 54 ครอบคลุมการลดชั้นความลับ ขจัดความเสียหาย และลงโทษผู้ละเมิด' },
+  { q: 'สิ่งที่เป็นความลับตามระเบียบเดิม (พ.ศ. 2517) ให้ถือว่าเป็นอย่างไรเมื่อระเบียบใหม่ใช้บังคับ', opts: ['ยกเลิกความลับทั้งหมดทันที', 'ให้ถือว่าเป็นสิ่งที่เป็นความลับตามระเบียบฉบับปี 2552 นี้ต่อไป', 'ต้องกำหนดชั้นความลับใหม่ภายใน 30 วัน', 'ให้ถือเป็นข้อมูลสาธารณะ'], ans: 1, exp: 'ตามข้อ 55 ให้สิ่งที่เป็นความลับตามระเบียบเดิมเป็นความลับตามระเบียบ พ.ศ. 2552 ต่อไป' },
+  { q: 'หน่วยงานใดมีหน้าที่ให้คำแนะนำและช่วยเหลือการรักษาความปลอดภัยแก่หน่วยงานของรัฐฝ่าย "ตำรวจ"', opts: ['สำนักข่าวกรองแห่งชาติ', 'ศูนย์รักษาความปลอดภัย', 'กองบัญชาการตำรวจสันติบาล', 'กรมสอบสวนคดีพิเศษ'], ans: 2, exp: 'ตามข้อ 7(3) กองบัญชาการตำรวจสันติบาลดูแลหน่วยงานฝ่ายตำรวจ' },
+  { q: '"ยุทธภัณฑ์" ตามความหมายในระเบียบนี้ คืออะไร', opts: ['สิ่งของที่ใช้ประจำกายหรือประจำหน่วยกำลังถืออาวุธของทางราชการ', 'รถยนต์หุ้มเกราะเท่านั้น', 'คอมพิวเตอร์ที่ใช้ในกระทรวงกลาโหม', 'ชุดเครื่องแบบพนักงานรัฐวิสาหกิจ'], ans: 0, exp: 'ตามข้อ 4 ยุทธภัณฑ์หมายถึงสิ่งของใช้ประจำกายหรือประจำหน่วยกำลังถืออาวุธ' },
+  { q: 'คำว่า "เจ้าหน้าที่ของรัฐ" ตามระเบียบนี้ รวมถึงใครบ้าง', opts: ['ข้าราชการประจำ', 'คณะกรรมการที่มีกฎหมายให้อำนาจดำเนินการเกี่ยวกับความลับราชการ', 'พนักงานรัฐวิสาหกิจ', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 4 ครอบคลุมผู้ปฏิบัติงานในหน่วยงานรัฐและคณะกรรมการตามกฎหมาย' },
+  { q: 'ใครมีหน้าที่แต่งตั้ง "เจ้าหน้าที่ควบคุมการรักษาความปลอดภัย" ในแต่ละหน่วยงาน', opts: ['นายกรัฐมนตรี', 'รัฐมนตรีเจ้าสังกัด', 'หัวหน้าหน่วยงานของรัฐนั้น ๆ', 'ผู้อำนวยการสำนักงบประมาณ'], ans: 2, exp: 'ตามข้อ 12 หัวหน้าหน่วยงานรัฐเป็นผู้แต่งตั้งเจ้าหน้าที่ควบคุมฯ' },
+  { q: 'การอบรมเจ้าหน้าที่รัฐเรื่องการรักษาความปลอดภัย เป็นหน้าที่ของใคร', opts: ['กรมประชาสัมพันธ์', 'หน่วยงานของรัฐต้นสังกัดนั้น ๆ', 'สถาบันการศึกษา', 'บริษัทเอกชนที่รับจ้างช่วง'], ans: 1, exp: 'ตามข้อ 12 วรรคสี่ ให้หน่วยงานของรัฐมีหน้าที่รับผิดชอบจัดการอบรมเจ้าหน้าที่ตน' },
+  { q: 'เมื่อมีการเปลี่ยนแปลงพฤติการณ์ที่สงสัยว่าบุคคลจะไม่เหมาะกับความไว้วางใจที่ได้รับอยู่ จะต้องทำอย่างไร', opts: ['เพิกถอนทันทีโดยไม่ต้องตรวจสอบ', 'ตรวจสอบประวัติและพฤติการณ์ใหม่และแก้ไขทะเบียนความไว้วางใจทันที', 'รอให้ครบ 5 ปีก่อนค่อยตรวจสอบ', 'ให้บุคคลนั้นไปสาบานตนใหม่'], ans: 1, exp: 'ตามข้อ 29 หากพฤติการณ์เปลี่ยนต้องตรวจสอบประวัติใหม่และแก้ไขทะเบียนทันที' },
+  { q: 'ข้อใดคือขั้นตอนการปฏิบัติเมื่อส่งบุคคลไปประชุมเกี่ยวกับความลับชั้น "ลับที่สุด" นอกหน่วยงาน', opts: ['ต้องมีหนังสือหรือใบรับรองความไว้วางใจให้เป็นหลักฐาน', 'ให้พกบัตรประชาชนไปอย่างเดียว', 'ไม่ต้องมีหลักฐานใด ๆ เพราะใช้ความไว้วางใจส่วนตัว', 'ต้องมีเจ้าหน้าที่ตำรวจนำขบวนไป'], ans: 0, exp: 'ตามข้อ 30(2) ต้องมีหนังสือหรือใบรับรองความไว้วางใจเป็นหลักฐานเมื่อออกไปประชุมภายนอก' },
+  { q: 'มาตรการ "การควบคุมบุคคล" ในพื้นที่รักษาความปลอดภัย มีเพื่ออะไร', opts: ['เพื่อตรวจสอบว่าเป็นบุคคลที่ได้รับอนุญาตให้ผ่านเข้าพื้นที่หรือไม่', 'เพื่อเก็บค่าธรรมเนียมการเข้าใช้พื้นที่', 'เพื่อให้นักท่องเที่ยวมาถ่ายรูปได้สะดวก', 'เพื่อจำกัดจำนวนคนไม่ให้อึดอัด'], ans: 0, exp: 'ตามข้อ 37(5) เพื่อตรวจสอบสิทธิการเข้าพื้นที่ควบคุมหรือพื้นที่หวงห้าม' },
+  { q: '"การควบคุมยานพาหนะ" ในพื้นที่รักษาความปลอดภัย ควรมีบันทึกสิ่งใด', opts: ['สีของรถที่สวยที่สุด', 'หลักฐานการเข้าและออก', 'ยี่ห้อรถของหัวหน้าหน่วยงานเท่านั้น', 'ไม่ต้องบันทึกอะไรเพื่อความรวดเร็ว'], ans: 1, exp: 'ตามข้อ 37(6) ต้องบันทึกหลักฐานการเข้าและออกของยานพาหนะ' },
+  { q: '"สัญญาณเตือนภัย" ในพื้นที่รักษาความปลอดภัย มีไว้เพื่อแจ้งสิ่งใด', opts: ['แจ้งเวลาเลิกงาน', 'แจ้งเมื่อมีการเข้าใกล้หรือล่วงล้ำเข้ามาในพื้นที่รักษาความปลอดภัย', 'แจ้งเหตุไฟไหม้เพียงอย่างเดียว', 'แจ้งการมาถึงของแขกวีไอพี'], ans: 1, exp: 'ตามข้อ 37(4) แจ้งเตือนเมื่อมีการเข้าใกล้หรือล่วงล้ำพื้นที่รักษาความปลอดภัย' },
+  { q: 'ในการออกแบบก่อสร้างอาคารราชการที่สำคัญ หัวหน้าหน่วยงานต้องคำนึงถึงสิ่งใดเป็นพิเศษ', opts: ['ความสวยงามทันสมัย', 'ด้านการรักษาความปลอดภัยและการพิทักษ์ความลับ', 'ฮวงจุ้ย', 'ราคาที่ถูกที่สุด'], ans: 1, exp: 'ตามข้อ 36(6) ต้องคำนึงถึงด้านการรักษาความปลอดภัยและความลับที่ต้องพิทักษ์รักษา' },
+  { q: 'การรายงานผลการสำรวจหรือตรวจสอบการรักษาความปลอดภัยสถานที่ ต้องรายงานต่อใคร', opts: ['สื่อมวลชน', 'ผู้บังคับบัญชาตามลำดับชั้น', 'ประชาชนในพื้นที่', 'นายกองค์การบริหารส่วนตำบล'], ans: 1, exp: 'ตามข้อ 36(8) รายงานต่อผู้บังคับบัญชาตามลำดับชั้น' },
+  { q: 'กรณีเจ้าหน้าที่รัฐพบพฤติการณ์ "การบ่อนทำลาย" ควรรายงานใครเบื้องต้น', opts: ['ผู้บังคับบัญชา หรือเจ้าหน้าที่ควบคุมการรักษาความปลอดภัย', 'สถานีวิทยุในท้องถิ่น', 'ญาติพี่น้อง', 'เก็บไว้เป็นความลับคนเดียว'], ans: 0, exp: 'ตามข้อ 51 เมื่อพบหรือสงสัยการละเมิด/บ่อนทำลาย ให้รีบรายงานผู้บังคับบัญชา' },
+  { q: 'นายกรัฐมนตรีมีอำนาจแต่งตั้งคณะกรรมการ กรช. เพิ่มเติมได้หรือไม่ตามความในระเบียบ', opts: ['ไม่ได้ จำนวนกรรมการต้องคงที่', 'ได้ ตามที่กฎหมายหรือความจำเป็นกำหนด', 'ต้องขออนุญาตจากรัฐสภาก่อน', 'ให้ประธานกรรมการ กรช. เป็นคนตัดสินใจคนเดียว'], ans: 1, exp: 'ตามข้อ 19 นายกรัฐมนตรีสามารถมอบหมายรัฐมนตรีและโครงสร้างกรรมการตามความเหมาะสม' },
+  { q: 'หน่วยงานใด "ไม่อยู่" ในนิยามของหน่วยงานของรัฐตามระเบียบนี้ แต่สามารถนำไปใช้บังคับโดยอนุโลมได้', opts: ['กระทรวงการต่างประเทศ', 'องค์กรปกครองส่วนท้องถิ่น', 'การไฟฟ้าฝ่ายผลิตแห่งประเทศไทย', 'กรมสรรพากร'], ans: 1, exp: 'ตามข้อ 79 องค์กรปกครองส่วนท้องถิ่นสามารถนำระเบียบนี้ไปใช้บังคับโดยอนุโลม' },
+  { q: 'เลขาธิการคณะกรรมการกฤษฎีกา มีตำแหน่งใดใน คณะกรรมการ กรช.', opts: ['ประธานกรรมการ', 'กรรมการ', 'เลขานุการ', 'ผู้ช่วยเลขานุการ'], ans: 1, exp: 'ตามข้อ 19(11) เลขาธิการคณะกรรมการกฤษฎีกาเป็นกรรมการ' },
+  { q: 'ใครเป็นรองประธานกรรมการ กรช. คนที่สอง', opts: ['เลขาธิการนายกรัฐมนตรี', 'เลขาธิการคณะรัฐมนตรี', 'ปลัดสำนักนายกรัฐมนตรี', 'เลขาธิการสภาความมั่นคงแห่งชาติ'], ans: 2, exp: 'ตามข้อ 19(4) ปลัดสำนักนายกรัฐมนตรีเป็นรองประธานคนที่สอง' },
+  { q: 'ข้อใดคือหนึ่งในอำนาจหน้าที่ของ กรช.', opts: ['วินิจฉัยปัญหาที่เกี่ยวข้องกับการปฏิบัติตามระเบียบนี้', 'จับกุมผู้กระทำความผิดอาญา', 'อนุมัติงบประมาณการซื้ออาวุธให้กองทัพ', 'ตัดสินคดีความในศาล'], ans: 0, exp: 'ตามข้อ 20(3) กรช. มีอำนาจวินิจฉัยปัญหาการปฏิบัติตามระเบียบนี้' },
+  { q: 'การประชุมร่วมกันขององค์การรักษาความปลอดภัยทุกฝ่าย มีวัตถุประสงค์เพื่ออะไร', opts: ['เพื่อสังสรรค์ประจำปี', 'เพื่อประสานการปฏิบัติ จัดทำหลักเกณฑ์ และคำแนะนำการปฏิบัติตามระเบียบ', 'เพื่อแย่งชิงผลงานกัน', 'เพื่อรวมตัวกันลาออก'], ans: 1, exp: 'ตามข้อ 12 เพื่อให้เกิดประสิทธิผลในการประสานงานและกำหนดแนวทางปฏิบัติ' },
+  { q: 'สถานการณ์: นาย ก. เป็นพนักงานจ้างเหมาของเอกชนมาซ่อมระบบแอร์ในพื้นที่ "ลับที่สุด" หัวหน้าหน่วยงานควรปฏิบัติอย่างไร', opts: ['ปล่อยให้เข้าไปซ่อมคนเดียวเพราะเป็นช่าง', 'ให้เจ้าหน้าที่ควบคุมการรักษาความปลอดภัยกำกับดูแลอย่างใกล้ชิด', 'ไม่ต้องตรวจสอบอะไรเพราะไม่ใช่เจ้าหน้าที่รัฐ', 'ให้ซ่อมได้เฉพาะตอนกลางคืนที่ไม่มีคนอยู่'], ans: 1, exp: 'ตามข้อ 8 หัวหน้าหน่วยงานต้องกำกับดูแลบุคคลภายนอกที่เข้ามาทำงานในหน่วยงาน' },
+  { q: 'สถานการณ์: มีการประชุมลับเรื่องความมั่นคงชายแดน นาย ข. ซึ่งไม่มีหน้าที่เกี่ยวข้องพยายามแอบฟัง หัวหน้าหน่วยงานควรทำอย่างไร', opts: ['แกล้งทำเป็นไม่เห็น', 'ดำเนินการตามมาตรการป้องกันการละเมิดความปลอดภัยและสอบสวนข้อเท็จจริง', 'เชิญมาร่วมประชุมด้วยเพื่อให้ทราบข้อมูลเหมือนกัน', 'บอกข้อมูลให้ทราบนิดหน่อยเพื่อให้เลิกแอบฟัง'], ans: 1, exp: 'ตามข้อ 50 และ 53 เป็นเรื่องการละเมิดมาตรการที่ต้องสอบสวนและป้องกัน' },
+  { q: 'สถานการณ์: เอกสารชั้น "ลับมาก" หายไปจากโต๊ะทำงาน เจ้าหน้าที่ควรทำอย่างไร', opts: ['รีบรายงานผู้บังคับบัญชาและแจ้งเจ้าหน้าที่ควบคุมการรักษาความปลอดภัยทันที', 'พิมพ์เอกสารฉบับใหม่มาวางไว้แทน', 'ลาป่วยเพื่อไม่ต้องตอบคำถาม', 'บอกว่าตนเองไม่รู้เรื่อง'], ans: 0, exp: 'ตามข้อ 51 เมื่อทราบว่ามีการละเมิด (สูญหาย) ต้องรายงานผู้บังคับบัญชาทันที' },
+  { q: 'สถานการณ์: หน่วยงานต้องการจัดแถลงข่าวเรื่องการจับกุมขบวนการก่อการร้าย ซึ่งมีข้อมูลบางส่วนเป็นความลับ ใครต้องเป็นผู้อนุมัติข้อมูลที่จะแถลง', opts: ['นักข่าวที่มารอรับฟัง', 'ที่ประชุมลับหรือผู้รับผิดชอบจัดประชุม', 'พนักงานขับรถของหน่วยงาน', 'แฟนคลับในเพจเฟซบุ๊ก'], ans: 1, exp: 'ตามข้อ 48(2) ข้อมูลแถลงข่าวต้องได้รับอนุมัติจากที่ประชุมลับก่อน' },
+  { q: 'สถานการณ์: เจ้าหน้าที่รัฐ ง. ต้องการเข้าถึงข้อมูลชั้น "ลับที่สุด" โดยอ้างว่าตนเองมีตำแหน่งสูงกว่า แต่ ง. ไม่มีหน้าที่เกี่ยวข้องในเรื่องนั้น ผู้ถือข้อมูลควรทำอย่างไร', opts: ['ให้ดูได้เพราะยศสูงกว่า', 'ปฏิเสธการเข้าถึงตามหลักการ "จำกัดให้ทราบเท่าที่จำเป็น"', 'ให้ดูได้ถ้า ง. เลี้ยงข้าวกลางวัน', 'ให้ดูแต่ห้ามบอกใคร'], ans: 1, exp: 'ตามข้อ 11 และ 64 การเข้าถึงต้องเป็นเรื่องที่ได้รับมอบหมายและจำเป็นเท่านั้น' },
+  { q: 'สถานการณ์: เกิดน้ำท่วมใหญ่ทำให้อาคารที่เก็บเอกสารลับเสียหาย หัวหน้าหน่วยงานควรจัดภยันตรายนี้อยู่ในกลุ่มใด', opts: ['การจารกรรม', 'ปรากฏการณ์ธรรมชาติ', 'การบ่อนทำลาย', 'การก่อการร้าย'], ans: 1, exp: 'ตามข้อ 34(1) ภัยจากปรากฏการณ์ธรรมชาติรวมถึงน้ำท่วม' },
+  { q: 'การรักษาความปลอดภัยทางเครือข่ายคอมพิวเตอร์และเทคโนโลยีสารสนเทศ ต้องปฏิบัติตามระเบียบใด', opts: ['ระเบียบรักษาความปลอดภัยแห่งชาติ', 'ระเบียบว่าด้วยการรักษาความลับของทางราชการ พ.ศ. 2544', 'กฎหมายและมติคณะรัฐมนตรีที่เกี่ยวกับความปลอดภัยสารสนเทศ', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 5 และ 47 ต้องปฏิบัติตามระเบียบนี้ ระเบียบความลับฯ และกฎหมายไอที' },
+  { q: '"เจ้าหน้าที่ควบคุมการรักษาความปลอดภัย" (จคร.) มีหน้าที่หลักคือข้อใด', opts: ['ขับรถรับส่งหัวหน้าหน่วยงาน', 'ดำเนินการ ควบคุม กำกับดูแล และให้คำปรึกษาเกี่ยวกับการรักษาความปลอดภัยของหน่วยงาน', 'ตรวจเช็กชื่อพนักงานตอนเช้า', 'ทำหน้าที่เป็นประธานในพิธีต่าง ๆ'], ans: 1, exp: 'ตามข้อ 4 เป็นนิยามหน้าที่ของเจ้าหน้าที่ควบคุมการรักษาความปลอดภัย' },
+  { q: 'การ "ตรวจสอบประวัติและพฤติการณ์บุคคล" ต้องเป็นไปตามประกาศของใคร', opts: ['ประกาศของกรมการปกครอง', 'ประกาศสำนักนายกรัฐมนตรี', 'ประกาศกระทรวงแรงงาน', 'ประกาศขององค์การสหประชาชาติ'], ans: 1, exp: 'ตามข้อ 26 วรรคท้าย ให้เป็นไปตามหลักเกณฑ์ที่กำหนดในประกาศสำนักนายกรัฐมนตรี' },
+  { q: 'ข้อใดคือ "แบบบันทึกรับรองการรักษาความลับ" ที่ต้องลงนามเมื่อเข้าปฏิบัติหน้าที่', opts: ['สัญญาจ้างงานทั่วไป', 'บันทึกรับรองการรักษาความลับตามแบบที่กำหนดในประกาศสำนักนายกรัฐมนตรี', 'บันทึกข้อตกลงคุณธรรม', 'ใบเสร็จรับเงินค่าจ้าง'], ans: 1, exp: 'ตามข้อ 28 และ 31 ต้องเป็นแบบตามประกาศสำนักนายกรัฐมนตรี' },
+  { q: 'หากมีการละเมิดมาตรการรักษาความปลอดภัยทางคอมพิวเตอร์ ต้องแจ้งใครทันทีที่เผชิญเหตุ', opts: ['แจ้งเจ้าหน้าที่ควบคุมการรักษาความปลอดภัยหรือเจ้าหน้าที่ผู้รับผิดชอบ', 'แจ้งช่างซ่อมคอมพิวเตอร์แถวบ้าน', 'แจ้งบริษัทประกันภัย', 'แจ้งแอดมินเพจไอที'], ans: 0, exp: 'ตามข้อ 51 วรรคสอง เมื่อเผชิญเหตุทางไอทีต้องแจ้งเจ้าหน้าที่ควบคุมฯ ทันที' },
+  { q: 'การสอบสวนหาตัวผู้ละเมิดความปลอดภัยเป็นหน้าที่ของใคร', opts: ['เจ้าหน้าที่รักษาความสะอาด', 'หัวหน้าหน่วยงานของรัฐ', 'ประชาชนทั่วไป', 'สื่อมวลชน'], ans: 1, exp: 'ตามข้อ 53 หัวหน้าหน่วยงานรัฐต้องสอบสวนหาผู้รับผิดชอบต่อการละเมิด' },
+  { q: 'หากข้อมูลลับที่รั่วไหลมีความสำคัญมากจนอาจต้องเปลี่ยนนโยบายและแผน ใครเป็นผู้ดำเนินการ', opts: ['หน่วยงานเจ้าของเรื่องเดิม', 'องค์การรักษาความปลอดภัย', 'คณะรัฐมนตรี', 'ถูกทั้ง ก. และ ค.'], ans: 0, exp: 'ตามข้อ 54(2) หน่วยงานเจ้าของเรื่องเดิมอาจต้องเปลี่ยนนโยบายเพื่อขจัดความเสียหาย' },
+  { q: 'องค์การรักษาความปลอดภัย "ฝ่ายทหาร" มีหน้าที่หลักต่อหน่วยงานใด', opts: ['กระทรวงมหาดไทย', 'หน่วยงานของรัฐฝ่ายทหาร', 'กระทรวงศึกษาธิการ', 'สถานีตำรวจทุกแห่ง'], ans: 1, exp: 'ตามข้อ 7(2) ศรภ. ดูแลหน่วยงานของรัฐฝ่ายทหาร' },
+  { q: 'การระบุว่าสิ่งของใดเป็น "บริภัณฑ์" หรือ "ยุทธภัณฑ์" เพิ่มเติม เป็นอำนาจของใคร', opts: ['นายกรัฐมนตรีคนเดียว', 'กรช. (คณะกรรมการนโยบายรักษาความปลอดภัยแห่งชาติ)', 'ผู้บัญชาการทหารสูงสุด', 'ปลัดกระทรวงการคลัง'], ans: 1, exp: 'ตามข้อ 4 นิยามบริภัณฑ์และยุทธภัณฑ์ระบุว่าเป็นไปตามที่ กรช. ประกาศกำหนด' },
+  { q: '"การรหัส" หมายความรวมถึงเรื่องใดบ้าง', opts: ['การใช้ประมวลลับ', 'การใช้รหัสแทนข้อความ', 'การส่งข่าวสารที่เป็นความลับ', 'ถูกทุกข้อ'], ans: 3, exp: 'ตามข้อ 4 การรหัสคือการใช้ประมวลลับ รหัส หรือการส่งข่าวสารลับ' },
+  { q: '"ที่สงวน" ประเภทชุมทางการขนส่งทางรางทุกระบบ ถูกเพิ่มเข้ามาโดยระเบียบฉบับใด', opts: ['ฉบับเดิม พ.ศ. 2517', 'ฉบับที่ 2 พ.ศ. 2554', 'ฉบับที่ 3 พ.ศ. 2560', 'ฉบับปี พ.ศ. 2552 (ฉบับหลัก)'], ans: 2, exp: 'ตามข้อ 34 ระเบียบฉบับที่ 3 พ.ศ. 2560 แก้ไขนิยาม "ที่สงวน" (2)' },
+  { q: '"ผู้บัญชาการศูนย์รักษาความปลอดภัย" มีตำแหน่งใดใน คณะกรรมการ กรช.', opts: ['รองประธานกรรมการ', 'กรรมการและผู้ช่วยเลขานุการ', 'เลขานุการ', 'ประธานที่ปรึกษา'], ans: 1, exp: 'ตามข้อ 19(23) ผู้บัญชาการ ศรภ. เป็นกรรมการและผู้ช่วยเลขานุการ' },
+  { q: 'การ "ทบทวนและซักซ้อมแผน" รักษาความปลอดภัยสถานที่ ต้องทำอย่างน้อยปีละกี่ครั้ง', opts: ['1 ครั้ง', '2 ครั้ง', '3 ครั้ง', '4 ครั้ง'], ans: 0, exp: 'ตามข้อ 36 วรรคสอง ต้องทบทวนและซักซ้อมอย่างน้อยปีละ 1 ครั้ง' },
+  { q: 'หากประธานและรองประธาน กรช. ทั้งสองคนไม่มาประชุม จะต้องดำเนินการอย่างไร', opts: ['ให้ยกเลิกการประชุม', 'ให้กรรมการที่มาประชุมเลือกกรรมการคนหนึ่งเป็นประธานในที่ประชุม', 'ให้เลขาธิการสภาความมั่นคงแห่งชาติเป็นประธานโดยอัตโนมัติ', 'ให้เลื่อนการประชุมไปสัปดาห์หน้า'], ans: 1, exp: 'ตามข้อ 21 หากประธานและรองประธานทั้งสองคนไม่มา ให้กรรมการที่มาประชุมเลือกกันเองหนึ่งคน' },
+];
+
+// ====== STATE ======
+let currentQuestions = [];
+let currentIdx = 0;
+let score = 0;
+let answered = false;
+
+// ====== NAVIGATION ======
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (id === 'quiz') {
+    exitQuiz();
+  }
+}
+
+// ====== ACCORDION ======
+function toggleAcc(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+}
+
+// ====== GLOSSARY ======
+function renderGloss(data) {
+  const grid = document.getElementById('glossGrid');
+  grid.innerHTML = data.map(g => `
+    <div class="gloss-card">
+      <div class="gloss-term">
+        <div class="term-icon">${g.icon}</div>
+        ${g.term}
+      </div>
+      <div class="gloss-def">${g.def}</div>
+    </div>
+  `).join('');
+}
+
+function filterGloss() {
+  const q = document.getElementById('glossSearch').value.toLowerCase();
+  const filtered = glossaryData.filter(g =>
+    g.term.toLowerCase().includes(q) || g.def.toLowerCase().includes(q)
+  );
+  renderGloss(filtered);
+}
+
+renderGloss(glossaryData);
+
+// ====== QUIZ ======
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startQuiz(mode) {
+  showSection('quiz', document.querySelector('nav button:nth-child(5)'));
+  document.getElementById('quizMenu').style.display = 'none';
+  document.getElementById('quizPlay').style.display = 'block';
+  document.getElementById('quizResult').style.display = 'none';
+
+  if (mode === 'all') {
+    currentQuestions = [...allQuestions];
+  } else if (mode === 'random20') {
+    currentQuestions = shuffle(allQuestions).slice(0, 20);
+  } else if (mode === 'random50') {
+    currentQuestions = shuffle(allQuestions).slice(0, 50);
+  }
+
+  currentIdx = 0;
+  score = 0;
+  renderQuestion();
+}
+
+function renderQuestion() {
+  answered = false;
+  const q = currentQuestions[currentIdx];
+  const total = currentQuestions.length;
+  const pct = ((currentIdx) / total * 100).toFixed(0);
+
+  document.getElementById('quizCounter').textContent = `ข้อ ${currentIdx + 1} / ${total}`;
+  document.getElementById('quizScoreDisplay').textContent = `คะแนน: ${score}`;
+  document.getElementById('quizProgress').style.width = pct + '%';
+  document.getElementById('quizQNum').textContent = `ข้อ ${currentIdx + 1}`;
+  document.getElementById('quizQuestion').textContent = q.q;
+  document.getElementById('quizExplanation').className = 'quiz-explanation';
+  document.getElementById('nextBtn').disabled = true;
+
+  const letters = ['ก', 'ข', 'ค', 'ง'];
+  const optsEl = document.getElementById('quizOptions');
+  optsEl.innerHTML = q.opts.map((opt, i) => `
+    <button class="quiz-option" onclick="selectAnswer(${i})">
+      <span class="opt-letter">${letters[i]}</span>
+      <span>${opt}</span>
+    </button>
+  `).join('');
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+
+  const q = currentQuestions[currentIdx];
+  const buttons = document.querySelectorAll('.quiz-option');
+
+  buttons.forEach(b => b.disabled = true);
+
+  if (idx === q.ans) {
+    buttons[idx].classList.add('correct');
+    score++;
+  } else {
+    buttons[idx].classList.add('wrong');
+    buttons[q.ans].classList.add('correct');
+  }
+
+  document.getElementById('quizScoreDisplay').textContent = `คะแนน: ${score}`;
+
+  const expEl = document.getElementById('quizExplanation');
+  expEl.innerHTML = `<strong>💡 คำอธิบาย:</strong> ${q.exp}`;
+  expEl.classList.add('show');
+
+  document.getElementById('nextBtn').disabled = false;
+}
+
+function nextQuestion() {
+  currentIdx++;
+  if (currentIdx >= currentQuestions.length) {
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showResult() {
+  document.getElementById('quizPlay').style.display = 'none';
+  document.getElementById('quizResult').style.display = 'block';
+
+  const total = currentQuestions.length;
+  const pct = Math.round(score / total * 100);
+  const deg = pct * 3.6;
+
+  document.getElementById('resultCircle').style.setProperty('--deg', deg + 'deg');
+  document.getElementById('resultPct').textContent = pct + '%';
+  document.getElementById('correctCount').textContent = score;
+  document.getElementById('wrongCount').textContent = total - score;
+
+  let title, msg;
+  if (pct >= 90) { title = '🏆 ยอดเยี่ยมมาก!'; msg = `คุณได้คะแนน ${score}/${total} ผ่านด้วยเกรด A`; }
+  else if (pct >= 75) { title = '🥇 ดีมาก!'; msg = `คุณได้คะแนน ${score}/${total} ผ่านด้วยเกรด B`; }
+  else if (pct >= 60) { title = '👍 ผ่านแล้ว!'; msg = `คุณได้คะแนน ${score}/${total} ควรทบทวนเนื้อหาเพิ่มเติม`; }
+  else { title = '📖 ต้องทบทวนเพิ่มเติม'; msg = `คุณได้คะแนน ${score}/${total} ลองทบทวนเนื้อหาและทดสอบใหม่`; }
+
+  document.getElementById('resultTitle').textContent = title;
+  document.getElementById('resultMsg').textContent = msg;
+}
+
+function exitQuiz() {
+  document.getElementById('quizMenu').style.display = 'block';
+  document.getElementById('quizPlay').style.display = 'none';
+  document.getElementById('quizResult').style.display = 'none';
+}
+
+  // Show donate banner after result
+  const __origShowResult = typeof showResult === 'function' ? showResult : null;
+  if (__origShowResult && !window.__donatePatched) {
+    window.__donatePatched = true;
+    showResult = function() {
+      __origShowResult();
+      const db = document.getElementById('donateBanner');
+      if (db) { db.style.display = 'block'; setTimeout(() => db.scrollIntoView({behavior:'smooth',block:'nearest'}), 300); }
+    };
+  }
+</script>
+</body>
+</html>
